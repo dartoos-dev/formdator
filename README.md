@@ -1,16 +1,8 @@
 # callor
 
-Composable, immutable, object-oriented set of form field validators.
+Composable, immutable, and object-oriented set of flutter form field validators.
 
-For easier composability, each validator implements the call() method.
+For easier composability, each validator implements the call() method; that's why
+this project's name is callor: **Call**able Validat**or** :-)
 
 ## Getting Started
-
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
