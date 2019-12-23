@@ -10,9 +10,11 @@ class Equal {
 
   static const _defaultMsg = 'Does not match.';
 
+  /// The original message will be retrieved by calling obj.toString
   Equal(Object obj, {msg = _defaultMsg}) :
     this.origin(obj.toString, msg: msg);
 
+  /// Main constructor.
   Equal.origin(Original original, {msg = _defaultMsg}) :
     _original = original,
     _msg = msg;
