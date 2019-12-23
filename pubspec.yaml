@@ -1,7 +1,7 @@
 name: callor
-description: A new Flutter package project.
+description: Declarative, composable, object-oriented set of Flutter form validators.
 version: 0.0.1
-author:
+author: Rafael Amizes <r.amizes@gmail.com>
 homepage:
 
 environment:
