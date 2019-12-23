@@ -6,3 +6,4 @@ export 'src/email.dart';
 export 'src/min_length.dart';
 export 'src/max_length.dart';
 export 'src/numeric.dart';
+export 'src/equal.dart';
