@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   validators: ^2.0.0
+  cpf_cnpj_validator: ^1.0.5
 
 dev_dependencies:
   flutter_test:
