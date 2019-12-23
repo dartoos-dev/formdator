@@ -7,3 +7,4 @@ export 'src/min_length.dart';
 export 'src/max_length.dart';
 export 'src/numeric.dart';
 export 'src/equal.dart';
+export 'src/cpf.dart';
