@@ -8,3 +8,4 @@ export 'src/max_length.dart';
 export 'src/numeric.dart';
 export 'src/equal.dart';
 export 'src/cpf.dart';
+export 'src/cnpj.dart';
