@@ -1,6 +1,7 @@
 import 'required.dart';
 import 'email.dart';
 import 'rules.dart';
+import 'type.dart';
 
 /// Validator for not blank and well formed email field.
 
