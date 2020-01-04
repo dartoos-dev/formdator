@@ -12,3 +12,4 @@ export 'src/cpf.dart';
 export 'src/req_cpf.dart';
 export 'src/cnpj.dart';
 export 'src/req_cnpj.dart';
+export 'src/trimmed.dart';
