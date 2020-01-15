@@ -4,10 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub/versioning).
 
+## [unreleased]
+
+## [0.0.3] - 2020-04-01
+### Added
+- Trimmer validators -- validators that trims the value before validating it.
+- Set of required and well formed special case classes.
+### Changed
+- Equal validator code reformatted.
+- Equal validator docoment comments enhanced.
+### Fixed
+- Created the "unreleased" section to this CHANGELOG file.
+
 ## [0.0.2] - 2019-12-23
 ### Added
- - Cpf(Cadastro da Pessoa Física) validator -- Brazil's version of ssn (Social Security Number).
- - Cnpj(Cadastro Nacional da Pessoa Jurídica) validator -- brazilian National Registry of Legal Entities. 
+- Cpf(Cadastro da Pessoa Física) validator -- Brazil's version of ssn (Social Security Number).
+- Cnpj(Cadastro Nacional da Pessoa Jurídica) validator -- brazilian National Registry of Legal Entities. 
 ## [0.0.1] - 2019-12-23
 ### Added
 - Required validator -- for mandatory fields.

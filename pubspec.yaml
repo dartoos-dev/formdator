@@ -1,6 +1,6 @@
 name: callor
 description: Declarative, composable, object-oriented set of Flutter form validators.
-version: 0.0.2
+version: 0.0.3
 author: Rafael Amizes <r.amizes@gmail.com>
 homepage:
 
