@@ -6,6 +6,12 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 
+## [0.1.0] - 2020-22-01
+### Changed
+- Equal validator message parameter name to "diff".
+### Fixed
+- Equal validator bug.
+
 ## [0.0.4] - 2020-22-01
 ### Added
 - "Tautological" Ok validator -- it always validates the incoming value.
