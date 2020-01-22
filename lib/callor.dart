@@ -24,3 +24,4 @@ export 'src/req_dt.dart';
 export 'src/wellformed_dt.dart';
 export 'src/req_wellformed_dt.dart';
 export 'src/rules_dt.dart';
+export 'src/req_num.dart';
