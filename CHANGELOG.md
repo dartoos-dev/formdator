@@ -6,6 +6,12 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 
+## [0.1.2] - 2020-22-01
+### Added
+- ReqNum (Required Numeric) convenience validator.
+### Fixed
+- Removed unused import from ReqEmail class.
+
 ## [0.1.1] - 2020-22-01
 ### Changed
 - Equal validator has a "to" method in addition to overloading the "call" operator.
