@@ -6,6 +6,10 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 
+## [0.1.1] - 2020-22-01
+### Changed
+- Equal validator has a "to" method in addition to overloading the "call" operator.
+
 ## [0.1.0] - 2020-22-01
 ### Changed
 - Equal validator message parameter name to "diff".
