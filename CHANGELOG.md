@@ -6,6 +6,13 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 
+## [0.0.4] - 2020-22-01
+### Added
+- "Tautological" Ok validator -- it always validates the incoming value.
+- Required DateTime validator.
+- Wellformed DateTime validator.
+- Multiple rules DateTime validator.
+
 ## [0.0.3] - 2020-04-01
 ### Added
 - Trimmer validators -- validators that trims the value before validating it.
