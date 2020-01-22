@@ -6,7 +6,7 @@ class Equal {
   final String _msg;
 
   /// Main constructor.
-  Equal(String origin, {String diff = 'Does not match.'})
+  const Equal(String origin, {String diff = 'Does not match.'})
     : _origin = origin,
       _msg = diff;
 
