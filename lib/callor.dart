@@ -20,6 +20,7 @@ export 'src/trim_req_email.dart';
 export 'src/trim_req_cpf.dart';
 export 'src/trim_req_cnpj.dart';
 export 'src/ok.dart';
+export 'src/ok_dt.dart';
 export 'src/req_dt.dart';
 export 'src/wellformed_dt.dart';
 export 'src/req_wellformed_dt.dart';
