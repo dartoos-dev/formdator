@@ -6,6 +6,9 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 
+## [0.1.3] - 2020-23-01
+### Added
+- OkDt -- DateTime validator that always validates the incoming datetime value.
 ## [0.1.2] - 2020-22-01
 ### Added
 - ReqNum (Required Numeric) convenience validator.
