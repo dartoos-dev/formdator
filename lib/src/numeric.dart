@@ -5,11 +5,10 @@ class Numeric {
   // Error message
   final String _msg;
 
-  const Numeric({String msg='Non-numeric value'})
-    : _msg = msg;
+  const Numeric({String msg = 'Non-numeric value'}) : _msg = msg;
 
   ///Checks whether the given value is numeric.
   String call(String value) {
-    return isNumeric(value)? null : _msg;
+    return isNumeric(value) ? null : _msg;
   }
 }

@@ -7,16 +7,15 @@ import 'rules.dart';
 /// It combines the functionality of the [Required] and [Email]
 /// validators.
 class ReqEmail {
-
   // The not blank and valid email rules to be applied to.
   final Rules _rules;
 
   /// Convenience constructor.
   /// [blank] is the error message for a not filled in email.
   /// [invalid] is the error message for a invalid email.
-  ReqEmail({String blank, String invalid}) :
-    this.custom(Rules.req(blank, Email(msg: invalid)));
- 
+  ReqEmail({String blank, String invalid})
+      : this.custom(Rules.req(blank, Email(msg: invalid)));
+
   /// Fully customable constructor.
   ReqEmail.custom(this._rules);
 

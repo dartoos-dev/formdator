@@ -2,7 +2,6 @@ import 'type.dart';
 
 ///Multiple datetime validator.
 class RulesDt {
-
   final List<DtValidator> _vals;
 
   const RulesDt(this._vals);

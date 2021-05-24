@@ -7,13 +7,12 @@ class Equal {
 
   /// Main constructor.
   const Equal(String origin, {String diff = 'Does not match.'})
-    : _origin = origin,
-      _msg = diff;
+      : _origin = origin,
+        _msg = diff;
 
   ///Checks whether the given value is equal to the original one.
-  String to(String value) => value == _origin? null : _msg;
+  String to(String value) => value == _origin ? null : _msg;
 
   /// Forwards to "to" method.
   String call(String value) => to(value);
 }
-

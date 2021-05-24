@@ -5,7 +5,6 @@ import 'type.dart';
 /// It does not validate anything! It just trims the incoming value
 /// and forwards it to the encapsulated validator.
 class Trimmed {
-
   final Val _validator;
 
   const Trimmed(this._validator);

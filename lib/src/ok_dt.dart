@@ -1,4 +1,3 @@
-
 /// Always true, aka Tautology.
 class OkDt {
   const OkDt();
