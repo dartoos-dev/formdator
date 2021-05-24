@@ -6,15 +6,14 @@ import 'cpf.dart';
 /// It combines the functionality of the [Required] and [Cpf]
 /// validators.
 class ReqCpf {
-
   // The not blank and valid cpf rules to be applied to.
   final Rules _rules;
 
   /// Convenience constructor.
   /// [blank] is the error message for a not filled in cpf.
   /// [invalid] is the error message for a invalid cpf.
-  ReqCpf({String blank, String invalid}) :
-    this.custom(Rules.req(blank, Cpf(msg: invalid)));
+  ReqCpf({String blank, String invalid})
+      : this.custom(Rules.req(blank, Cpf(msg: invalid)));
 
   /// Fully customable constructor.
   const ReqCpf.custom(this._rules);

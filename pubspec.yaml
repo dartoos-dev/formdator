@@ -1,8 +1,8 @@
 name: callor
 description: Declarative, composable, object-oriented set of Flutter form validators.
 version: 0.1.3
-author: Rafael Amizes <r.amizes@gmail.com>
-homepage:
+homepage: https://dartoos.dev
+repository: https://github.com/dartoos-dev/callor
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
