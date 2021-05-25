@@ -12,14 +12,14 @@ alt="EO-Color logo" width="101" height="48"/>
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 [![PDD status](https://www.0pdd.com/svg?name=dartoos-dev/callor)](https://www.0pdd.com/p?name=dartoos-dev/callor)
 [![build](https://github.com/dartoos-dev/callor/actions/workflows/build.yml/badge.svg)](https://github.com/dartoos-dev/callor/actions/)
-[![codecov](https://codecov.io/gh/dartoos-dev/callor/branch/master/graph/badge.svg)](https://codecov.io/gh/dartoos-dev/callor)
+[![codecov](https://codecov.io/gh/dartoos-dev/callor/branch/master/graph/badge.svg?token=jYfO55O22s)](https://codecov.io/gh/dartoos-dev/callor)
 [![Hits-of-Code](https://hitsofcode.com/github/dartoos-dev/callor?branch=master)](https://hitsofcode.com/github/dartoos-dev/callor/view?branch=master)
 
-**Call**able Validat**or** - **Callor** is a fully object-oriented package for
-validating fields of a Flutter form widget before it gets processed.  Its key
-benefits, comparing to all other similar packages, include:
+ **Call**able Validat**or** - Callor is a fully object-oriented package for
+ validating form fields before they get processed. Its key benefits, compared to
+ all other similar packages, include:
 
-- Object-oriented mindset: no static functions; only trustworthy immutable
+- Object-oriented mindset: no static functions; only trustworthy **immutable**
   objects.
 - Classes with short - yet meaningful - names. Ex: ```Req``` for a
   required(non-blank) field; ```ReqEmail``` for a non-blank, well-formed email;
