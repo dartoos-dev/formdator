@@ -24,7 +24,7 @@ alt="EO-Color logo" width="101" height="48"/>
 - Classes with short - yet meaningful - names. Ex: ```Req``` for a
   required(non-blank) field; ```ReqEmail``` for a non-blank, well-formed email;
   ```MinLen``` for a minimum number of characters; ```Equal``` for equality
-  rule; and so on.
+  rules; and so on.
 - No complex class hierarchy: the validator classes just implement the
   Dart's built-in ```call()``` method.
 - Ready-to-use compound validators such as the ```TrimReqEmail``` class, which,
