@@ -1,16 +1,15 @@
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
 
 /// Cpf Cadastro da Pessoa Física rule.
-
+///
 /// Kind of Brazilian SSN - Social Security Number.
 class Cpf {
-  final String _msg;
+  /// Cpf validator with [invalid] as the error message.
+  const Cpf({String invalid = 'Invalid cpf'}) : _invalid = invalid;
 
-  const Cpf({String msg = 'Invalid cpf.'}) : _msg = msg;
+  // The invalid message.
+  final String _invalid;
 
-  /// Checks whether the given value represents a valid cpf.
-  /// (Kind of Brazilian Social Security Number - SSN).
-  String? call(String? value) {
-    return CPFValidator.isValid(value) ? null : _msg;
-  }
+  /// Returns null if [cpf] is valid; the error message otherwise.
+  String? call(String? cpf) => CPFValidator.isValid(cpf) ? null : _invalid;
 }

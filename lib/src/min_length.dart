@@ -1,17 +1,16 @@
 /// Minimum length rule.
 class MinLength {
+  /// Minimum length validation with [tooShort] as the error message.
+  const MinLength(int length, {String tooShort = 'Minimum length required.'})
+      : _len = length,
+        _tooShort = tooShort;
+
   // The minimum length value.
   final int _len;
   // Error message.
-  final String _msg;
+  final String _tooShort;
 
-  const MinLength(int length, {msg = 'Minimum length required.'})
-      : _len = length,
-        _msg = msg;
-
-  /// Checks whether the given value has a minimum number of
-  /// characteres.
-  String? call(String? value) {
-    return (value != null && value.length < _len) ? _msg : null;
-  }
+  /// Null if [notTooShort] is not long enough; the error message otherwise.
+  String? call(String? notTooShort) =>
+      (notTooShort != null && notTooShort.length < _len) ? _tooShort : null;
 }

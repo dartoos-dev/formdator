@@ -1,17 +1,16 @@
 /// Maximum length rule.
 class MaxLength {
-  // The maximum length value.
+  /// Text values not longer than [length]; [tooLong] as the error message.
+  const MaxLength(int length, {String tooLong = 'Maximum length exceeded'})
+      : _len = length,
+        _tooLong = tooLong;
+
+  // Maximum length.
   final int _len;
   // Error message.
-  final String _msg;
+  final String _tooLong;
 
-  const MaxLength(int length, {msg = 'Maximum length exceeded.'})
-      : _len = length,
-        _msg = msg;
-
-  /// Checks whether the given value has not exceeded the maximun
-  /// number of characteres.
-  String? call(String? value) {
-    return (value != null && value.length > _len) ? _msg : null;
-  }
+  /// Null if [notTooLong] is longer; the error message otherwise.
+  String? call(String? notTooLong) =>
+      (notTooLong != null && notTooLong.length > _len) ? _tooLong : null;
 }

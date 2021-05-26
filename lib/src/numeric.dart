@@ -2,13 +2,14 @@ import 'package:validators/validators.dart';
 
 /// Numeric only rule.
 class Numeric {
+  /// Non-numeric validation with [nonNumeric] error message.
+  const Numeric({String nonNumeric = 'Non-numeric value'})
+      : _nonNumeric = nonNumeric;
+
   // Error message
-  final String _msg;
+  final String _nonNumeric;
 
-  const Numeric({String msg = 'Non-numeric value'}) : _msg = msg;
-
-  ///Checks whether the given value is numeric.
-  String? call(String? value) {
-    return (value == null || isNumeric(value)) ? null : _msg;
-  }
+  /// Null if [number] is a numeric value; the error message otherwise.
+  String? call(String? number) =>
+      (number == null || isNumeric(number)) ? null : _nonNumeric;
 }

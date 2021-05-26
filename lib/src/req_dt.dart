@@ -1,8 +1,11 @@
 /// Required datetime.
 class ReqDt {
-  final String _msg;
+  /// Mandatory datetime with [blank] as the error message.
+  const ReqDt({String blank = 'Required field'}) : _blank = blank;
 
-  const ReqDt({String blank = 'Required.'}) : _msg = blank;
+  // Error message.
+  final String _blank;
 
-  String? call(DateTime? dt) => dt == null ? _msg : null;
+  /// Null if [datetime] is valid; the erro message if blank or invalid.
+  String? call(DateTime? datetime) => datetime == null ? _blank : null;
 }

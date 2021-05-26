@@ -4,7 +4,7 @@ import 'package:callor/callor.dart';
 void main() {
   group('Ok validator', () {
     test('always null', () {
-      final ok = const Ok();
+      const ok = Ok();
       expect(ok('test-string'), null);
     });
   });
