@@ -8,7 +8,7 @@ class Required {
   /// Checks whether the given value is neither null nor empty.
 
   /// Returns null if value is valid; null otherwise.
-  String call(String value) {
+  String? call(String? value) {
     return value == null || value.isEmpty ? _msg : null;
   }
 }

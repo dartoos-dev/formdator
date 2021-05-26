@@ -5,13 +5,13 @@ homepage: https://dartoos.dev
 repository: https://github.com/dartoos-dev/callor
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  validators: ^2.0.0
-  cpf_cnpj_validator: ^1.0.5
+  validators: ^3.0.0
+  cpf_cnpj_validator: ^2.0.0
 
 dev_dependencies:
   flutter_test:

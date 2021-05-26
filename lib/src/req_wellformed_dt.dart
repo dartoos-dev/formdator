@@ -14,5 +14,5 @@ class ReqWellFormedDt {
           WellFormedDt(malformed: malformed),
         ]);
 
-  String call(DateTime dt) => _rules(dt);
+  String? call(DateTime? dt) => _rules(dt);
 }

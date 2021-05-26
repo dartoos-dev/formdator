@@ -7,5 +7,5 @@ class TrimRules {
 
   TrimRules(List<Val> vals) : _trimmed = Trimmed(Rules(vals));
 
-  String call(String value) => _trimmed(value);
+  String? call(String value) => _trimmed(value);
 }

@@ -2,14 +2,14 @@
 class WellFormedDt {
   final String _msg;
 
-  const WellFormedDt({String malformed = 'Malformed value.'})
+  const WellFormedDt({String malformed = 'Malformed date value.'})
       : _msg = malformed;
 
-  String call(DateTime dt) {
-    String ok;
+  String? call(DateTime? dt) {
+    String? ok;
     try {
       DateTime.parse(dt.toString());
-    } catch (e) {
+    } on FormatException {
       ok = _msg;
     }
     return ok;

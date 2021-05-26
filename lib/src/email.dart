@@ -7,7 +7,7 @@ class Email {
   const Email({String msg = 'Invalid email.'}) : _msg = msg;
 
   /// Checks whether the given value is a well formed email.
-  String call(String value) {
-    return isEmail(value) ? null : _msg;
+  String? call(String? value) {
+    return (value == null || isEmail(value)) ? null : _msg;
   }
 }

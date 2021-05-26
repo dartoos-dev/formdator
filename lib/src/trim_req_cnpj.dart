@@ -11,5 +11,5 @@ class TrimReqCnpj {
 
   ///Trims the value before validating against blankness and
   ///ill-formedness.
-  String call(String value) => _trimmed(value);
+  String? call(String? value) => _trimmed(value);
 }

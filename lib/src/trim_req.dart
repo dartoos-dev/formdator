@@ -9,5 +9,5 @@ class TrimReq {
       : _trimmed = Trimmed(Required(msg: blank));
 
   /// Trims the value before validating agains blankness.
-  String call(String value) => _trimmed(value);
+  String? call(String? value) => _trimmed(value);
 }

@@ -10,7 +10,7 @@ class Cnpj {
   const Cnpj({msg = 'Invalid cnpj.'}) : _msg = msg;
 
   /// Checks wheter the given value represents a valid cnpj.
-  String call(String value) {
+  String? call(String? value) {
     return CNPJValidator.isValid(value) ? null : _msg;
   }
 }

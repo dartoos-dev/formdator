@@ -13,12 +13,12 @@ class ReqNum {
   /// Convenience constructor.
   /// [blank] is the error message for a not filled in numeric field.
   /// [invalid] is the error message for a invalid numeric value.
-  ReqNum({String blank, String invalid})
+  ReqNum({String blank = 'required value', String invalid = 'invalid value'})
       : this.custom(Rules.req(blank, Numeric(msg: invalid)));
 
   /// Fully customable constructor.
   ReqNum.custom(this._rules);
 
   /// Checks whether the value is a non-blank and valid numeric value.
-  String call(String value) => _rules(value);
+  String? call(String? value) => _rules(value);
 }

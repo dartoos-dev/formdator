@@ -10,5 +10,5 @@ class Trimmed {
   const Trimmed(this._validator);
 
   /// Trims the value before forwarding it.
-  String call(String value) => _validator(value.trim());
+  String? call(String? value) => _validator(value?.trim());
 }

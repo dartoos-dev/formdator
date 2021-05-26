@@ -10,9 +10,9 @@ class Equal {
       : _origin = origin,
         _msg = diff;
 
-  ///Checks whether the given value is equal to the original one.
-  String to(String value) => value == _origin ? null : _msg;
+  /// Checks whether the given value is equal to the original one.
+  String? to(String? value) => value == _origin ? null : _msg;
 
   /// Forwards to "to" method.
-  String call(String value) => to(value);
+  String? call(String? value) => to(value);
 }

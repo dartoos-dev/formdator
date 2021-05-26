@@ -10,7 +10,7 @@ class Cpf {
 
   /// Checks whether the given value represents a valid cpf.
   /// (Kind of Brazilian Social Security Number - SSN).
-  String call(String value) {
+  String? call(String? value) {
     return CPFValidator.isValid(value) ? null : _msg;
   }
 }

@@ -17,8 +17,8 @@ class Rules {
   /// Checks wether the value is valid for all rules.
 
   /// Returns the rule message if value is invalid; null otherwise.
-  String call(String value) {
-    String msg;
+  String? call(String? value) {
+    String? msg;
     for (final rule in _rules) {
       msg = rule(value);
       if (msg != null) {
