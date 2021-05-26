@@ -1,14 +1,16 @@
 /// Well formed datetime validator.
 class WellFormedDt {
-  final String _msg;
-
-  const WellFormedDt({String malformed = 'Malformed date value.'})
+  /// Well-formed datetime with [malformed] as the error message.
+  const WellFormedDt({String malformed = 'Malformed date value'})
       : _msg = malformed;
 
-  String? call(DateTime? dt) {
+  final String _msg;
+
+  /// Null if datetime is w
+  String? call(DateTime? datetime) {
     String? ok;
     try {
-      DateTime.parse(dt.toString());
+      DateTime.parse(datetime.toString());
     } on FormatException {
       ok = _msg;
     }

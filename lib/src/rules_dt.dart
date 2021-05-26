@@ -2,14 +2,16 @@ import 'type.dart';
 
 /// Multiple datetime validator.
 class RulesDt {
-  final List<DtValidator> _vals;
-
+  /// DtValidator.
   const RulesDt(this._vals);
 
-  String? call(DateTime? dt) {
+  final List<DtValidator> _vals;
+
+  /// Null if [datetime] if valid for all rules; the error message otherwise.
+  String? call(DateTime? datetime) {
     String? msg;
     for (final val in _vals) {
-      msg = val(dt);
+      msg = val(datetime);
       if (msg != null) break;
     }
     return msg;

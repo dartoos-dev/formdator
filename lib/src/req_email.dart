@@ -1,24 +1,18 @@
-import 'required.dart';
 import 'email.dart';
 import 'rules.dart';
 
-/// Validator for not blank and well formed email field.
-
-/// It combines the functionality of the [Required] and [Email]
-/// validators.
+/// Mandatory and well-formed email.
 class ReqEmail {
-  // The not blank and valid email rules to be applied to.
-  final Rules _rules;
-
-  /// Convenience constructor.
-  /// [blank] is the error message for a not filled in email.
-  /// [invalid] is the error message for a invalid email.
+  /// Mandatory email validator having [blank] as the message for blank fields
+  /// and [invalid] for malformed ones.
   ReqEmail({String blank = 'required email', String invalid = 'invalid email'})
-      : this.custom(Rules.req(blank, Email(msg: invalid)));
+      : this.custom(Rules.req(blank, Email(invalid: invalid)));
 
   /// Fully customable constructor.
   ReqEmail.custom(this._rules);
+  // The not blank and valid email rules to be applied to.
+  final Rules _rules;
 
-  /// Checks whether the value is a non-blank and well formed email.
-  String? call(String? value) => _rules(value);
+  /// Null if [email] is valid; the error message if blank or invalid.
+  String? call(String? email) => _rules(email);
 }

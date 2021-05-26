@@ -1,11 +1,10 @@
-import 'rules_dt.dart';
 import 'req_dt.dart';
+import 'rules_dt.dart';
 import 'wellformed_dt.dart';
 
 /// Required, wellformed datetime.
 class ReqWellFormedDt {
-  final RulesDt _rules;
-
+  /// Well-formed datetime.
   ReqWellFormedDt({
     String blank = 'Required.',
     String malformed = 'Malformed.',
@@ -14,5 +13,8 @@ class ReqWellFormedDt {
           WellFormedDt(malformed: malformed),
         ]);
 
-  String? call(DateTime? dt) => _rules(dt);
+  final RulesDt _rules;
+
+  /// Null if [datetime] is valid; the error message if blank or invalid.
+  String? call(DateTime? datetime) => _rules(datetime);
 }

@@ -6,6 +6,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 ## Changed - BREAKING CHANGES
+- Lint as the linter tool - [10](https://github.com/dartoos-dev/callor/pull/10)
 - Null-safety migration - [11](https://github.com/dartoos-dev/callor/pull/11)
 
 ## [0.1.3] - 2020-23-01

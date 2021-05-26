@@ -5,12 +5,12 @@ import 'package:cpf_cnpj_validator/cnpj_validator.dart';
 /// Kind of brazilian Company's Registered Number or
 /// National Registry of Legal Entities.
 class Cnpj {
-  final String _msg;
+  /// Cnpj validator with [invalid] as the error message.
+  const Cnpj({String invalid = 'Invalid cnpj'}) : _invalid = invalid;
 
-  const Cnpj({msg = 'Invalid cnpj.'}) : _msg = msg;
+  // The error message.
+  final String _invalid;
 
-  /// Checks wheter the given value represents a valid cnpj.
-  String? call(String? value) {
-    return CNPJValidator.isValid(value) ? null : _msg;
-  }
+  /// Returns null if [cnpj] is valid; the error message otherwise.
+  String? call(String? cnpj) => CNPJValidator.isValid(cnpj) ? null : _invalid;
 }

@@ -2,12 +2,13 @@ import 'package:validators/validators.dart';
 
 /// Well formed email rule.
 class Email {
-  final String _msg;
+  /// Email validator with [invalid] as the error message.
+  const Email({String invalid = 'Invalid email'}) : _invalid = invalid;
 
-  const Email({String msg = 'Invalid email.'}) : _msg = msg;
+  // The error message.
+  final String _invalid;
 
-  /// Checks whether the given value is a well formed email.
-  String? call(String? value) {
-    return (value == null || isEmail(value)) ? null : _msg;
-  }
+  /// Returns null if [email] is valid; the error message otherwise.
+  String? call(String? email) =>
+      (email == null || isEmail(email)) ? null : _invalid;
 }

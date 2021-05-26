@@ -1,14 +1,13 @@
 /// Input field must be filled out before submitting the form.
 class Required {
-  // Error message.
-  final String _msg;
+  /// Mandatory field with [blank] error message.
+  const Required({String blank = 'Required field'}) : _blank = blank;
 
-  const Required({String msg = 'Required field.'}) : _msg = msg;
+  /// Error message.
+  final String _blank;
 
-  /// Checks whether the given value is neither null nor empty.
-
-  /// Returns null if value is valid; null otherwise.
+  /// Null if [value] is not blank - filled in; the error message otherwise.
   String? call(String? value) {
-    return value == null || value.isEmpty ? _msg : null;
+    return value == null || value.isEmpty ? _blank : null;
   }
 }

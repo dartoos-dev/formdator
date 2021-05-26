@@ -1,15 +1,16 @@
-import 'trimmed.dart';
 import 'req_email.dart';
+import 'trimmed.dart';
 
 /// Convenience trimmed required email validator.
 class TrimReqEmail {
-  final Trimmed _trimmed;
-
+  /// Trimmed mandatory email with [blank] as error for blank and [invalid] as
+  /// error for invalid emails.
   TrimReqEmail(
       {String blank = 'Non-blank field.', String invalid = 'Invalid email.'})
       : _trimmed = Trimmed(ReqEmail(blank: blank, invalid: invalid));
 
-  ///Trims the value before validating against blankness and
-  ///ill-formedness.
-  String? call(String? value) => _trimmed(value);
+  final Trimmed _trimmed;
+
+  /// Null if [email] is valid; the error message if blank or invalid.
+  String? call(String? email) => _trimmed(email);
 }
