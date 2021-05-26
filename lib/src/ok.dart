@@ -2,5 +2,5 @@
 class Ok {
   const Ok();
 
-  String call(String value) => null;
+  String? call(String? value) => null;
 }

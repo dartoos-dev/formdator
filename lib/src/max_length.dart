@@ -11,7 +11,7 @@ class MaxLength {
 
   /// Checks whether the given value has not exceeded the maximun
   /// number of characteres.
-  String call(String value) {
-    return value.length > _len ? _msg : null;
+  String? call(String? value) {
+    return (value != null && value.length > _len) ? _msg : null;
   }
 }

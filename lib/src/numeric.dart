@@ -8,7 +8,7 @@ class Numeric {
   const Numeric({String msg = 'Non-numeric value'}) : _msg = msg;
 
   ///Checks whether the given value is numeric.
-  String call(String value) {
-    return isNumeric(value) ? null : _msg;
+  String? call(String? value) {
+    return (value == null || isNumeric(value)) ? null : _msg;
   }
 }

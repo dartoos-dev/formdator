@@ -12,7 +12,7 @@ class ReqCpf {
   /// Convenience constructor.
   /// [blank] is the error message for a not filled in cpf.
   /// [invalid] is the error message for a invalid cpf.
-  ReqCpf({String blank, String invalid})
+  ReqCpf({String blank = 'required field', String invalid = 'invalid cpf'})
       : this.custom(Rules.req(blank, Cpf(msg: invalid)));
 
   /// Fully customable constructor.
@@ -20,5 +20,5 @@ class ReqCpf {
 
   /// Checks whether the given value represents a filled in well
   /// formed cpf.
-  String call(String value) => _rules(value);
+  String? call(String? value) => _rules(value);
 }
