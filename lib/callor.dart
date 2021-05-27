@@ -7,6 +7,7 @@ export 'src/email.dart';
 export 'src/equal.dart';
 export 'src/max_len.dart';
 export 'src/min_len.dart';
+export 'src/nok.dart';
 export 'src/ok.dart';
 export 'src/req.dart';
 export 'src/req_cnpj.dart';
