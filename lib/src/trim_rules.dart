@@ -1,14 +1,14 @@
 import 'rules.dart';
-import 'trimmed.dart';
+import 'trim.dart';
 import 'type.dart';
 
-/// Trimed multi rules validator.
+/// Convenience trimed-multirules validator.
 class TrimRules {
-  /// Trims the value before forwarding to [vals].
-  TrimRules(List<Val> vals) : _trimmed = Trimmed(Rules(vals));
+  /// Trims the value and forwards it to [vals].
+  TrimRules(List<Callor> vals) : _trim = Trim(Rules(vals));
 
-  final Trimmed _trimmed;
+  final Trim _trim;
 
-  /// Null if [value] is valid for all rules; the error message otherwise.
-  String? call(String value) => _trimmed(value);
+  /// Valid - returns null - if [value] is valid for all rules.
+  String? call(String? value) => _trim(value);
 }

@@ -3,9 +3,12 @@ import 'package:callor/callor.dart';
 
 void main() {
   group('Ok validator', () {
-    test('always null', () {
-      const ok = Ok();
+    const ok = Ok();
+    test('any non-null input', () {
       expect(ok('test-string'), null);
+    });
+    test('null input', () {
+      expect(ok(null), null);
     });
   });
 }

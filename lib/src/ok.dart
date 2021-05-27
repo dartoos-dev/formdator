@@ -1,8 +1,10 @@
-/// Always true, aka Tautology.
+/// Always valid - Tautology.
+///
+/// Used for validation logic purposes.
 class Ok {
-  /// Ctor.
+  /// Does not perform any validation.
   const Ok();
 
-  /// Always returns null.
+  /// Always valid - always returns null.
   String? call(String? value) => null;
 }

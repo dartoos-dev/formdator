@@ -1,24 +1,19 @@
 import 'cpf.dart';
 import 'rules.dart';
 
-/// Validator for not blank and well formed cpf field.
-
-/// It combines the functionality of the [Required] and [Cpf]
-/// validators.
+/// Mandatory CPF - Cadastro da Pessoa Física.
+///
+/// Kind of Brazilian SSN - Social Security Number.
 class ReqCpf {
-  /// Convenience constructor.
-  /// [blank] is the error message for a not filled in cpf.
-  /// [invalid] is the error message for a invalid cpf.
-  ReqCpf({String blank = 'required field', String invalid = 'invalid cpf'})
-      : this.custom(Rules.req(blank, Cpf(invalid: invalid)));
+  /// It combines both the [Req] and [Cpf] validators.
+  ///
+  /// [blank] is the error message for a null or empty cpf; [invalid], for an
+  /// invalid one.
+  ReqCpf({required String blank, required String invalid})
+      : _nonBlankValid = Rules.req(blank, Cpf(invalid: invalid));
 
-  /// Fully customable constructor.
-  const ReqCpf.custom(this._rules);
+  final Rules _nonBlankValid;
 
-  // The not blank and valid cpf rules to be applied to.
-  final Rules _rules;
-
-  /// Checks whether the given value represents a filled in well
-  /// formed cpf.
-  String? call(String? cpf) => _rules(cpf);
+  /// Valid - returns null - if [cpf] is valid.
+  String? call(String? cpf) => _nonBlankValid(cpf);
 }

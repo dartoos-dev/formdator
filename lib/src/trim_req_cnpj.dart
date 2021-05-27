@@ -1,16 +1,17 @@
 import 'req_cnpj.dart';
-import 'trimmed.dart';
+import 'trim.dart';
 
-/// Convenience trimmed required cnpj validator.
+/// Convenience trimmed-required-cnpj validator.
 class TrimReqCnpj {
-  /// Trimmed mandatory with [blank] as error for blank and [invalid] as error
-  /// for invalid.
-  TrimReqCnpj(
-      {String blank = 'Non-blank field.', String invalid = 'Invalid cnpj.'})
-      : _trimmed = Trimmed(ReqCnpj(blank: blank, invalid: invalid));
+  /// It combines the [Trim], [Req], and [Cnpj] validators.
+  ///
+  /// [blank] is the error message in case of a null or empty value; [invalid],
+  /// in case of an invalid one.
+  TrimReqCnpj({required String blank, required String invalid})
+      : _trim = Trim(ReqCnpj(blank: blank, invalid: invalid));
 
-  final Trimmed _trimmed;
+  final Trim _trim;
 
-  /// Null if [cnpj] is valid; the error message if blank or invalid.
-  String? call(String? cnpj) => _trimmed(cnpj);
+  /// Valid - returns null - if [cnpj] is valid.
+  String? call(String? cnpj) => _trim(cnpj);
 }
