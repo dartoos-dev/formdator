@@ -1,15 +1,21 @@
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
 
-/// Cpf Cadastro da Pessoa Física rule.
+/// Optional CPF - Cadastro da Pessoa Física.
 ///
 /// Kind of Brazilian SSN - Social Security Number.
+///
+/// ** Blank field - null value - is a valid input!**.
+///
+/// If the field is mandatory, use [ReqCpf].
 class Cpf {
-  /// Cpf validator with [invalid] as the error message.
-  const Cpf({String invalid = 'Invalid cpf'}) : _invalid = invalid;
+  /// Validates an optional cpf field.
+  ///
+  /// [invalid] is the error message in case of an invalid CPF.
+  const Cpf({required String invalid}) : _invalid = invalid;
 
-  // The invalid message.
   final String _invalid;
 
-  /// Returns null if [cpf] is valid; the error message otherwise.
-  String? call(String? cpf) => CPFValidator.isValid(cpf) ? null : _invalid;
+  /// Valid - returns null - if [cpf] is either valid or null.
+  String? call(String? cpf) =>
+      (cpf == null || CPFValidator.isValid(cpf)) ? null : _invalid;
 }

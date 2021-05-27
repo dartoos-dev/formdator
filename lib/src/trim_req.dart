@@ -1,14 +1,16 @@
-import 'required.dart';
-import 'trimmed.dart';
+import 'req.dart';
+import 'trim.dart';
 
-/// Convenience trimmed required validator.
+/// Convenience trimmed-required validator.
 class TrimReq {
-  /// Trimmed mandatory with [blank] as the erro message.
-  TrimReq({String blank = 'Non-blank field.'})
-      : _trimmed = Trimmed(Required(blank: blank));
+  /// It combines both the [Trim] and [Req] validators.
+  ///
+  /// [blank] is the error message in case of a null or empty value.
+  TrimReq({required String blank}) : _trim = Trim(Req(blank: blank));
 
-  final Trimmed _trimmed;
+  final Trim _trim;
 
-  /// Trims the value before validating for blankness.
-  String? call(String? value) => _trimmed(value);
+  /// Valid - returns null - if [value], after being trimmed, is neither null
+  /// nor empty.
+  String? call(String? value) => _trim(value);
 }

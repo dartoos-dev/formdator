@@ -1,16 +1,17 @@
 import 'req_cpf.dart';
-import 'trimmed.dart';
+import 'trim.dart';
 
-/// Convenience trimmed required cpf validator.
+/// Convenience trimmed-required-cpf validator.
 class TrimReqCpf {
-  /// Trimmed mandatory cpf with [blank] as error for blank and invalid as error
-  /// for invalid values.
-  TrimReqCpf(
-      {String blank = 'Non-blank field.', String invalid = 'Invalid cpf.'})
-      : _trimmed = Trimmed(ReqCpf(blank: blank, invalid: invalid));
+  /// It combines the [Trim], [Req], and [Cpf] validators.
+  ///
+  /// [blank] is the error message in case of a null or empty value; [invalid],
+  /// in case on an invalid one.
+  TrimReqCpf({required String blank, required String invalid})
+      : _trim = Trim(ReqCpf(blank: blank, invalid: invalid));
 
-  final Trimmed _trimmed;
+  final Trim _trim;
 
-  /// Null if cpf is valid; the error message if blank or invalid.
-  String? call(String? cpf) => _trimmed(cpf);
+  /// Valid - returns null - if [cpf] is valid.
+  String? call(String? cpf) => _trim(cpf);
 }

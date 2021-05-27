@@ -1,16 +1,22 @@
 import 'package:cpf_cnpj_validator/cnpj_validator.dart';
 
-/// Cnpj (Cadastro Nacional de Pessoa Jurídica) rule.
-
-/// Kind of brazilian Company's Registered Number or
-/// National Registry of Legal Entities.
+/// Optional CNPJ - Cadastro Nacional de Pessoa Jurídica.
+///
+/// Kind of brazilian Company's Registered Number or National Registry of Legal
+/// Entities.
+///
+/// ** Blank field - null value - is a valid input!**.
+///
+/// If the field is mandatory, use [ReqCnpj].
 class Cnpj {
-  /// Cnpj validator with [invalid] as the error message.
-  const Cnpj({String invalid = 'Invalid cnpj'}) : _invalid = invalid;
+  /// Validates an optional cnpj field.
+  ///
+  /// [invalid] is the error message in case of an invalid CNPJ.
+  const Cnpj({required String invalid}) : _invalid = invalid;
 
-  // The error message.
   final String _invalid;
 
-  /// Returns null if [cnpj] is valid; the error message otherwise.
-  String? call(String? cnpj) => CNPJValidator.isValid(cnpj) ? null : _invalid;
+  /// Valid - returns null - if [cnpj] is either valid or null.
+  String? call(String? cnpj) =>
+      (cnpj == null || CNPJValidator.isValid(cnpj)) ? null : _invalid;
 }

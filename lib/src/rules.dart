@@ -1,21 +1,23 @@
-import 'required.dart';
+import 'req.dart';
 import 'type.dart';
 
-/// Represents multiple rules applied to an text field.
+/// Multiple rules applied to a field.
 class Rules {
-  /// Rules with the given rules to apply.
+  /// Validates with the given rules.
   const Rules(this._rules);
 
-  ///Special case constructor.
-  ///It is useful when two rules must be applied and the first one
-  ///is the required filled. (a field that cannot be null or blank)
-  ///[blank] is the error message for a not filled in field.
-  ///[val] is the second validator.
-  Rules.req(String blank, Val val) : this([Required(blank: blank), val]);
+  /// Required and custom validation.
+  ///
+  /// It is useful when two rules must be applied and the first one is the
+  /// non-blank.
+  ///
+  /// [blank] is the error message in case of null or empty value.
+  /// [val] is the second validator.
+  Rules.req(String blank, Callor val) : this([Req(blank: blank), val]);
 
-  final List<Val> _rules;
+  final List<Callor> _rules;
 
-  /// Null if [value] is valid for all rules; the erro message otherwise.
+  /// Valid - returns null - if [value] is valid for all rules.
   String? call(String? value) {
     String? msg;
     for (final rule in _rules) {
