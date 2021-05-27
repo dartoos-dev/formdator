@@ -6,12 +6,12 @@ import 'type.dart';
 /// it to the encapsulated validator.
 class Trim {
   /// The value to be trimmed - without any leading and trailing whitspace.
-  const Trim(this._validator);
+  Trim(this._validator);
 
   final Callor _validator;
 
   /// Trims the value and forwards it.
   ///
-  /// In another words, removes any leading and trailing whitespace.
+  /// In other words, removes any leading and trailing whitespace.
   String? call(String? value) => _validator(value?.trim());
 }
