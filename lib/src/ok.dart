@@ -2,7 +2,7 @@
 ///
 /// Used for validation logic purposes.
 class Ok {
-  /// Does not perform any validation.
+  /// Always valid - does not perform any validation.
   const Ok();
 
   /// Always valid - always returns null.

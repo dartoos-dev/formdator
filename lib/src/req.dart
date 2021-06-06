@@ -1,6 +1,6 @@
 /// Mandatory field.
 ///
-/// **Note: both the null value and the empty string '' are invalid inputs.**
+/// **Note:** both the **null** value and the empty string **''** are **invalid inputs**.
 class Req {
   /// Validation for non-blank fields.
   ///

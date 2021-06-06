@@ -5,10 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub/versioning).
 
 ## [unreleased]
-## Changed - BREAKING CHANGES
+### Added
+- unit tests of validator classes.
+
+### Changed - BREAKING
 - Classes renaming - [13](https://github.com/dartoos-dev/callor/pull/13)
 - Lint as the linter tool - [10](https://github.com/dartoos-dev/callor/pull/10)
 - Null-safety migration - [11](https://github.com/dartoos-dev/callor/pull/11)
+
+### Removed - BREAKING
+- OkDt and any other DateTime-related validator.
 
 ## [0.1.3] - 2020-23-01
 ### Added

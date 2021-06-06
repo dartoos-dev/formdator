@@ -4,7 +4,7 @@ import 'type.dart';
 /// Multiple rules applied to a field.
 class Rules {
   /// Validates with the given rules.
-  const Rules(this._rules);
+  Rules(this._rules);
 
   /// Required and custom validation.
   ///

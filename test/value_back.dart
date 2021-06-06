@@ -1,5 +1,4 @@
-/// Unit testing purposes.
-///
+/// Unit testing purposes - it gives back the input value.
 class ValueBack {
   /// Does not perform any validation.
   const ValueBack();
