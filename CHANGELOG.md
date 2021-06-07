@@ -6,7 +6,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [unreleased]
 ### Added
-- unit tests of validator classes.
+- unit tests so that each validator is fully covered by tests.
 
 ### Changed - BREAKING
 - Classes renaming - [13](https://github.com/dartoos-dev/callor/pull/13)

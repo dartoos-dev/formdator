@@ -5,7 +5,7 @@ void main() {
   const error = 'Value must contain only digits';
   const digits = Digit(nonDigit: error);
   group('Valid inputs - ', () {
-    test('singe digit', () {
+    test('single digit', () {
       expect(digits('1'), null);
     });
     test('many digits', () {
