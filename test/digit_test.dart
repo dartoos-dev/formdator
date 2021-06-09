@@ -9,7 +9,7 @@ void main() {
       expect(digits('8'), null);
     });
     test('many digits', () {
-      expect(digits('-012345678'), null);
+      expect(digits('012345678'), null);
     });
     test('null', () {
       expect(digits(null), null);

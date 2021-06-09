@@ -4,7 +4,7 @@
 /// value otherwise - this includes unmasked and malformed values.
 ///
 /// Ex. the masked CNPJ value 41.831.918/0001-60 becomes 41831918000160; on the
-/// other hand, unmasked and malformed values are left untouched.
+/// other hand, for example, the unmasked 41831918000160 CNPJ if left untouched.
 class CnpjStripped {
   /// Removes the two dots '.', the bar '/', and the dash '-' from the cnpj if
   /// it's properly masked; otherwise, the cnpj is left untouched.

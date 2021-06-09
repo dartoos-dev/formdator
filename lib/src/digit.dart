@@ -18,9 +18,10 @@ class Digit {
   String? call(String? digits) =>
       (digits == null || _isNumeric(digits)) ? null : _nonDigit;
 
-  /// Checks whether [value] is numeric. RegExp _numeric = new RegExp(r'^-?[0-9]+$');
+  /// Checks whether [value] is numeric.
+  ///
+  /// Algorithm equivalent to the regular expression r'^[0-9]+$'.
   bool _isNumeric(String value) {
-    // Algorithm equivalent to the regular expression r'^[0-9]+$';
     const digits = <String>{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     bool numeric = value.isNotEmpty;
     for (int i = 0; (i < value.length) && numeric; ++i) {
