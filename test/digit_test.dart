@@ -6,10 +6,10 @@ void main() {
   const digits = Digit(nonDigit: error);
   group('Valid inputs - ', () {
     test('single digit', () {
-      expect(digits('1'), null);
+      expect(digits('8'), null);
     });
     test('many digits', () {
-      expect(digits('012345678'), null);
+      expect(digits('-012345678'), null);
     });
     test('null', () {
       expect(digits(null), null);

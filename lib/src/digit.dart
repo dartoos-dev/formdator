@@ -1,5 +1,3 @@
-import 'package:validators/validators.dart';
-
 /// Digits-only field.
 ///
 /// Ex: '1', '123' are valid inputs; 'A', '12A', '123.34', '9,99' are invalid
@@ -18,5 +16,16 @@ class Digit {
 
   /// Valid - returns null - if [digits] has only digits or is null.
   String? call(String? digits) =>
-      (digits == null || isNumeric(digits)) ? null : _nonDigit;
+      (digits == null || _isNumeric(digits)) ? null : _nonDigit;
+
+  /// Checks whether [value] is numeric. RegExp _numeric = new RegExp(r'^-?[0-9]+$');
+  bool _isNumeric(String value) {
+    // Algorithm equivalent to the regular expression r'^[0-9]+$';
+    const digits = <String>{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    bool numeric = value.isNotEmpty;
+    for (int i = 0; (i < value.length) && numeric; ++i) {
+      numeric = digits.contains(value[i]);
+    }
+    return numeric;
+  }
 }
