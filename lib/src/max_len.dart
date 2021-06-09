@@ -2,6 +2,8 @@
 class MaxLen {
   /// Validates an optional field with maximum length constraint.
   ///
+  /// If the field is mandatory, see [Req].
+  ///
   /// [length] is the maximum length.
   /// [tooLong] is the error message in case of a too long value.
   const MaxLen(int length, {required String tooLong})

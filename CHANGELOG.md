@@ -7,6 +7,15 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 ## [unreleased]
 ### Added
 - unit tests so that each validator is fully covered by tests.
+- Brazil-related classes:
+  - **Cpf validator:** _"Cadastro da Pessoa Física"_, kind of brazilian SSN - Social
+    Security Number.
+  - **CpfStripped:** helper class that removes from a properly masked CPF
+    field the two dots '.' and the dash '-'.
+  - **Cnpj validator:** _"Cadastro Nacional de Pessoa Jurídica"_, kind of _"National
+    Registry of Legal Entities"_.
+  - **CnpjStripped:** helper class that removes from a properly masked CNPJ the
+    two dots '.', the slash '/', and the dash '-'.
 
 ### Changed - BREAKING
 - Classes renaming - [13](https://github.com/dartoos-dev/callor/pull/13)
@@ -15,6 +24,9 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Removed - BREAKING
 - OkDt and any other DateTime-related validator.
+- The validator classes:
+  - ReqCnpj, ReqCpf, ReqDigit, ReqEmail, TrimReq, TrimReq, TrimReqCpf,
+    TrimReqEmail, TrimRules.
 
 ## [0.1.3] - 2020-23-01
 ### Added

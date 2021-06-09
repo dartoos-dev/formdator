@@ -1,12 +1,13 @@
 import 'package:validators/validators.dart';
 
-/// Optional digit-only.
+/// Digits-only field.
 ///
-/// Ex: '123' is valid; 'AB', '12AB', '123.34', '9,99' are invalid.
+/// Ex: '1', '123' are valid inputs; 'A', '12A', '123.34', '9,99' are invalid
+/// ones;
 ///
-/// ** Blank field - null value - is a valid input!**.
+/// Blank field - null value - is a valid input.
 ///
-/// If the field is mandatory, use [ReqDigit].
+/// If the field is mandatory, see [Req].
 class Digit {
   /// Validates an optional digit-only field.
   ///

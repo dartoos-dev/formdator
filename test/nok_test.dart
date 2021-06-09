@@ -3,18 +3,14 @@ import 'package:callor/callor.dart';
 
 void main() {
   group('Nok validator', () {
-    const nok = Nok();
-    const nonEmpty = 'test-string';
-    test('any non null input', () {
-      expect(nok(nonEmpty), nonEmpty);
+    const msg = 'Not Test';
+    const nok = Nok(msg: msg);
+    test('non-blank input', () {
+      expect(nok('non-blank'), msg);
     });
-    test('custom msg', () {
-      const msg = 'any message';
-      const nokWithCustomMsg = Nok(msg: msg);
-      expect(nokWithCustomMsg(null), msg);
-    });
-    test('null input', () {
-      expect(nok(null), '');
+    test('blank input', () {
+      expect(nok(null), msg);
+      expect(nok(''), msg);
     });
   });
 }

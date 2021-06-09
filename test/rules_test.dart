@@ -2,46 +2,38 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:callor/callor.dart';
 
 import 'counter.dart';
-import 'value_back.dart';
 
 void main() {
   group('Multiple rules', () {
-    group('- empty list of rules -', () {
+    test('- special case: empty list of rules', () {
       final norules = Rules([]);
-      test('non-blank input', () {
-        expect(norules('any text'), null);
-      });
-      test('blank input', () {
-        expect(norules(null), null);
-        expect(norules(''), null);
-      });
+      expect(norules(null), null);
+      expect(norules(''), null);
+      expect(norules('non-blank input'), null);
     });
-    group('- "req" constructor for required fields -', () {
-      const errorMsg = 'required field';
-      final req = Rules.req(errorMsg, const Ok());
-      test('non-blank input', () {
-        expect(req('any text'), null);
-      });
-      test('blank input', () {
-        expect(req(null), errorMsg);
-        expect(req(''), errorMsg);
-      });
+    test('single rule', () {
+      final counter = Counter();
+      final single = Rules([counter]);
+      expect(single(null), null);
+      expect(single(''), null);
+      expect(single('non-blank input'), null);
+      expect(counter.value, 3);
     });
-
-    group('- custom rules -', () {
-      test('single rule', () {
-        final counter = Counter();
-        final single = Rules([counter]);
-        expect(single('any text'), null);
-        expect(counter.value, 1);
-      });
-      test('multiple rules', () {
-        final counter = Counter();
-        final multiple = Rules([const Ok(), counter, const ValueBack()]);
-        expect(multiple(null), null);
-        expect(multiple('a text'), 'a text');
-        expect(counter.value, 2);
-      });
+    test('multiple rules', () {
+      final counter = Counter();
+      const error = 'error';
+      final theRules = <Callor>[
+        counter,
+        const Ok(),
+        counter,
+        // the last rule is always invalid regardless of the input value
+        const Nok(msg: error),
+      ];
+      final multiple = Rules(theRules);
+      expect(multiple(null), error);
+      expect(multiple(''), error);
+      expect(multiple('non-blank input'), error);
+      expect(counter.value, 6);
     });
   });
 }

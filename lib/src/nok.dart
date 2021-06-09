@@ -1,14 +1,14 @@
 /// Always invalid
 ///
-/// Used for some validation logic and testing.
+/// Used for some validation logic and unit testing.
 class Nok {
   /// Does not perform any validation.
   ///
-  /// [msg] the message in case of a null input value.
-  const Nok({String msg = ''}) : _msg = msg;
+  /// [msg] the message that will always be returned.
+  const Nok({required String msg}) : _msg = msg;
 
   final String _msg;
 
-  /// Always invalid
-  String? call(String? value) => value ?? _msg;
+  /// Always invalid; always returns msg.
+  String? call(String? _) => _msg;
 }
