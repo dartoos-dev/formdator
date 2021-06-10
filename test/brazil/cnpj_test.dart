@@ -4,7 +4,13 @@ import 'package:callor/callor.dart';
 void main() {
   group('Cnpj', () {
     const error = 'malformed cnpj';
-    const cnpj = Cnpj(malformed: error);
+    const cnpj = Cnpj(mal: error);
+    test('null', () {
+      expect(cnpj(null), null);
+    });
+    test('empty', () {
+      expect(cnpj(''), error);
+    });
     test('masked, well-formed', () {
       expect(cnpj('34.600.728/0001-76'), null);
       expect(cnpj('41.831.918/0001-60'), null);
@@ -52,9 +58,6 @@ void main() {
       expect(cnpj('03.029.749/0001-51'), error);
       expect(cnpj('18707049000145'), error);
       expect(cnpj('66975296000175'), error);
-    });
-    test('empty string', () {
-      expect(cnpj(''), error);
     });
     test('less than 14 digits', () {
       expect(cnpj('4183191800016'), error);

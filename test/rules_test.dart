@@ -5,7 +5,7 @@ import 'counter.dart';
 
 void main() {
   group('Multiple rules', () {
-    test('- special case: empty list of rules', () {
+    test('empty list', () {
       final norules = Rules([]);
       expect(norules(null), null);
       expect(norules(''), null);

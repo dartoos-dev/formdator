@@ -21,6 +21,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 - Classes renaming - [13](https://github.com/dartoos-dev/callor/pull/13)
 - Lint as the linter tool - [10](https://github.com/dartoos-dev/callor/pull/10)
 - Null-safety migration - [11](https://github.com/dartoos-dev/callor/pull/11)
+- huge refactoring.
+- rearrangement in directories structure.
 
 ### Removed - BREAKING
 - OkDt and any other DateTime-related validator.

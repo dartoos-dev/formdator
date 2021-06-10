@@ -2,8 +2,8 @@ import 'type.dart';
 
 /// Trimmed value.
 ///
-/// It does not validate anything! It just trims the inpu value before
-/// forwarding it.
+/// It does not validate anything! It just trims the input value and forwards
+/// it.
 class Trim {
   /// The value to be trimmed - remove any leading and trailing whitspace.
   Trim(this._val);

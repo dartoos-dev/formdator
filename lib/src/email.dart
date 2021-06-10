@@ -1,4 +1,4 @@
-/// Optional, well-formed email.
+/// Optional well-formed email.
 ///
 /// Blank field - null value - is a valid input!
 ///
@@ -16,8 +16,8 @@ class Email {
   /// **Note:** null value is a **valid input**, whereas the empty string _''_
   /// is not. If the email field is mandatory, see [Req].
   ///
-  /// [malformed] is the error message in case of a malformed email.
-  const Email({required String malformed}) : _malformed = malformed;
+  /// [mal] is the error message in case of a malformed email.
+  const Email({required String mal}) : _malformed = mal;
 
   final String _malformed;
   // lazy loading (on-demand) initialization.

@@ -1,5 +1,5 @@
 import 'package:cpf_cnpj_validator/cnpj_validator.dart';
-import 'cnpj_stripped.dart';
+import 'cnpj_strip.dart';
 
 /// CNPJ - Cadastro Nacional de Pessoa Jurídica.
 ///
@@ -8,19 +8,18 @@ import 'cnpj_stripped.dart';
 class Cnpj {
   /// Validates an optional cnpj field.
   ///
-  /// Blank field - null value - is a valid input!  If the field is mandatory,
-  /// see [Req].
-  ///
-  /// [malformed] is the error message in case of a malformed CNPJ.
-  const Cnpj({required String malformed}) : _malformed = malformed;
+  /// [mal] is the error message in case of a malformed CNPJ.
+  const Cnpj({required String mal}) : _malformed = mal;
 
   final String _malformed;
 
-  /// Returns null if [cnpj] is well-formed; the erro message otherwise.
+  /// Returns null if [cnpj] is well-formed; otherwise, the erro message.
   String? call(String? cnpj) {
-    return (cnpj == null ||
-            CNPJValidator.isValid('${CnpjStripped(cnpj)}', false))
-        ? null
-        : _malformed;
+    if (cnpj == null) return null;
+
+    final stripped = CnpjStrip(cnpj).value;
+    if (stripped == null) return _malformed;
+
+    return CNPJValidator.isValid(stripped, false) ? null : _malformed;
   }
 }

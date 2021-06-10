@@ -1,4 +1,4 @@
-/// Equality rule: checks whether A == B.
+/// Equality rule - checks whether A == B.
 class Equal {
   /// Validates the equality between two values.
   ///

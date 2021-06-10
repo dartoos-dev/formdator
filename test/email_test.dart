@@ -6,7 +6,7 @@ import 'package:callor/callor.dart';
 void main() {
   group('Email validator', () {
     const error = 'malformed email';
-    const email = Email(malformed: error);
+    const email = Email(mal: error);
     group('- valid emails:', () {
       test('simple valid email', () {
         expect(email('simple@example.com'), null);

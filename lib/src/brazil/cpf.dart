@@ -1,5 +1,5 @@
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
-import 'cpf_stripped.dart';
+import 'cpf_strip.dart';
 
 /// CPF - Cadastro da Pessoa Física.
 ///
@@ -11,15 +11,18 @@ import 'cpf_stripped.dart';
 class Cpf {
   /// Validates an optional cpf field.
   ///
-  /// [invalid] is the error message in case of an malformed CPF.
-  const Cpf({required String malformed}) : _malformed = malformed;
+  /// [mal] is the error message in case of a malformed CPF.
+  const Cpf({required String mal}) : _malformed = mal;
 
   final String _malformed;
 
-  /// Valid - returns null - if [cpf] is either valid or null.
+  /// Returns null if [cpf] is well-formed; otherwise, the erro message.
   String? call(String? cpf) {
-    return (cpf == null || CPFValidator.isValid('${CpfStripped(cpf)}', false))
-        ? null
-        : _malformed;
+    if (cpf == null) return null;
+
+    final stripped = CpfStrip(cpf).value;
+    if (stripped == null) return _malformed;
+
+    return CPFValidator.isValid(stripped, false) ? null : _malformed;
   }
 }

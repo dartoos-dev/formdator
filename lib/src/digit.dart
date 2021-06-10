@@ -1,7 +1,7 @@
-/// Digits-only field.
+/// Digit - any one of the ten numbers 0 to 9.
 ///
-/// Ex: '1', '123' are valid inputs; 'A', '12A', '123.34', '9,99' are invalid
-/// ones;
+/// For example, the input values "1" and "123" are valid; whereas the values
+/// "A", "12A", "123.34", "9.99" are invalid.
 ///
 /// Blank field - null value - is a valid input.
 ///
@@ -9,24 +9,17 @@
 class Digit {
   /// Validates an optional digit-only field.
   ///
-  /// [nonDigit] is the error message in case of a non-numeric digit.
-  const Digit({required String nonDigit}) : _nonDigit = nonDigit;
+  /// [non] is the error message in case of a non-digit value.
+  const Digit({required String non}) : _nonDigit = non;
 
   final String _nonDigit;
+
+  static late final _digitsOnly = RegExp(r'^[0-9]+$');
 
   /// Valid - returns null - if [digits] has only digits or is null.
   String? call(String? digits) =>
       (digits == null || _isNumeric(digits)) ? null : _nonDigit;
 
-  /// Checks whether [value] is numeric.
-  ///
-  /// Algorithm equivalent to the regular expression r'^[0-9]+$'.
-  bool _isNumeric(String value) {
-    const digits = <String>{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-    bool numeric = value.isNotEmpty;
-    for (int i = 0; (i < value.length) && numeric; ++i) {
-      numeric = digits.contains(value[i]);
-    }
-    return numeric;
-  }
+  /// Checks whether [value] contains only digits.
+  bool _isNumeric(String value) => _digitsOnly.hasMatch(value);
 }
