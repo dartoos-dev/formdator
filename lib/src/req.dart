@@ -1,8 +1,8 @@
 /// Mandatory field.
 ///
-/// **Note: both the null value and the empty string '' are invalid inputs.**
+/// **Note:** both the **null** value and the empty string **''** are **invalid inputs**.
 class Req {
-  /// Validation for non-blank fields.
+  /// Non-blank field.
   ///
   /// [blank] is the error message in case of a null or empty value.
   const Req({required String blank}) : _blank = blank;

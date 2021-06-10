@@ -1,22 +1,14 @@
 library callor;
 
-export 'src/cnpj.dart';
-export 'src/cpf.dart';
+export 'brazil.dart';
 export 'src/digit.dart';
 export 'src/email.dart';
 export 'src/equal.dart';
 export 'src/max_len.dart';
 export 'src/min_len.dart';
+export 'src/nok.dart';
 export 'src/ok.dart';
 export 'src/req.dart';
-export 'src/req_cnpj.dart';
-export 'src/req_cpf.dart';
-export 'src/req_digit.dart';
 export 'src/rules.dart';
 export 'src/trim.dart';
-export 'src/trim_req.dart';
-export 'src/trim_req_cnpj.dart';
-export 'src/trim_req_cpf.dart';
-export 'src/trim_req_email.dart';
-export 'src/trim_rules.dart';
-export 'src/trim_rules.dart';
+export 'src/type.dart';
