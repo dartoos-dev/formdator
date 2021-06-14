@@ -5,6 +5,7 @@ import 'value_back.dart';
 void main() {
   const trimmed = 'trimmed text';
   const untrimmed = '  \t$trimmed  \n';
+  // ignore: prefer_const_constructors
   final trim = Trim(const ValueBack());
   group('Trim validator', () {
     test('blank input', () {

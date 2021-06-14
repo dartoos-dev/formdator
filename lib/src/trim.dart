@@ -6,7 +6,7 @@ import 'type.dart';
 /// it.
 class Trim {
   /// The value to be trimmed - remove any leading and trailing whitspace.
-  Trim(this._val);
+  const Trim(this._val);
 
   final Callor _val;
 

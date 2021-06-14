@@ -1,0 +1,10 @@
+include: package:lint/analysis_options_package.yaml
+linter:
+  rules:
+    # Make constructors the first thing in every class
+    sort_constructors_first: true
+    # Good packages document everything
+    public_member_api_docs: true
+    # It's a good practice to expose the ability to provide a key when creating public widgets.
+    use_key_in_widget_constructors: true
+
