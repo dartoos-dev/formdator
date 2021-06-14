@@ -3,7 +3,7 @@ import 'type.dart';
 /// Multiple rules applied to a field.
 class Rules {
   /// Validates with the given rules.
-  Rules(this._rules);
+  const Rules(this._rules);
 
   final List<Callor> _rules;
 

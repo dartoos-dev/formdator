@@ -9,6 +9,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Added
 
+- Demo app as an example of how to use this package effectively.
 - unit tests so that each validator is fully covered by tests.
 - Brazil-related classes:
   - **Cpf validator:** _"Cadastro da Pessoa Física"_, kind of brazilian SSN - Social

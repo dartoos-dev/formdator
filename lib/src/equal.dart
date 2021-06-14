@@ -2,20 +2,20 @@
 class Equal {
   /// Validates the equality between two values.
   ///
-  /// [origin] the original value to be compared to.
+  /// [to] the value to be compared to.
   /// [diff] the error message in case of different values.
-  const Equal(String origin, {required String diff})
-      : _origin = origin,
+  const Equal(String? Function() to, {required String diff})
+      : _to = to,
         _diff = diff;
 
-  final String _origin;
+  final String? Function() _to;
   final String _diff;
 
   /// Forwards to [call] method.
   String? to(String? value) => this(value);
 
-  /// Valid - returns null - if [to] has the expected value.
+  /// Valid - returns null - if [value] is equal.
   ///
   /// the [==] operator is used for comparison.
-  String? call(String? to) => to == _origin ? null : _diff;
+  String? call(String? value) => value == _to() ? null : _diff;
 }
