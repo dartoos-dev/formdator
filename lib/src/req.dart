@@ -6,12 +6,12 @@ import 'type.dart';
 class Req {
   /// Non-blank field.
   ///
-  /// [field] an optional extra validation step. E.g.:
-  ///   _Req(field:Email(mal:'malformed email'), blank:'email is required')_
+  /// [val] an optional extra validation step. E.g.:
+  ///   _Req(val:Email(mal:'malformed email'), blank:'required field')_
   /// for a required email.
   /// [blank] is the error message in case of a null or empty input.
-  const Req({Callor field = _ok, required String blank})
-      : _val = field,
+  const Req({Callor val = _ok, required String blank})
+      : _val = val,
         _blank = blank;
 
   final String _blank;

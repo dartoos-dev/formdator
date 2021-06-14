@@ -29,14 +29,14 @@ void main() {
     group(' - extra step validation', () {
       test('valid input', () {
         final count = Counter();
-        final extraVal = Req(field: count, blank: error);
+        final extraVal = Req(val: count, blank: error);
         expect(extraVal('a'), null);
         expect(extraVal('abcdefghijklmnopqrstuvwxyz-1234567890'), null);
         expect(count.value, 2);
       });
       test('invalid input', () {
         final count = Counter();
-        final extraInval = Req(field: count, blank: error);
+        final extraInval = Req(val: count, blank: error);
         expect(extraInval(null), error);
         expect(extraInval(''), error);
         expect(count.value, 0);

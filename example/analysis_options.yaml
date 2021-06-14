@@ -7,3 +7,4 @@ linter:
     public_member_api_docs: true
     # It's a good practice to expose the ability to provide a key when creating public widgets.
     use_key_in_widget_constructors: true
+
