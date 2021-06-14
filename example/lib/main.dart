@@ -51,7 +51,7 @@ class Demo extends StatelessWidget {
                       children: [
                         TextFormField(
                           validator: Trim(
-                          // ignore: prefer_const_constructors
+                            // ignore: prefer_const_constructors
                             Req(
                               val: const Email(mal: 'malformed'),
                               blank: 'required',
