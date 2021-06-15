@@ -1,8 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:callor/callor.dart';
 
-import 'counter.dart';
-
 void main() {
   group('Multiple rules', () {
     test('empty list', () {
@@ -22,7 +20,7 @@ void main() {
     test('multiple rules', () {
       final counter = Counter();
       const error = 'error';
-      final theRules = <Callor>[
+      final theRules = <StrVal>[
         counter,
         const Ok(),
         counter,

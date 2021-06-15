@@ -1,4 +1,4 @@
-import 'type.dart';
+import 'package:callor/callor.dart';
 
 /// Mandatory field.
 ///
@@ -10,13 +10,13 @@ class Req {
   ///   _Req(val:Email(mal:'malformed email'), blank:'required field')_
   /// for a required email.
   /// [blank] is the error message in case of a null or empty input.
-  const Req({Callor val = _ok, required String blank})
+  const Req({StrVal val = _ok, required String blank})
       : _val = val,
         _blank = blank;
 
   final String _blank;
   // optional extra validation.
-  final Callor _val;
+  final StrVal _val;
 
   // always ok validation.
   static String? _ok(String? v) => null;
