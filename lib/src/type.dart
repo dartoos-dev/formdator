@@ -1,9 +1,17 @@
-/// **Callor** - **Call**able Validat**or**.
+/// Comparable value validator.
+typedef CmpVal = String? Function(Comparable? value);
 
-/// According to the Flutter form standards, a validator must return the null
-/// value to indicate that an input is **valid**. On the other hand, to indicate
-/// a **valid** input, a validator must return a message, which in turn will be
-/// displayed to the user by the field with wrong data.
+/// Iterable value validator.
+typedef IterVal = String? Function(Iterable? value);
+
+/// Map value validator.
+typedef MapVal = String? Function(Map? value);
+
+/// String value validator.
+typedef NumVal = String? Function(num? value);
+
+/// Object value validator.
+typedef ObjVal = String? Function(Object? value);
 
 /// String value validator.
 typedef StrVal = String? Function(String? value);
