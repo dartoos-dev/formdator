@@ -10,7 +10,7 @@ class Digit {
   /// Validates an optional digit-only field.
   ///
   /// [non] is the error message in case of a non-digit value.
-  const Digit({required String non}) : _nonDigit = non;
+  const Digit({String non = 'digit-only field'}) : _nonDigit = non;
 
   final String _nonDigit;
 

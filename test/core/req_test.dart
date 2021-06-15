@@ -15,13 +15,25 @@ void main() {
       test('non-digits, non-alpha chars', () {
         expect(req('@#\$*()-+=-'), null);
       });
+      test('Iterable input', () {
+        expect(req(['abc', '123']), null);
+      });
+      test('Map input', () {
+        expect(req({'key1': 1, 'key2': "two"}), null);
+      });
     });
     group('- invalid inputs:', () {
       test('null', () {
         expect(req(null), error);
       });
-      test('the empty string', () {
+      test('empty string', () {
         expect(req(''), error);
+      });
+      test('empty iterable', () {
+        expect(req([]), error);
+      });
+      test('empty map', () {
+        expect(req({}), error);
       });
     });
   });
