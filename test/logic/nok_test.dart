@@ -4,7 +4,7 @@ import 'package:callor/callor.dart';
 void main() {
   group('Nok validator', () {
     const msg = 'Not Test';
-    const nok = Nok(msg: msg);
+    const nok = Nok(error: msg);
     test('non-blank input', () {
       expect(nok('non-blank'), msg);
     });

@@ -19,13 +19,13 @@ void main() {
     });
     test('multiple rules', () {
       final counter = Counter();
-      const error = 'error';
+      const error = 'erroneous value';
       final List<StrVal> theRules = [
         counter,
         const Ok(),
         counter,
         // the last rule is always invalid regardless of the input value
-        const Nok(msg: error),
+        const Nok(error: error),
       ];
       final multiple = Rules(theRules);
       expect(multiple(null), error);

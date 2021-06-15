@@ -4,11 +4,11 @@ class Equal {
   ///
   /// [to] the value to be compared to.
   /// [diff] the error message in case of different values.
-  const Equal(String? Function() to, {required String diff})
+  const Equal(Object? Function() to, {String diff = 'cannot be different'})
       : _to = to,
         _diff = diff;
 
-  final String? Function() _to;
+  final Object? Function() _to;
   final String _diff;
 
   /// Forwards to [call] method.
@@ -17,5 +17,5 @@ class Equal {
   /// Valid - returns null - if [value] is equal.
   ///
   /// the [==] operator is used for comparison.
-  String? call(String? value) => value == _to() ? null : _diff;
+  String? call(Object? value) => value == _to() ? null : _diff;
 }
