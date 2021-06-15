@@ -1,4 +1,4 @@
-import 'type.dart';
+import 'package:callor/callor.dart';
 
 /// Trimmed value.
 ///
@@ -8,7 +8,7 @@ class Trim {
   /// The value to be trimmed - remove any leading and trailing whitspace.
   const Trim(this._val);
 
-  final Callor _val;
+  final StrVal _val;
 
   /// Trims the value and forwards it.
   ///

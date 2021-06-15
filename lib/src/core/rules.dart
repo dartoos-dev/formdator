@@ -1,11 +1,11 @@
-import 'type.dart';
+import 'package:callor/callor.dart';
 
 /// Multiple rules applied to a field.
 class Rules {
   /// Validates with the given rules.
   const Rules(this._rules);
 
-  final List<Callor> _rules;
+  final List<StrVal> _rules;
 
   /// Valid - returns null - if [value] is valid for all rules.
   String? call(String? value) {
