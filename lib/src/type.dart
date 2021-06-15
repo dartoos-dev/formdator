@@ -1,17 +1,20 @@
-/// Comparable value validator.
-typedef CmpVal = String? Function(Comparable? value);
+/// Type value validator ّ≡ T? Function(T? value).
+typedef TypeVal<T> = String? Function(T?);
 
-/// Iterable value validator.
-typedef IterVal = String? Function(Iterable? value);
+/// Iterable value validator ≡ Iterable? Function(Iterable? value).
+typedef IterVal<I extends Iterable> = String? Function(I?);
 
-/// Map value validator.
-typedef MapVal = String? Function(Map? value);
+/// Map value validator ≡ Map? Function(Map? value).
+typedef MapVal<M extends Map> = String? Function(M?);
 
-/// String value validator.
-typedef NumVal = String? Function(num? value);
+/// Numeric value validator ≡ num? Function(num? value).
+typedef NumVal<N extends num> = String? Function(N?);
 
-/// Object value validator.
-typedef ObjVal = String? Function(Object? value);
+/// Object value validator ≡ Object? Function(Object? value).
+typedef ObjVal<O extends Object> = String? Function(O?);
 
-/// String value validator.
-typedef StrVal = String? Function(String? value);
+/// String value validator ≡ String? Function(String? value).
+typedef StrVal<S extends String> = String? Function(S?);
+
+/// DateTime value validator ≡ DateTime? Function(DateTime? value).
+typedef DTVal<DT extends DateTime> = String? Function(DT?);

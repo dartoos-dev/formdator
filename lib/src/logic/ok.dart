@@ -6,5 +6,5 @@ class Ok {
   const Ok();
 
   /// Always valid - always returns null.
-  String? call(String? value) => null;
+  String? call(Object? _) => null;
 }

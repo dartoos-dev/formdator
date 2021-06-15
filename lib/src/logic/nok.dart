@@ -10,5 +10,5 @@ class Nok {
   final String _msg;
 
   /// Always invalid; always returns msg.
-  String? call(String? _) => _msg;
+  String? call(Object? _) => _msg;
 }
