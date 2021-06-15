@@ -135,7 +135,7 @@ class SecretField extends StatelessWidget {
     return TextFormField(
       onSaved: _onSaved,
       onChanged: _onChanged,
-      validator: Rules([
+      validator: Rules(<StrVal>[
         const Req(blank: 'cannot be blank.'),
         const MinLen(4, short: 'too short; min length is 4.'),
         const MaxLen(8, long: 'too long; max length is 8.'),
@@ -169,7 +169,7 @@ class EmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: _onSaved,
-      validator: Rules([
+      validator: Rules<String>([
         // ignore: prefer_const_constructors
         Trim(const Req(blank: 'required.')),
         const Email(mal: 'malformed.'),

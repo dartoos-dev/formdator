@@ -5,7 +5,7 @@
 /// If the field is mandatory, see [Req].
 class Email {
   /// Validates an optional email field using a regular expression suitable for
-  /// manually entered emails.
+  /// validating emails that were manually entered.
   ///
   /// The validation takes into account that the local part (before the @) is
   /// limited to 64 characters and that each part of the domain name is limited

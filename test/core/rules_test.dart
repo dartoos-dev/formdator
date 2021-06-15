@@ -4,14 +4,14 @@ import 'package:callor/callor.dart';
 void main() {
   group('Multiple rules', () {
     test('empty list', () {
-      const norules = Rules([]);
+      final norules = Rules(<StrVal>[]);
       expect(norules(null), null);
       expect(norules(''), null);
       expect(norules('non-blank input'), null);
     });
     test('single rule', () {
       final counter = Counter();
-      final single = Rules([counter]);
+      final single = Rules(<ObjVal>[counter]);
       expect(single(null), null);
       expect(single(''), null);
       expect(single('non-blank input'), null);
@@ -20,7 +20,7 @@ void main() {
     test('multiple rules', () {
       final counter = Counter();
       const error = 'error';
-      final theRules = <StrVal>[
+      final List<StrVal> theRules = [
         counter,
         const Ok(),
         counter,
