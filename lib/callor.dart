@@ -1,28 +1,13 @@
+/// **Callor** - **Call**able Validat**or**.
+
+/// According to the Flutter form standards, a validator must return the null
+/// value to indicate that an input is **valid**. On the other hand, to indicate
+/// a **valid** input, a validator must return a message, which in turn will be
+/// displayed to the user by the field with wrong data.
 library callor;
 
-export 'src/email.dart';
-export 'src/cpf.dart';
-export 'src/cnpj.dart';
-export 'src/min_length.dart';
-export 'src/max_length.dart';
-export 'src/numeric.dart';
-export 'src/equal.dart';
-export 'src/rules.dart';
-export 'src/required.dart';
-export 'src/req_email.dart';
-export 'src/req_cpf.dart';
-export 'src/req_cnpj.dart';
-export 'src/trimmed.dart';
-export 'src/trim_req.dart';
-export 'src/trim_rules.dart';
-export 'src/trim_rules.dart';
-export 'src/trim_req_email.dart';
-export 'src/trim_req_cpf.dart';
-export 'src/trim_req_cnpj.dart';
-export 'src/ok.dart';
-export 'src/ok_dt.dart';
-export 'src/req_dt.dart';
-export 'src/wellformed_dt.dart';
-export 'src/req_wellformed_dt.dart';
-export 'src/rules_dt.dart';
-export 'src/req_num.dart';
+export 'brazil.dart';
+export 'core.dart';
+export 'logic.dart';
+export 'net.dart';
+export 'src/type.dart';
