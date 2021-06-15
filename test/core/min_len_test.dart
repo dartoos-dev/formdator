@@ -27,5 +27,8 @@ void main() {
       expect(ten('abcdefghij'), null);
       expect(ten('abcdefghijklmnopqrstuvwxyz'), null);
     });
+    test('assert error', () {
+      expect(() => MinLen(-1), throwsAssertionError);
+    });
   });
 }

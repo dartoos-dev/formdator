@@ -28,5 +28,8 @@ void main() {
       expect(ten('abcdefghijk'), error);
       expect(ten('abcdefghijklmnopqrstuvwxyz'), error);
     });
+    test('assert error', () {
+      expect(() => MaxLen(-1), throwsAssertionError);
+    });
   });
 }
