@@ -2,7 +2,7 @@ name: formdator
 description: A formidable set of form validators that can be selected and grouped into various combinations. Each validator is an immutable object that can be easily extended through composition - Decorator Pattern.
 version: 0.2.1
 homepage: https://dartoos.dev
-repository: https://github.com/dartoos-dev/callor
+repository: https://github.com/dartoos-dev/formdator
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
