@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.2.1] - 2021-06-16
+
 ### Added
 
 - Demo app as an example of how to use this package effectively.
