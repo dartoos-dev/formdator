@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:callor/callor.dart';
+import 'package:formdator/formdator.dart';
 
 void main() {
   group('ValueBack validator', () {

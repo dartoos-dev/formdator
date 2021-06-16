@@ -1,4 +1,4 @@
-import 'package:callor/callor.dart';
+import 'package:formdator/formdator.dart';
 
 /// Counts the number of times the validation has been performed.
 class Counter {
