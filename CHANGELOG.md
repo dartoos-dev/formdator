@@ -9,6 +9,12 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [0.2.1] - 2021-06-16
 
+### Fixed
+
+- create section 0.2.0 in this CHANGELOG. 
+
+## [0.2.0] - 2021-06-16
+
 ### Added
 
 - Demo app as an example of how to use this package effectively.
