@@ -1,6 +1,6 @@
-# callor_demo
+# formdator_demo
 
-How to use Callor package effectively.
+How to use Formdator package effectively.
 
 ## Getting Started
 

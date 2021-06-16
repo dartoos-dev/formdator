@@ -1,4 +1,4 @@
-import 'package:callor/callor.dart';
+import 'package:formdator/formdator.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:callor/callor.dart';
+import 'package:formdator/formdator.dart';
 
 /// Most test cases were taken from:
 /// - [valid-email-addresses](https://en.wikipedia.org/wiki/Email_address#Valid_email_addresses)

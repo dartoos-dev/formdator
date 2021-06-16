@@ -1,4 +1,4 @@
-import 'package:callor/callor.dart';
+import 'package:formdator/formdator.dart';
 
 /// Multiple rules applied to a field.
 class Rules<T> {
