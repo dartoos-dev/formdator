@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.3.0] - 2021-06-16
+
 ### Changed - BREAKING
 
 - rename this package to formdator - Formidable form validator.
