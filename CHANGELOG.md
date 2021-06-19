@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- _ReqEmail_ class — Convenient validator for required email fields -
+  [28](https://github.com/dartoos-dev/formdator/issues/28).
+
 ### Changed
 
 - shorter package description.
