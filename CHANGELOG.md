@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.3.1] - 2021-06-19
+
 ### Added
 
 - _ReqEmail_ class — Convenient validator for required email fields -
