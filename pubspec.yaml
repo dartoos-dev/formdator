@@ -1,5 +1,5 @@
 name: formdator
-description: A formidable set of form validators that can be selected and grouped into various combinations. Each validator is an immutable object that can be easily extended through composition - Decorator Pattern.
+description: A formidable collection of form validators that can be selected and grouped into various combinations throght composition - Decorator Pattern.
 version: 0.3.0
 homepage: https://dartoos.dev
 repository: https://github.com/dartoos-dev/formdator
