@@ -4,3 +4,4 @@
 library net;
 
 export 'src/net/email.dart';
+export 'src/net/req_email.dart';

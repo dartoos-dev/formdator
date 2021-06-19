@@ -15,20 +15,21 @@ alt="EO-Color logo" width="101" height="48"/>
 [![codecov](https://codecov.io/gh/dartoos-dev/formdator/branch/master/graph/badge.svg?token=jYfO55O22s)](https://codecov.io/gh/dartoos-dev/formdator)
 [![Hits-of-Code](https://hitsofcode.com/github/dartoos-dev/formdator?branch=master)](https://hitsofcode.com/github/dartoos-dev/formdator/view?branch=master)
 
-**Form**idable Vali**dator** - Formdator is a fully object-oriented package for
+**Form**idable Vali**dator** — Formdator is a fully object-oriented package for
 validating form fields before they get processed. Its key benefits, compared to
 all other similar packages, include:
 
-- Object-oriented mindset: no static functions; only trustworthy **immutable**
-  objects.
-- Easy-to-compose validators. E.g., for a "trimmed-required-email":
-  `Trim(ReqEmail(blank:'required field', mal:'malformed email'))`.
-- You can compose your own multi-rule validation logic - via the `Rules` class.
-- Classes with short - yet meaningful - names. E.g: `Req` for a
-  required (non-blank) field; `ReqEmail` for a non-blank, well-formed email;
-  `MinLen` for a minimum number of characters.
-- No complex class hierarchy: the validator classes just implement the
-  Dart's built-in `call()` method.
+- Object-oriented mindset: there is no static functions, only trustworthy
+  **immutable** objects.
+- Easy-to-compose validators, e.g.: `Trim(ReqEmail())` for a
+  "trimmed-required-email", it trims the entered email before trying to validate
+  it.
+- You can apply multiple validation rules at once — `Rules` class.
+- Classes with short — yet meaningful — names like `Req` for a required
+  (non-blank) field; `ReqEmail` for a non-blank and well-formed email; `MinLen`
+  for a minimum number of characters.
+- No complex class hierarchy: each validator only implements the Dart's built-in
+  `call()` method.
 
 For easier integration with the fields of a Flutter form, each validator
 implements the `call()` method; therefore, any validator can be treated as an
@@ -37,8 +38,11 @@ ordinary function.
 ## Getting Started
 
 A flexible package provides components that can be selected and grouped in
-various combinations so that user requirements can be fulfilled. The code below
-shows how you can easily group `Trim` and `Email` to form a trimmed-email field:
+various combinations so that user requirements can be fulfilled.
+
+As a demonstration of such combinations of components, the code below shows how
+you can easily group `Trim` and `Email` to form a trimmed-email field with a
+custom error message in case of a malformed email.
 
 ```dart
   @override
@@ -54,7 +58,7 @@ shows how you can easily group `Trim` and `Email` to form a trimmed-email field:
 ### Demo application
 
 The demo application provides a fully working example, focused on demonstrating
-exactly four validators in action - Rules, Req, Email, and Equal. You can take
+exactly four validators in action — Rules, ReqEmail and Equal. You can take
 the code in this demo and experiment with it.
 
 To run the demo application:
