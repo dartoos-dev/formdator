@@ -13,6 +13,7 @@ alt="EO-Color logo" width="101" height="48"/>
 [![PDD status](https://www.0pdd.com/svg?name=dartoos-dev/formdator)](https://www.0pdd.com/p?name=dartoos-dev/formdator)
 [![build](https://github.com/dartoos-dev/formdator/actions/workflows/build.yml/badge.svg)](https://github.com/dartoos-dev/formdator/actions/)
 [![codecov](https://codecov.io/gh/dartoos-dev/formdator/branch/master/graph/badge.svg?token=jYfO55O22s)](https://codecov.io/gh/dartoos-dev/formdator)
+[![CodeFactor](https://www.codefactor.io/repository/github/dartoos-dev/formdator/badge)](https://www.codefactor.io/repository/github/dartoos-dev/formdator)
 [![Hits-of-Code](https://hitsofcode.com/github/dartoos-dev/formdator?branch=master)](https://hitsofcode.com/github/dartoos-dev/formdator/view?branch=master)
 
 **Form**idable Vali**dator** — Formdator is a fully object-oriented package for
