@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- make MaxLen and MinLen accept String, Iterable and Map as input value —
+  [36](https://github.com/dartoos-dev/formdator/issues/36).
+
 ## [0.3.1] - 2021-06-19
 
 ### Added
