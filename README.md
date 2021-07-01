@@ -18,8 +18,8 @@ alt="EO-Color logo" width="101" height="48"/>
 [![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 
 **Form**idable Vali**dator** — Formdator is a fully object-oriented package for
-validating form fields before they get processed. Its key benefits, compared to
-all other similar packages, include:
+validating Flutter form fields. Its key benefits, compared to all other similar
+packages, include:
 
 - Object-oriented mindset: there is no static functions, only trustworthy
   **immutable** objects.
