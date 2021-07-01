@@ -9,12 +9,13 @@ alt="EO-Color logo" width="101" height="48"/>
 
 [![pub](https://img.shields.io/pub/v/formdator)](https://pub.dev/packages/formdator)
 [![license](https://img.shields.io/badge/license-mit-green.svg)](https://github.com/dartoos-dev/formdator/blob/master/LICENSE)
-[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 [![PDD status](https://www.0pdd.com/svg?name=dartoos-dev/formdator)](https://www.0pdd.com/p?name=dartoos-dev/formdator)
+
 [![build](https://github.com/dartoos-dev/formdator/actions/workflows/build.yml/badge.svg)](https://github.com/dartoos-dev/formdator/actions/)
 [![codecov](https://codecov.io/gh/dartoos-dev/formdator/branch/master/graph/badge.svg?token=jYfO55O22s)](https://codecov.io/gh/dartoos-dev/formdator)
 [![CodeFactor](https://www.codefactor.io/repository/github/dartoos-dev/formdator/badge)](https://www.codefactor.io/repository/github/dartoos-dev/formdator)
 [![Hits-of-Code](https://hitsofcode.com/github/dartoos-dev/formdator?branch=master)](https://hitsofcode.com/github/dartoos-dev/formdator/view?branch=master)
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
 
 **Form**idable Vali**dator** — Formdator is a fully object-oriented package for
 validating form fields before they get processed. Its key benefits, compared to
@@ -22,12 +23,11 @@ all other similar packages, include:
 
 - Object-oriented mindset: there is no static functions, only trustworthy
   **immutable** objects.
-- Easy-to-compose validators, e.g.: `Trim(ReqEmail())` for a
-  "trimmed-required-email", it trims the entered email before trying to validate
-  it.
-- You can apply multiple validation rules at once — `Rules` class.
+- Easy-to-compose validators, e.g., the command `Trim(ReqEmail())` produces a
+  validator that trims the entered email and then validates it.
+- You can apply multiple validation rules at once by using the `Rules` class.
 - Classes with short — yet meaningful — names like `Req` for a required
-  (non-blank) field; `ReqEmail` for a non-blank and well-formed email; `MinLen`
+  (non-blank) field; `ReqEmail` for a non-blank and well-formed email; `Len.min`
   for a minimum number of characters.
 - No complex class hierarchy: each validator only implements the Dart's built-in
   `call()` method.
