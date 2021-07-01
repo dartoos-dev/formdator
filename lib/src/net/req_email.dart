@@ -9,9 +9,9 @@ class ReqEmail {
   ///
   /// [blank] is the blank field message; [mal], the malformed email message.
   ReqEmail({String blank = 'required', String mal = 'malformed'})
-      : _reqEmail = Rules<String>([Req(blank: blank), Email(mal: mal)]);
+      : _reqEmail = Rules([Req(blank: blank), Email(mal: mal)]);
 
-  final Rules _reqEmail;
+  final Rules<String> _reqEmail;
 
   /// Valid — returns null — if [email] is a non-blank and well-formed email;
   /// otherwise, returns the blank error message if [email] is null, or the
