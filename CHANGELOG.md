@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.4.0] - 2021-07-01
+
 ### Added
 
 - Len class for field length validation —
