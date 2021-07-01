@@ -1,17 +1,17 @@
-import 'package:formdator/formdator.dart';
 import 'package:flutter/material.dart';
+import 'package:formdator/formdator.dart';
 
 void main() {
-  runApp(const DemoApp());
+  runApp(const _DemoApp());
 }
 
 /// Demo purposes app widget.
 ///
-/// The widget displays a simple registration form in which the user enters an
-/// email, password and password confirmation.
-class DemoApp extends StatelessWidget {
+/// The widget displays a simple registration form in which a user enters an
+/// email, a password and password confirmation.
+class _DemoApp extends StatelessWidget {
   /// Ctor.
-  const DemoApp({Key? key}) : super(key: key);
+  const _DemoApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class DemoApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Simple form demo',
       home: SafeArea(
-        child: RegForm(
-          title: 'Enter an email, password and password confirmation',
+        child: _RegForm(
+          title: 'Enter an email, a password and password confirmation',
         ),
       ),
     );
@@ -28,9 +28,9 @@ class DemoApp extends StatelessWidget {
 }
 
 /// A simple registration form widget.
-class RegForm extends StatelessWidget {
+class _RegForm extends StatelessWidget {
   /// Ctor.
-  RegForm({required String title, Key? key})
+  _RegForm({required String title, Key? key})
       : _title = title,
         super(key: key);
 
@@ -56,18 +56,18 @@ class RegForm extends StatelessWidget {
               key: _fkey,
               child: Column(
                 children: [
-                  EmailField(onSaved: _saveEmail),
-                  SecretField(
+                  _EmailField(onSaved: _saveEmail),
+                  _SecretField(
                     label: 'Password',
                     onChanged: _refreshPass,
                   ),
-                  SecretField(
+                  _SecretField(
                     label: 'Confirm password',
                     onChanged: _refreshConfirm,
                     onSaved: _savePass,
                     extra: Equal(_enteredPass, diff: 'does not match.'),
                   ),
-                  ClearSubmitBar(fkey: _fkey, data: _data),
+                  _ClearSubmitBar(fkey: _fkey, data: _data),
                 ],
               ),
             ),
@@ -106,14 +106,14 @@ typedef OnChanged = void Function(String);
 typedef OnSaved = void Function(String?);
 
 /// Convenient form field for sensitive data.
-class SecretField extends StatelessWidget {
+class _SecretField extends StatelessWidget {
   /// A form field suitable for entering sensitive data.
   ///
   /// [label] descriptive text for the field.
   /// [onChange] callback for data chage event.
   /// [onSaved] callback for data saved event.
   /// [extra] an optional extra validation step.
-  SecretField({
+  _SecretField({
     required String label,
     OnChanged? onChanged,
     OnSaved? onSaved,
@@ -135,10 +135,14 @@ class SecretField extends StatelessWidget {
     return TextFormField(
       onSaved: _onSaved,
       onChanged: _onChanged,
-      validator: Rules(<StrVal>[
+      validator: Rules<String>([
         const Req(blank: 'cannot be blank.'),
-        const MinLen(4, short: 'too short; min length is 4.'),
-        const MaxLen(8, long: 'too long; max length is 8.'),
+        Len.range(
+          min: 4,
+          short: 'too short; min length is 4.',
+          max: 8,
+          long: 'too long; max length is 8.',
+        ),
         _extra,
       ]),
       keyboardType: TextInputType.visiblePassword,
@@ -152,12 +156,13 @@ class SecretField extends StatelessWidget {
   }
 }
 
-/// Email field widget - ensures a trimmed non-blank well-formed email value.
-class EmailField extends StatelessWidget {
+/// Email field widget — it trims the entered email value and validate it so
+/// that it is not blank and is well-formed.
+class _EmailField extends StatelessWidget {
   /// Non-blank well-formed email with an optional [extra] validation step.
   ///
   /// [onSaved] callback for email saved event.
-  EmailField({OnSaved? onSaved, StrVal? extra, Key? key})
+  _EmailField({OnSaved? onSaved, StrVal? extra, Key? key})
       : _onSaved = onSaved,
         _extra = extra ?? const Ok().call, // defaults to dummy validator.
         super(key: key);
@@ -178,16 +183,16 @@ class EmailField extends StatelessWidget {
         labelText: 'Email',
         filled: true,
         icon: Icon(Icons.email),
-        hintText: 'anuser@aprovider.com',
+        hintText: 'a_user@aprovider.com',
       ),
     );
   }
 }
 
-/// Row with convenient clear and submit buttons.
-class ClearSubmitBar extends StatelessWidget {
+/// Row with clear and submit buttons.
+class _ClearSubmitBar extends StatelessWidget {
   /// Encapsulates the form state.
-  const ClearSubmitBar({
+  const _ClearSubmitBar({
     required GlobalKey<FormState> fkey,
     required Map<String, dynamic> data,
     Key? key,
@@ -222,6 +227,7 @@ class ClearSubmitBar extends StatelessWidget {
     );
   }
 
+  /// Displays a success dialog.
   void _showDialog(BuildContext context) {
     showDialog<String>(
       context: context,
