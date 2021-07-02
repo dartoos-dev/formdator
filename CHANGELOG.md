@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.4.1] - 2021-07-02
+
 ### Added
 
 - Num class for number relating validation —
