@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- Num class for number relating validation —
+  [35](https://github.com/dartoos-dev/formdator/issues/35).
+
 ## [0.4.0] - 2021-07-01
 
 ### Added
