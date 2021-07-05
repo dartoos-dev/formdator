@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- Num class refactoring —
+  [45](https://github.com/dartoos-dev/formdator/issues/45) **BREAKING CHANGES**.
+
 ## [0.4.1] - 2021-07-02
 
 ### Added

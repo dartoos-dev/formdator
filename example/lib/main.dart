@@ -35,7 +35,7 @@ class _RegForm extends StatelessWidget {
         super(key: key);
 
   final String _title;
-  // the input data.
+  // input data.
   final Map<String, dynamic> _data = {};
   // the form's mandatory key.
   final _fkey = GlobalKey<FormState>();
