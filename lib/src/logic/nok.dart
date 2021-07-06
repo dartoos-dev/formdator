@@ -4,8 +4,8 @@
 class Nok {
   /// Does not perform any validation.
   ///
-  /// [error] the message that will always be returned.
-  const Nok({String error = 'error'}) : _error = error;
+  /// [error] the message that will always be returned; defaults to 'Nok error'.
+  const Nok({String? error}) : _error = error ?? 'Nok error';
 
   final String _error;
 

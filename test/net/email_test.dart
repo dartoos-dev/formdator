@@ -6,7 +6,7 @@ import 'package:formdator/formdator.dart';
 void main() {
   group('Email validator', () {
     const error = 'malformed email';
-    const email = Email(mal: error);
+    final email = Email(mal: error);
     group('- valid emails:', () {
       test('simple valid email', () {
         expect(email('simple@example.com'), null);

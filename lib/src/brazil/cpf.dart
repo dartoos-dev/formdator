@@ -9,10 +9,11 @@ import 'cpf_strip.dart';
 ///
 /// If the field is mandatory, see [Req].
 class Cpf {
-  /// Validates an optional cpf field.
+  /// Validates an optional cpf input.
   ///
-  /// [mal] is the error message in case of a malformed CPF.
-  const Cpf({required String mal}) : _malformed = mal;
+  /// [mal] is the error message in case of a malformed CPF; defaults to
+  /// 'malformed cpf'
+  const Cpf({String? mal}) : _malformed = mal ?? 'malformed cpf';
 
   final String _malformed;
 

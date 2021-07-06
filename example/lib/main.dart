@@ -107,11 +107,11 @@ typedef OnSaved = void Function(String?);
 
 /// Convenient form field for sensitive data.
 class _SecretField extends StatelessWidget {
-  /// A form field suitable for entering sensitive data.
+  /// A form field that is suitable for entering sensitive data.
   ///
-  /// [label] descriptive text for the field.
-  /// [onChange] callback for data chage event.
-  /// [onSaved] callback for data saved event.
+  /// [label] a descriptive text for the field.
+  /// [onChange] the callback for data chage event.
+  /// [onSaved] the callback for data saved event.
   /// [extra] an optional extra validation step.
   _SecretField({
     required String label,
@@ -122,7 +122,7 @@ class _SecretField extends StatelessWidget {
   })  : _label = label,
         _onChanged = onChanged,
         _onSaved = onSaved,
-        _extra = extra ?? const Ok().call, // dummy validator as default
+        _extra = extra ?? const Ok().call, // a dummy validator as default
         super(key: key);
 
   final String _label;
@@ -136,7 +136,7 @@ class _SecretField extends StatelessWidget {
       onSaved: _onSaved,
       onChanged: _onChanged,
       validator: Rules<String>([
-        const Req(blank: 'cannot be blank.'),
+        const Req(),
         Len.range(
           4,
           8,
@@ -150,21 +150,21 @@ class _SecretField extends StatelessWidget {
         labelText: _label,
         filled: true,
         icon: const Icon(Icons.password),
-        hintText: 'between 4 and 8 characters',
+        hintText: '4 to 8 characters',
       ),
     );
   }
 }
 
-/// Email field widget — it trims the entered email value and validate it so
-/// that it is not blank and is well-formed.
+/// Email field widget — it trims and validate an email so that it is neither
+/// blank nor malformed.
 class _EmailField extends StatelessWidget {
   /// Non-blank well-formed email with an optional [extra] validation step.
   ///
   /// [onSaved] callback for email saved event.
   _EmailField({OnSaved? onSaved, ValStr? extra, Key? key})
       : _onSaved = onSaved,
-        _extra = extra ?? const Ok().call, // defaults to dummy validator.
+        _extra = extra ?? const Ok().call, // defaults to a dummy validator.
         super(key: key);
 
   final OnSaved? _onSaved;
@@ -189,7 +189,7 @@ class _EmailField extends StatelessWidget {
   }
 }
 
-/// Row with clear and submit buttons.
+/// A clear and submit buttons within a Row widget.
 class _ClearSubmitBar extends StatelessWidget {
   /// Encapsulates the form state.
   const _ClearSubmitBar({

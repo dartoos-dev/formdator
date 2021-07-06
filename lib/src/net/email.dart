@@ -2,10 +2,10 @@
 ///
 /// Blank field - null value - is a valid input!
 ///
-/// If the field is mandatory, see [Req].
+/// If email is required, see [ReqEmail].
 class Email {
-  /// Validates an optional email field using a regular expression suitable for
-  /// validating emails that were manually entered.
+  /// Validates an optional email using a regular expression that is suitable
+  /// for validating emails that were manually entered.
   ///
   /// The validation takes into account that the local part (before the @) is
   /// limited to 64 characters and that each part of the domain name is limited
@@ -14,10 +14,11 @@ class Email {
   /// more than 4 subdomains.
   ///
   /// **Note:** null value is a **valid input**, whereas the empty string _''_
-  /// is not. If the email field is mandatory, see [Req].
+  /// is not. If the email field is mandatory, see [ReqEmail].
   ///
-  /// [mal] is the error message in case of a malformed email.
-  const Email({required String mal}) : _malformed = mal;
+  /// [mal] is the error message in case of a malformed email; defaults to
+  /// 'malformed email'.
+  Email({String? mal}) : _malformed = mal ?? 'malformed email';
 
   final String _malformed;
   // lazy loading (on-demand) initialization.

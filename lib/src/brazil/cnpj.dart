@@ -8,8 +8,9 @@ import 'cnpj_strip.dart';
 class Cnpj {
   /// Validates an optional cnpj field.
   ///
-  /// [mal] is the error message in case of a malformed CNPJ.
-  const Cnpj({required String mal}) : _malformed = mal;
+  /// [mal] is the error message in case of a malformed CNPJ; defaults to
+  /// 'malformed cnpj'.
+  const Cnpj({String? mal}) : _malformed = mal ?? 'malformed cnpj';
 
   final String _malformed;
 

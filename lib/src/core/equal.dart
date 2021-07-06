@@ -3,10 +3,11 @@ class Equal {
   /// Validates the equality between two values.
   ///
   /// [to] the value to be compared to.
-  /// [diff] the error message in case of different values.
-  const Equal(Object? Function() to, {String diff = 'cannot be different'})
+  /// [diff] the error message in case of different values; defaults to 'does
+  /// not match'.
+  const Equal(Object? Function() to, {String? diff})
       : _to = to,
-        _diff = diff;
+        _diff = diff ?? 'does not match';
 
   final Object? Function() _to;
   final String _diff;

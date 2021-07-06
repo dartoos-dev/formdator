@@ -9,6 +9,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Changed
 
+- Update the validators error message type to 'String?' —
+  [43](https://github.com/dartoos-dev/formdator/issues/43) **BREAKING CHANGES**.
 - Rename the validator types aliases —
   [49](https://github.com/dartoos-dev/formdator/issues/49) **BREAKING CHANGES**.
 - Len class refactoring —

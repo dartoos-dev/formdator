@@ -7,13 +7,13 @@ void main() {
   group('Default error messages', () {
     final reqEmail = ReqEmail();
     test('null - blank', () {
-      expect(reqEmail(null), 'required');
+      expect(reqEmail(null), 'required email');
     });
     test('empty - blank', () {
-      expect(reqEmail(''), 'required');
+      expect(reqEmail(''), 'required email');
     });
     test('invalid email', () {
-      expect(reqEmail('123@email'), 'malformed');
+      expect(reqEmail('123@email'), 'malformed email');
     });
     test('valid email', () {
       expect(reqEmail('a_valid_user@anyemail.com'), null);

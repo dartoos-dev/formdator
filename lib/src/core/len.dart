@@ -5,37 +5,42 @@ import 'rules.dart';
 ///
 /// Valid input types: [String], [num], [Iterable], and [Map].
 class Len {
-  /// Defines the (exact) length of data.
+  /// Defines the (exact) length of input data.
   ///
-  /// [len] the length of the input data; it must be >= 0.
-  /// [error] the error message if the length of the input data != [len].
+  /// [len] the length of input data; it must be >= 0.
+  /// [error] the error message if input data length != [len]; defaults to
+  /// 'length error'.
   Len(int len, {String? error})
       : assert(len >= 0),
         _lenVal =
             _InputLen((int l) => l != len ? error ?? 'length error' : null);
 
-  /// Defines the shortest length of data.
+  /// Defines the shortest length of input data.
   ///
-  /// [min] the shortest length of the input data; it must be >= 0.
-  /// [short] the error message if the length of the input data is < [min].
+  /// [min] the shortest length of input data; it must be >= 0.
+  /// [short] the error message if input data length < [min]; defaults to 'too
+  /// short'.
   Len.min(int min, {String? short})
       : assert(min >= 0),
         _lenVal = _InputLen((int l) => l < min ? short ?? 'too short' : null);
 
-  /// Defines the longest length of data.
+  /// Defines the longest length of input data.
   ///
-  /// [max] the longest length of the input data; it must be >= 0.
-  /// [long] the error message if the length of the input data is > [max].
+  /// [max] the longest length of input data; it must be >= 0.
+  /// [long] the error message if input data length > [max]; defaults to 'too
+  /// large'.
   Len.max(int max, {String? long})
       : assert(max >= 0),
         _lenVal = _InputLen((int l) => l > max ? long ?? 'too long' : null);
 
-  /// Defines both the shortest and longest length of the input data.
+  /// Defines a range for the length of input data.
   ///
-  /// [min] the minimum length of an input; it must be >= 0 and <= [max].
-  /// [max] the maximum length of an input; it must be >= 0 and >= [min].
-  /// [short] the error message if the length of the input data is < [min].
-  /// [long] the error message if the length of the input data is > [max].
+  /// [min] the shortest length of input data; it must be >= 0.
+  /// [max] the longest length of input data; it must be >= 0.
+  /// [short] the error message if input data length < [min]; defaults to 'too
+  /// short'.
+  /// [long] the error message if input data length > [max]; defaults to 'too
+  /// large'.
   Len.range(int min, int max, {String? short, String? long})
       : assert(min <= max),
         _lenVal = Rules<Object>([
@@ -49,7 +54,8 @@ class Len {
   /// Valid - returns null - if the length of [input] satisfies the length
   /// requirement.
   ///
-  /// **Note:** the type of [input] must be [String], [num],[Iterable] or [Map].
+  /// **Note:** the type of [input] must be [String], [num], [Iterable] or
+  /// [Map].
   String? call(Object? input) => _lenVal(input);
 }
 
