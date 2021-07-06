@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.5.0] - 2021-07-06
+
 ### Changed
 
 - Update the validators error message type to 'String?' —
