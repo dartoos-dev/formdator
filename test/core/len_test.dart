@@ -11,15 +11,15 @@ void main() {
         expect(() => Len(-1), throwsAssertionError);
         expect(() => Len.min(-1), throwsAssertionError);
         expect(() => Len.max(-1), throwsAssertionError);
-        expect(() => Len.range(min: -1, max: 1), throwsAssertionError);
-        expect(() => Len.range(min: 1, max: -1), throwsAssertionError);
+        expect(() => Len.range(-1, 1), throwsAssertionError);
+        expect(() => Len.range(1, -1), throwsAssertionError);
       });
       test('input type other than String, num, Iterable, or Map', () {
         expect(() => Len(10).call(true), throwsArgumentError);
         expect(() => Len.min(10).call(false), throwsArgumentError);
         expect(() => Len.max(10).call(Object()), throwsArgumentError);
         expect(
-          () => Len.range(min: 5, max: 10).call(const MapEntry(1, 'a')),
+          () => Len.range(5, 10).call(const MapEntry(1, 'a')),
           throwsArgumentError,
         );
       });
@@ -96,8 +96,7 @@ void main() {
       });
 
       group('Len.range', () {
-        final rangeZeroLen =
-            Len.range(min: 0, max: 0, short: short, long: long);
+        final rangeZeroLen = Len.range(0, 0, short: short, long: long);
         test('String', () {
           expect(rangeZeroLen(null), null);
           expect(rangeZeroLen(''), null);
@@ -221,8 +220,7 @@ void main() {
       });
 
       group('Len.range', () {
-        final rangeOneFive =
-            Len.range(min: 1, max: 5, short: short, long: long);
+        final rangeOneFive = Len.range(1, 5, short: short, long: long);
         test('String', () {
           expect(rangeOneFive(null), null);
           expect(rangeOneFive(''), short);

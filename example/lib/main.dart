@@ -138,9 +138,9 @@ class _SecretField extends StatelessWidget {
       validator: Rules<String>([
         const Req(blank: 'cannot be blank.'),
         Len.range(
-          min: 4,
+          4,
+          8,
           short: 'too short; min length is 4.',
-          max: 8,
           long: 'too long; max length is 8.',
         ),
         _extra,

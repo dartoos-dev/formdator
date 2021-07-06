@@ -9,6 +9,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Changed
 
+- Len class refactoring —
+  [47](https://github.com/dartoos-dev/formdator/issues/47) **BREAKING CHANGES**.
 - Num class refactoring —
   [45](https://github.com/dartoos-dev/formdator/issues/45) **BREAKING CHANGES**.
 
