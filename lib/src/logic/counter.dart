@@ -4,12 +4,12 @@ import 'package:formdator/formdator.dart';
 class Counter {
   /// [init] the initial count value.
   /// [val] an optional extra validation step.
-  Counter({int init = 0, ObjVal val = _ok})
+  Counter({int init = 0, ValObj val = _ok})
       : _count = List<int>.filled(1, init),
         _val = val;
 
   final List<int> _count;
-  final ObjVal _val;
+  final ValObj _val;
 
   static String? _ok(Object? _) => null;
 

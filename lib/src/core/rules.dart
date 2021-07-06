@@ -1,21 +1,18 @@
 import 'package:formdator/formdator.dart';
 
-/// Multiple rules applied to a field.
+/// Multiple rules applied to input data.
 class Rules<T> {
   /// Validates with the given rules.
-  Rules(Iterable<TypeVal<T>> rules) : _rules = List.unmodifiable(rules);
+  Rules(Iterable<ValType<T>> rules) : _rules = List.unmodifiable(rules);
 
-  final List<TypeVal<T>> _rules;
+  final List<ValType<T>> _rules;
 
-  /// Valid - returns null - if [value] is valid for all rules.
-  String? call(T? value) {
-    String? msg;
+  /// Valid - returns null - if [input] is valid for all rules.
+  String? call(T? input) {
     for (final rule in _rules) {
-      msg = rule(value);
-      if (msg != null) {
-        break;
-      }
+      final error = rule(input);
+      if (error != null) return error;
     }
-    return msg;
+    return null;
   }
 }

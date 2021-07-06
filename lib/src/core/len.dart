@@ -44,7 +44,7 @@ class Len {
         ]);
 
   /// Performs length-related validation.
-  final ObjVal _lenVal;
+  final ValObj _lenVal;
 
   /// Valid - returns null - if the length of [input] satisfies the length
   /// requirement.

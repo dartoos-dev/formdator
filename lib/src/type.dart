@@ -1,20 +1,34 @@
-/// Type value validator - T? Function(T? value) signature.
-typedef TypeVal<T> = String? Function(T?);
+/// Generic validator.
+///
+/// Function signature: String? Function(T?)
+typedef ValType<T> = String? Function(T?);
 
-/// Iterable value validator - Iterable? Function(Iterable? value) signature.
-typedef IterVal<I extends Iterable> = String? Function(I?);
+/// Validator for [Iterable] input data.
+///
+/// Function signature: String? Function(Iterable?)
+typedef ValIter<I extends Iterable> = String? Function(I?);
 
-/// Map value validator - Map? Function(Map? value) signature.
-typedef MapVal<M extends Map> = String? Function(M?);
+/// Validator for [Map] input data.
+///
+/// Function signature: String? Function(Map?)
+typedef ValMap<M extends Map> = String? Function(M?);
 
-/// Numeric value validator - num? Function(num? value) signature.
-typedef NumVal<N extends num> = String? Function(N?);
+/// Validator for [num] input data.
+///
+/// Function signature: String? Function(num?)
+typedef ValNum<N extends num> = String? Function(N?);
 
-/// Object value validator - Object? Function(Object? value) signature.
-typedef ObjVal<O extends Object> = String? Function(O?);
+/// Validator for non-specific type input data.
+///
+/// Function signature: String? Function(Object?)
+typedef ValObj<O extends Object> = String? Function(O?);
 
-/// String value validator - String? Function(String? value) signature.
-typedef StrVal<S extends String> = String? Function(S?);
+/// Validator for [String] input data.
+///
+/// Function signature: String? Function(String?)
+typedef ValStr<S extends String> = String? Function(S?);
 
-/// DateTime value validator - DateTime? Function(DateTime? value) signature.
-typedef DTVal<DT extends DateTime> = String? Function(DT?);
+/// Validator for [DateTime] input data.
+///
+/// Function signature: String? Function(DateTime?)
+typedef ValDT<DT extends DateTime> = String? Function(DT?);

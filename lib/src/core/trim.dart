@@ -1,17 +1,17 @@
 import 'package:formdator/formdator.dart';
 
-/// Trimmed value.
+/// Trims input data.
 ///
-/// It does not validate anything! It just trims the input value and forwards
-/// it.
+/// It does not validate anything! It just trims input data and forwards it.
 class Trim {
-  /// The value to be trimmed - remove any leading and trailing whitspace.
-  const Trim(this._val);
-
-  final StrVal _val;
-
-  /// Trims the value and forwards it.
+  /// Will remove any leading or trailing whitspace from input before forwarding
+  /// it to [val].
   ///
-  /// In other words, removes any leading and trailing whitespace.
-  String? call(String? value) => _val(value?.trim());
+  /// [val] a validator for string input data.
+  const Trim(ValStr val) : _val = val;
+
+  final ValStr _val;
+
+  /// Trims input data and forwards it.
+  String? call(String? input) => _val(input?.trim());
 }

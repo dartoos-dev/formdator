@@ -4,14 +4,14 @@ import 'package:formdator/formdator.dart';
 void main() {
   group('Multiple rules', () {
     test('empty list', () {
-      final norules = Rules(<StrVal>[]);
+      final norules = Rules(<ValStr>[]);
       expect(norules(null), null);
       expect(norules(''), null);
       expect(norules('non-blank input'), null);
     });
     test('single rule', () {
       final counter = Counter();
-      final single = Rules(<ObjVal>[counter]);
+      final single = Rules(<ValObj>[counter]);
       expect(single(null), null);
       expect(single(''), null);
       expect(single('non-blank input'), null);
@@ -20,7 +20,7 @@ void main() {
     test('multiple rules', () {
       final counter = Counter();
       const error = 'erroneous value';
-      final List<StrVal> theRules = [
+      final List<ValStr> theRules = [
         counter,
         const Ok(),
         counter,

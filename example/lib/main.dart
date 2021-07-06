@@ -117,7 +117,7 @@ class _SecretField extends StatelessWidget {
     required String label,
     OnChanged? onChanged,
     OnSaved? onSaved,
-    StrVal? extra,
+    ValStr? extra,
     Key? key,
   })  : _label = label,
         _onChanged = onChanged,
@@ -128,7 +128,7 @@ class _SecretField extends StatelessWidget {
   final String _label;
   final OnChanged? _onChanged;
   final OnSaved? _onSaved;
-  final StrVal _extra;
+  final ValStr _extra;
 
   @override
   Widget build(BuildContext context) {
@@ -162,13 +162,13 @@ class _EmailField extends StatelessWidget {
   /// Non-blank well-formed email with an optional [extra] validation step.
   ///
   /// [onSaved] callback for email saved event.
-  _EmailField({OnSaved? onSaved, StrVal? extra, Key? key})
+  _EmailField({OnSaved? onSaved, ValStr? extra, Key? key})
       : _onSaved = onSaved,
         _extra = extra ?? const Ok().call, // defaults to dummy validator.
         super(key: key);
 
   final OnSaved? _onSaved;
-  final StrVal _extra;
+  final ValStr _extra;
 
   @override
   Widget build(BuildContext context) {
