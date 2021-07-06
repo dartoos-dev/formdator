@@ -9,7 +9,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Changed
 
-- Renaming Validator Types —
+- Rename the validator types aliases —
   [49](https://github.com/dartoos-dev/formdator/issues/49) **BREAKING CHANGES**.
 - Len class refactoring —
   [47](https://github.com/dartoos-dev/formdator/issues/47) **BREAKING CHANGES**.
