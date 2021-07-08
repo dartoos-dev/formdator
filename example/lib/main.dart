@@ -175,7 +175,8 @@ class _EmailField extends StatelessWidget {
     return TextFormField(
       onSaved: _onSaved,
       validator: Rules<String>([
-        Trim(ReqEmail()),
+        const Req(),
+        Trim(Email.len(50)),
         _extra,
       ]),
       keyboardType: TextInputType.emailAddress,

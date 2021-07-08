@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- the 'len' named constructor to the Email validator class —
+  [53](https://github.com/dartoos-dev/formdator/issues/53).
+
 ## [0.5.0] - 2021-07-06
 
 ### Changed

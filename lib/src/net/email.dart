@@ -1,11 +1,13 @@
-/// Optional well-formed email.
+import 'package:formdator/formdator.dart';
+
+/// Validator of optional e-mail values.
 ///
 /// Blank field - null value - is a valid input!
 ///
-/// If email is required, see [ReqEmail].
+/// If the email address is required, see [Req].
 class Email {
-  /// Validates an optional email using a regular expression that is suitable
-  /// for validating emails that were manually entered.
+  /// Validates email addresses using a regular expression that is suitable for
+  /// manually entered emails.
   ///
   /// The validation takes into account that the local part (before the @) is
   /// limited to 64 characters and that each part of the domain name is limited
@@ -13,14 +15,38 @@ class Email {
   /// to 8 as it is unlikely that someone will ever enter an email address with
   /// more than 4 subdomains.
   ///
-  /// **Note:** null value is a **valid input**, whereas the empty string _''_
-  /// is not. If the email field is mandatory, see [ReqEmail].
+  /// If the email field is mandatory, see [Req]; If you need to limit the
+  /// maximum length of an email address, see [Email.len].
   ///
-  /// [mal] is the error message in case of a malformed email; defaults to
-  /// 'malformed email'.
-  Email({String? mal}) : _malformed = mal ?? 'malformed email';
+  /// [mal] the error message in case of a malformed email address; if omitted,
+  /// the default message will be 'malformed email'.
+  Email({String? mal})
+      : _emailVal = ((String? email) {
+          return (email == null || _matcher.hasMatch(email))
+              ? null
+              : mal ?? 'malformed email';
+        });
 
-  final String _malformed;
+  /// Validates an optional email address and limits its length to up to [len]
+  /// characters.
+  ///
+  /// [len] the maximum length of an email address; it must be > 0.
+  /// [mal] the error message in case of a malformed email address; if omitted,
+  /// the default message will be 'malformed email'.
+  /// [long] the error message in case of an email address that is too long; if
+  /// omitted, the default message will be 'too long email'.
+  Email.len(int len, {String? mal, String? long})
+      : assert(len > 0),
+        _emailVal = Rules<String>(
+          [
+            Len.max(len, long: long ?? 'too long email'),
+            Email(mal: mal),
+          ],
+        );
+
+  // email validation logic.
+  final ValStr _emailVal;
+
   // lazy loading (on-demand) initialization.
   static late final RegExp _matcher = _emailPattern();
 
@@ -34,6 +60,5 @@ class Email {
   }
 
   /// Valid - returns null - if [email] is either well-formed or null.
-  String? call(String? email) =>
-      (email == null || _matcher.hasMatch(email)) ? null : _malformed;
+  String? call(String? email) => _emailVal(email);
 }

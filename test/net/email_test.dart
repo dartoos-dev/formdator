@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
 
-/// Most test cases were taken from:
+/// Most of the test cases were taken from:
 /// - [valid-email-addresses](https://en.wikipedia.org/wiki/Email_address#Valid_email_addresses)
 void main() {
-  group('Email validator', () {
+  group('Email', () {
     const error = 'malformed email';
     final email = Email(mal: error);
     group('- valid emails:', () {
@@ -80,6 +80,30 @@ void main() {
       test('icon characters', () {
         expect(email('QA[icon]CHOCOLATE[icon]@test.com'), error);
       });
+    });
+  });
+
+  group('Email.len', () {
+    const mal = 'malformed email';
+    const long = 'too long email';
+    final lenEmail = Email.len(21, mal: mal, long: long);
+    test('short valid email', () {
+      expect(lenEmail('simple@example.com'), null);
+      expect(lenEmail('very.good@example.com'), null);
+    });
+    test('short invalid email', () {
+      expect(lenEmail('Abc.example.com'), mal);
+      expect(lenEmail('A@b@c@example.com'), mal);
+    });
+    test('long valid email', () {
+      expect(lenEmail('very.common@example.com'), long);
+      expect(lenEmail('very_common_too@example.com'), long);
+    });
+    test('long invalid email', () {
+      expect(
+          lenEmail(
+              '1234567890123456789012345678901234567890123456789012345678901234+x@example.com'),
+          long);
     });
   });
 }
