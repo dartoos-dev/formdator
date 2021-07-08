@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.5.1] - 2021-07-08
+
 ### Added
 
 - the 'len' named constructor to the Email validator class —
