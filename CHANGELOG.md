@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.6.0] - 2021-07-15
+
 ### Changed
 
 - 'Req' validator accept an additional validation step as a parameter —
