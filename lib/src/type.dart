@@ -1,34 +1,34 @@
 /// Generic validator.
 ///
 /// Function signature: String? Function(T?)
-typedef ValType<T> = String? Function(T?);
+typedef ValType<T> = String? Function(T? t);
 
 /// Validator for [Iterable] input data.
 ///
 /// Function signature: String? Function(Iterable?)
-typedef ValIter<I extends Iterable> = String? Function(I?);
+typedef ValIter = String? Function(Iterable? i);
 
 /// Validator for [Map] input data.
 ///
 /// Function signature: String? Function(Map?)
-typedef ValMap<M extends Map> = String? Function(M?);
+typedef ValMap = String? Function(Map? m);
 
 /// Validator for [num] input data.
 ///
 /// Function signature: String? Function(num?)
-typedef ValNum<N extends num> = String? Function(N?);
+typedef ValNum = String? Function(num? n);
 
-/// Validator for non-specific type input data.
+/// Validator for non-specific input data.
 ///
 /// Function signature: String? Function(Object?)
-typedef ValObj<O extends Object> = String? Function(O?);
+typedef ValObj = String? Function(Object? o);
 
 /// Validator for [String] input data.
 ///
 /// Function signature: String? Function(String?)
-typedef ValStr<S extends String> = String? Function(S?);
+typedef ValStr = String? Function(String? s);
 
 /// Validator for [DateTime] input data.
 ///
 /// Function signature: String? Function(DateTime?)
-typedef ValDT<DT extends DateTime> = String? Function(DT?);
+typedef ValDT = String? Function(DateTime? dt);

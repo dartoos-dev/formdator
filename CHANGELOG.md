@@ -7,6 +7,17 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- 'Req' validator accept an additional validation step as a parameter —
+  [56](https://github.com/dartoos-dev/formdator/issues/56).
+- 'Req' validator constructors are no longer const — **BREAKING CHANGE**.
+
+### Added
+
+- 'Pair' validator that groups two validators as if they were only one.
+- 'ToValObj' adapter that restricts the input data type to String.
+
 ## [0.5.1] - 2021-07-08
 
 ### Added

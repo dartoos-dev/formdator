@@ -35,9 +35,9 @@ class _RegForm extends StatelessWidget {
         super(key: key);
 
   final String _title;
-  // input data.
+  // The input data.
   final Map<String, dynamic> _data = {};
-  // the form's mandatory key.
+  // The form's mandatory key.
   final _fkey = GlobalKey<FormState>();
 
   @override
@@ -57,12 +57,9 @@ class _RegForm extends StatelessWidget {
               child: Column(
                 children: [
                   _EmailField(onSaved: _saveEmail),
+                  _SecretField(label: 'Password', onChanged: _refreshPass),
                   _SecretField(
-                    label: 'Password',
-                    onChanged: _refreshPass,
-                  ),
-                  _SecretField(
-                    label: 'Confirm password',
+                    label: 'Password confirmation',
                     onChanged: _refreshConfirm,
                     onSaved: _savePass,
                     extra: Equal(_enteredPass, diff: 'does not match.'),
@@ -135,16 +132,12 @@ class _SecretField extends StatelessWidget {
     return TextFormField(
       onSaved: _onSaved,
       onChanged: _onChanged,
-      validator: Rules<String>([
-        const Req(),
-        Len.range(
-          4,
-          8,
-          short: 'too short; min length is 4.',
-          long: 'too long; max length is 8.',
+      validator: Req.val(
+        Pair(
+          Len.range(4, 8, short: 'at least 4 chars', long: 'at most 8 chars'),
+          _extra,
         ),
-        _extra,
-      ]),
+      ),
       keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
         labelText: _label,
@@ -156,29 +149,23 @@ class _SecretField extends StatelessWidget {
   }
 }
 
-/// Email field widget — it trims and validate an email so that it is neither
+/// Email field widget — it trims and validates an email so that it is neither
 /// blank nor malformed.
 class _EmailField extends StatelessWidget {
   /// Non-blank well-formed email with an optional [extra] validation step.
   ///
   /// [onSaved] callback for email saved event.
-  _EmailField({OnSaved? onSaved, ValStr? extra, Key? key})
+  const _EmailField({OnSaved? onSaved, Key? key})
       : _onSaved = onSaved,
-        _extra = extra ?? const Ok().call, // defaults to a dummy validator.
         super(key: key);
 
   final OnSaved? _onSaved;
-  final ValStr _extra;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: _onSaved,
-      validator: Rules<String>([
-        const Req(),
-        Trim(Email.len(50)),
-        _extra,
-      ]),
+      validator: Trim(Req.str(Email.len(50))),
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
         labelText: 'Email',
