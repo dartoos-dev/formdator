@@ -17,6 +17,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - 'Pair' validator that groups two validators as if they were only one.
 - 'ToValObj' adapter that restricts the input data type to String.
+- 'ReqEmail.len' constructor —
+  [60](https://github.com/dartoos-dev/formdator/issues/60).
 
 ## [0.5.1] - 2021-07-08
 

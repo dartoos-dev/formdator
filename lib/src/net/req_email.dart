@@ -5,14 +5,32 @@ import 'email.dart';
 ///
 /// It is the composite of [Req] and [Email] validators.
 class ReqEmail {
-  /// Ensures a non-blank and well-formed email value.
+  /// Non-blank and well-formed email values.
   ///
-  /// [blank] the blank field message; defaults to 'required email'.
-  /// [mal] the malformed email message.
+  /// [blank] the error message in case of an email address left blank; if
+  /// omitted, the default message will be 'required email'.
+  /// [mal] the error message in case of a malformed email address; if omitted,
+  /// the default message will be 'malformed email'.
   ReqEmail({String? blank, String? mal})
-      : _reqEmail = Req.val(ToValObj(Email(mal: mal)),
-            blank: blank ?? 'required email');
+      : this._email(Email(mal: mal), blank: blank);
 
+  /// Non-blank, well-formed, and limited-length email values.
+  ///
+  /// [max] the maximum length of an email address; it must be > 0.
+  /// [blank] the error message in case of an email address left blank; if
+  /// omitted, the default message will be 'required email'.
+  /// [mal] the error message in case of a malformed email address; if omitted,
+  /// the default message will be 'malformed email'.
+  /// [long] the error message in case of an email address that is too long; if
+  /// omitted, the default message will be 'too long email'.
+  ReqEmail.len(int max, {String? blank, String? mal, String? long})
+      : this._email(Email.len(max, mal: mal, long: long), blank: blank);
+
+  /// Helper ctor.
+  ReqEmail._email(Email email, {String? blank})
+      : _reqEmail = Pair(Req(blank: blank ?? 'required email'), email);
+
+  // the required email logic.
   final ValObj _reqEmail;
 
   /// Valid — returns null — if [input] is a non-blank well-formed email;

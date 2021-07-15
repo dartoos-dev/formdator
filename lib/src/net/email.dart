@@ -4,7 +4,7 @@ import 'package:formdator/formdator.dart';
 ///
 /// Blank field - null value - is a valid input!
 ///
-/// If the email address is required, see [Req].
+/// If the email address is required, see [ReqEmail] or [Req].
 class Email {
   /// Validates email addresses using a regular expression that is suitable for
   /// manually entered emails.
@@ -15,8 +15,8 @@ class Email {
   /// to 8 as it is unlikely that someone will ever enter an email address with
   /// more than 4 subdomains.
   ///
-  /// If the email field is mandatory, see [Req]; If you need to limit the
-  /// maximum length of an email address, see [Email.len].
+  /// If the email field is mandatory, see [ReqEmail] or [Req]. If you need to
+  /// limit the maximum length of an email address, see [Email.len].
   ///
   /// [mal] the error message in case of a malformed email address; if omitted,
   /// the default message will be 'malformed email'.
