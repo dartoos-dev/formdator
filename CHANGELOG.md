@@ -7,6 +7,15 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- 'Digit.len', 'Digit.min', 'Digit.max', and 'Digit.range' constructors —
+  [63](https://github.com/dartoos-dev/formdator/issues/63).
+
+### Changed
+
+- The 'Digit' constructor is no longer const — **BREAKING CHANGE**.
+
 ## [0.6.0] - 2021-07-15
 
 ### Changed

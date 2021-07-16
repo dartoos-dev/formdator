@@ -10,7 +10,7 @@ void main() {
     final req = Req(blank: error);
     final reqVal =
         Req.val(Len.range(1, 3, short: errorVal, long: errorVal), blank: error);
-    final reqStr = Req.str(const Digit(non: errorStr), blank: error);
+    final reqStr = Req.str(Digit(non: errorStr), blank: error);
     final reqMany =
         Req.many([const Ok(), const Nok(error: errorMany)], blank: error);
     group('- valid inputs:', () {
