@@ -22,7 +22,7 @@ class ReqEmail {
   /// [mal] the error message in case of a malformed email address; if omitted,
   /// the default message will be 'malformed email'.
   /// [long] the error message in case of an email address that is too long; if
-  /// omitted, the default message will be 'too long email'.
+  /// omitted, the default message will be 'email longer than $max chars'.
   ReqEmail.len(int max, {String? blank, String? mal, String? long})
       : this._email(Email.len(max, mal: mal, long: long), blank: blank);
 

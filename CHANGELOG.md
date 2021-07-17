@@ -15,6 +15,10 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 ### Changed
 
 - The 'Digit' constructor is no longer const — **BREAKING CHANGE**.
+- The name of Len's parameters. The 'short' param. was renamed to
+  'less'; the 'long' param., to 'great'. **BREAKING CHANGE**.
+- Len's default error messages.
+  [69](https://github.com/dartoos-dev/formdator/issues/69).
 
 ## [0.6.0] - 2021-07-15
 

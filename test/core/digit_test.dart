@@ -4,14 +4,14 @@ import 'package:formdator/formdator.dart';
 void main() {
   group('Digit —', () {
     const error = 'the data must only contain digits';
-    const diff = 'value length error';
-    const short = 'the value is too short';
-    const long = 'the value is too long';
+    const diff = 'length error';
+    const less = 'the length is too short';
+    const great = 'the length is too long';
     final dig = Digit(non: error);
     final digLen = Digit.len(2, non: error, diff: diff);
-    final digMin = Digit.min(3, non: error, short: short);
-    final digMax = Digit.max(6, non: error, long: long);
-    final digRange = Digit.range(4, 6, non: error, short: short, long: long);
+    final digMin = Digit.min(3, non: error, less: less);
+    final digMax = Digit.max(6, non: error, great: great);
+    final digRange = Digit.range(4, 6, non: error, less: less, great: great);
     test('null', () {
       expect(dig(null), null);
       expect(digLen(null), null);
@@ -42,21 +42,21 @@ void main() {
       expect(digMax(sixDigits), null);
       expect(digRange(sixDigits), null);
     });
-    test('short value', () {
+    test('less value', () {
       const twoDigits = '99';
       expect(dig(twoDigits), null);
       expect(digLen(twoDigits), null);
-      expect(digMin(twoDigits), short);
+      expect(digMin(twoDigits), less);
       expect(digMax(twoDigits), null);
-      expect(digRange(twoDigits), short);
+      expect(digRange(twoDigits), less);
     });
-    test('long value', () {
+    test('great value', () {
       const manyDigits = '01234567899876543210';
       expect(dig(manyDigits), null);
       expect(digLen(manyDigits), diff);
       expect(digMin(manyDigits), null);
-      expect(digMax(manyDigits), long);
-      expect(digRange(manyDigits), long);
+      expect(digMax(manyDigits), great);
+      expect(digRange(manyDigits), great);
     });
     test('the last char is non-digit', () {
       const invalid = '0123456789987654321X';

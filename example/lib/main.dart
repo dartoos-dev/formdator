@@ -134,7 +134,7 @@ class _SecretField extends StatelessWidget {
       onChanged: _onChanged,
       validator: Req.val(
         Pair(
-          Len.range(4, 8, short: 'at least 4 chars', long: 'at most 8 chars'),
+          Len.range(4, 8, less: 'at least 4 chars', great: 'at most 8 chars'),
           _extra,
         ),
       ),

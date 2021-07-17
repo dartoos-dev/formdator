@@ -1,54 +1,62 @@
-import '../type.dart';
-import 'rules.dart';
+import 'package:formdator/formdator.dart';
 
 /// Length-related constraints.
 ///
 /// Valid input types: [String], [num], [Iterable], and [Map].
 class Len {
-  /// Defines the (exact) length of input data.
+  /// Constrains the length or quantity of data items.
   ///
-  /// [len] the length of input data; it must be >= 0.
-  /// [error] the error message if input data length != [len]; defaults to
-  /// 'length error'.
-  Len(int len, {String? error})
+  /// [len] the length or number of items; it must be >= 0.
+  /// [diff] the error message if the length or number of data items is
+  /// different from [len]; the default value is 'the length or qty. must be
+  /// $len'.
+  Len(int len, {String? diff})
       : assert(len >= 0),
-        _lenVal =
-            _InputLen((int l) => l != len ? error ?? 'length error' : null);
+        _lenVal = _InputLen(
+          (int l) =>
+              l != len ? diff ?? 'the length or qty. must be $len' : null,
+        );
 
-  /// Defines the shortest length of input data.
+  /// Constrains the length or number of data items to a minimum amount.
   ///
-  /// [min] the shortest length of input data; it must be >= 0.
-  /// [short] the error message if input data length < [min]; defaults to 'too
-  /// short'.
-  Len.min(int min, {String? short})
-      : assert(min >= 0),
-        _lenVal = _InputLen((int l) => l < min ? short ?? 'too short' : null);
+  /// [min] the minimum number of items; it must be > 0.
+  /// [less] the error message if the length or number of items is < [min]; the
+  /// default value is 'the length or qty. cannot be < $min'
+  Len.min(int min, {String? less})
+      : assert(min > 0),
+        _lenVal = _InputLen(
+          (int len) =>
+              len < min ? less ?? 'the length or qty. cannot be < $min' : null,
+        );
 
-  /// Defines the longest length of input data.
+  /// Constrains the length or number of data items to a maximum amount.
   ///
-  /// [max] the longest length of input data; it must be >= 0.
-  /// [long] the error message if input data length > [max]; defaults to 'too
-  /// large'.
-  Len.max(int max, {String? long})
-      : assert(max >= 0),
-        _lenVal = _InputLen((int l) => l > max ? long ?? 'too long' : null);
+  /// [max] the maximum number of items; it must be > 0.
+  /// [great] the error message if the length or number of items is > [max]; the
+  /// default value is 'the length or qty. cannot be > [max]'.
+  Len.max(int max, {String? great})
+      : assert(max > 0),
+        _lenVal = _InputLen(
+          (int len) =>
+              len > max ? great ?? 'the length or qty. cannot be > $max' : null,
+        );
 
-  /// Defines a range for the length of input data.
+  /// Constrains the length or number of data items within the range [min–max].
   ///
-  /// [min] the shortest length of input data; it must be >= 0.
-  /// [max] the longest length of input data; it must be >= 0.
-  /// [short] the error message if input data length < [min]; defaults to 'too
-  /// short'.
-  /// [long] the error message if input data length > [max]; defaults to 'too
-  /// large'.
-  Len.range(int min, int max, {String? short, String? long})
-      : assert(min <= max),
-        _lenVal = Rules<Object>([
-          Len.min(min, short: short),
-          Len.max(max, long: long),
-        ]);
+  /// [min] the lower limit; it must be > 0 and < [max].
+  /// [max] the upper limit; it must be > 0 and > [min].
+  /// [less] the error message if the length or number of items is < [min]; the
+  /// default value is 'the length or qty. cannot be < [min]'
+  /// [great] the error message if the length or number of items is > [max]; the
+  /// default value is 'the length or qty. cannot be > [max]'.
+  Len.range(int min, int max, {String? less, String? great})
+      : assert(min < max),
+        _lenVal = Pair.obj(
+          Len.min(min, less: less),
+          Len.max(max, great: great),
+        );
 
-  /// Performs length-related validation.
+  // Performs length-related validation.
   final ValObj _lenVal;
 
   /// Valid - returns null - if the length of [input] satisfies the length

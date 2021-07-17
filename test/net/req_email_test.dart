@@ -28,7 +28,7 @@ void main() {
     test('long, valid email', () {
       const longValid = 'disposable.style.email.with+symbol@example.com';
       expect(reqEmail(longValid), null);
-      expect(reqEmailLen(longValid), 'too long email');
+      expect(reqEmailLen(longValid), 'email longer than 30 chars');
     });
   });
 }

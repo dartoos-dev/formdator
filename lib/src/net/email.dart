@@ -34,14 +34,12 @@ class Email {
   /// [mal] the error message in case of a malformed email address; if omitted,
   /// the default message will be 'malformed email'.
   /// [long] the error message in case of an email address that is too long; if
-  /// omitted, the default message will be 'too long email'.
+  /// omitted, the default message will be 'email longer than $len chars'.
   Email.len(int len, {String? mal, String? long})
       : assert(len > 0),
-        _emailVal = Rules<String>(
-          [
-            Len.max(len, long: long ?? 'too long email'),
-            Email(mal: mal),
-          ],
+        _emailVal = Pair(
+          Len.max(len, great: long ?? 'email longer than $len chars'),
+          Email(mal: mal),
         );
 
   // email validation logic.

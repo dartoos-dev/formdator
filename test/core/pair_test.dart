@@ -14,7 +14,7 @@ void main() {
     });
     test('— ValObj and ValObj', () {
       const long = 'the maximum length is 20';
-      final objPair = Pair.obj(req, Len.max(20, long: long));
+      final objPair = Pair.obj(req, Len.max(20, great: long));
       expect(objPair(null), blank);
       expect(objPair('A text that is too long and should be rejected'), long);
       expect(objPair('A short text'), null);
