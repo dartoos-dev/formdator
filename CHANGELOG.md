@@ -11,6 +11,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - 'Digit.len', 'Digit.min', 'Digit.max', and 'Digit.range' constructors —
   [63](https://github.com/dartoos-dev/formdator/issues/63).
+- 'Cep' and 'ReqCep' validators along with the 'CepStrip' utility class
+  [71](https://github.com/dartoos-dev/formdator/issues/71).
 
 ### Changed
 
