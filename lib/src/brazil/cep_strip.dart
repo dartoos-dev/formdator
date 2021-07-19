@@ -1,4 +1,4 @@
-/// CEP as a plain value - the CEP numeric value without the hyphen '-'.
+/// CEP as a digit-only value.
 ///
 /// CEP values matching the pattern '#####-###' will have the hyphen "-" removed
 /// from them. However, if a zip value is already fully numeric, it will remain
@@ -7,8 +7,9 @@
 ///
 /// For example:
 ///
-/// - if the CEP value is '12345-678', the return value will be '12345678';
-/// - if the CEP value is '87654321', the return value will be '87654321';
+/// - if the CEP value is '12345-678', then the return value will be '12345678';
+/// - if the CEP value is '87654321', then the return value will also be
+///   '87654321';
 /// - if the CEP value is malformed as the value '83191+060', then the return
 ///   value will be the null value.
 class CepStrip {
@@ -20,7 +21,7 @@ class CepStrip {
 
   static final RegExp _wellFormedCep = RegExp(r'^(\d{8}|\d{5}-\d{3})$');
 
-  /// CEP plain value - without the hyphen '-'.
+  /// CEP as a digit-only value — without the hyphen '-'.
   ///
   /// There are three scenarios for a CEP value. If it is:
   ///   1. properly masked as '#####-###', then the hyphen "-" will be removed

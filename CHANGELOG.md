@@ -11,7 +11,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - 'Digit.len', 'Digit.min', 'Digit.max', and 'Digit.range' constructors —
   [63](https://github.com/dartoos-dev/formdator/issues/63).
-- 'Cep' and 'ReqCep' validators along with the 'CepStrip' utility class
+- 'Cep' and 'ReqCep' validators along with the 'CepStrip' utility class —
   [71](https://github.com/dartoos-dev/formdator/issues/71).
 
 ### Changed
@@ -19,8 +19,10 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 - The 'Digit' constructor is no longer const — **BREAKING CHANGE**.
 - The name of Len's parameters. The 'short' param. was renamed to
   'less'; the 'long' param., to 'great'. **BREAKING CHANGE**.
-- Len's default error messages.
+- Len's default error messages —
   [69](https://github.com/dartoos-dev/formdator/issues/69).
+- Refactoring of classes CnpjStrip, CpfStrip, and CepStrip —
+  [73](https://github.com/dartoos-dev/formdator/issues/73).
 
 ## [0.6.0] - 2021-07-15
 
