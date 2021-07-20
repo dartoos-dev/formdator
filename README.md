@@ -23,44 +23,66 @@ packages, include:
 
 - Object-oriented mindset: there is no static functions, only trustworthy
   **immutable** objects.
-- Easy-to-compose validators, e.g., the command `Trim(ReqEmail())` produces a
-  validator that trims the entered email and then validates it.
-- You can apply multiple validation rules at once by using the `Rules` class.
 - Classes with short — yet meaningful — names like `Req` for a required
   (non-blank) field; `ReqEmail` for a non-blank and well-formed email; `Len.min`
-  for a minimum number of characters.
-- No complex class hierarchy: each validator only implements the Dart's built-in
-  `call()` method.
+  for a minimum number of characters; and so on.
+- Easy-to-compose validators, e.g., `Trim(Email())` produces a validator that
+  trims the entered email before validating it.
+- Contains a built-in set of ready-to-use compound validators: if you need to
+  validate an email and limit its length to, say, 50 chars, simply pass an
+  `Email.len(50)` or `ReqEmail.len(50)` object as the validation argument.
+- You can apply multiple validation rules at once by using the `Pair` or `Rules`
+  classes.
 
-For easier integration with the fields of a Flutter form, each validator
-implements the `call()` method; therefore, any validator can be treated as an
-ordinary function.
+For easier integration with Flutter form fields, each validator implements the
+`call()` method so that any validator object can be called like a function —
+Callable classes.
 
 ## Getting Started
 
 A flexible package provides components that can be selected and grouped in
 various combinations so that user requirements can be fulfilled.
 
-As a demonstration of such combinations of components, the code below shows how
-you can easily group `Trim` and `Email` to form a trimmed-email field with a
-custom error message in case of a malformed email.
+The code below shows how you can easily group the `Rules`, `Req`, `Len`, and
+`Email` validators to form a 'trimmed-required-max-50-chars-email' constraint.
 
 ```dart
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: _onSaved,
-      validator: Trim(Email(mal: 'malformed email.')),
+      validator: Rules<String>([
+        Req(),
+        Len.max(50),
+        Email(),
+      ]),
       keyboardType: TextInputType.emailAddress,
     );
   }
 ```
 
+Or — even better — if the compound validator `ReqEmail` is used to perform the
+same task.
+
+```dart
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      onSaved: _onSaved,
+      validator: ReqEmail.len(50),
+      keyboardType: TextInputType.emailAddress,
+    );
+  }
+```
+
+The shorter command `ReqEmail.len(50)` is equivalent to the much longer command
+`Rules<String>([Req(), Len.max(50), Email()])`.
+
 ### Demo application
 
 The demo application provides a fully working example, focused on demonstrating
-exactly four validators in action — Rules, ReqEmail and Equal. You can take
-the code in this demo and experiment with it.
+exactly four validators in action — Pair, ReqLen, ReqEmail, and Equal. You can
+take the code in this demo and experiment with it.
 
 To run the demo application:
 

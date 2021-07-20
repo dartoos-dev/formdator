@@ -1,6 +1,6 @@
 # formdator_demo
 
-How to use Formdator package effectively.
+How to use Formdator effectively.
 
 ## Getting Started
 

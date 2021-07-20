@@ -11,6 +11,12 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - 'ReqDigit' which is the composition between the validators 'Req' and 'Digit' —
   [64](https://github.com/dartoos-dev/formdator/issues/64).
+- 'ReqNum' which is the composition between the validators 'Req' and 'Num' —
+  [66](https://github.com/dartoos-dev/formdator/issues/66).
+
+### Changed
+
+- more elaborate content in the README file.
 
 ## [0.7.0] - 2021-07-20
 

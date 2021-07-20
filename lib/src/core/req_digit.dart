@@ -1,6 +1,6 @@
 import 'package:formdator/formdator.dart';
 
-/// Convenient validator for required, digit-only fields.
+/// Convenient validator for required digit-only fields.
 ///
 /// It is the composition between the [Req] and [Digit] validators.
 class ReqDigit {

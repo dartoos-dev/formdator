@@ -2,18 +2,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
 
 void main() {
+  const blank = 'The value is required';
   const error = 'The value must be numeric';
-  final numeric = Num(nan: error);
+  final numeric = ReqNum(blank: blank, nan: error);
 
-  group('Num', () {
+  group('ReqNum', () {
     group('():', () {
       group('Valid input - ', () {
         test('null', () {
-          expect(numeric(null), null);
+          expect(numeric(null), blank);
         });
         test('single digit', () {
-          expect(numeric('0'), null);
-          expect(numeric('9'), null);
+          expect(numeric('1'), null);
+          expect(numeric('2'), null);
         });
         test('many digits', () {
           expect(numeric('01234567899876543210'), null);
@@ -23,13 +24,13 @@ void main() {
           expect(numeric('+999'), null);
         });
         test('minus sign', () {
-          expect(numeric('-0'), null);
-          expect(numeric('-1'), null);
+          expect(numeric('-100'), null);
+          expect(numeric('+100'), null);
         });
       });
       group('Invalid input', () {
         test('empty', () {
-          expect(numeric(''), error);
+          expect(numeric(''), blank);
         });
         test('last digit non-numeric', () {
           expect(numeric('0123456789987654321X'), error);
@@ -47,15 +48,15 @@ void main() {
     });
     group('min:', () {
       const small = 'too small';
-      final numMin = Num.min(10, nan: error, small: small);
+      final numMin = ReqNum.min(10, blank: blank, nan: error, small: small);
       test('null input', () {
-        expect(numMin(null), null);
+        expect(numMin(null), blank);
       });
       test('empty input', () {
-        expect(numMin(''), error);
+        expect(numMin(''), blank);
       });
       test('too small', () {
-        expect(numMin('0'), small);
+        expect(numMin('9'), small);
         expect(numMin('9.9'), small);
         expect(numMin('-10'), small);
       });
@@ -66,12 +67,12 @@ void main() {
     });
     group('max:', () {
       const large = 'too large';
-      final numMax = Num.max(10, nan: error, large: large);
+      final numMax = ReqNum.max(10, blank: blank, nan: error, large: large);
       test('null', () {
-        expect(numMax(null), null);
+        expect(numMax(null), blank);
       });
       test('empty', () {
-        expect(numMax(''), error);
+        expect(numMax(''), blank);
       });
       test('too large', () {
         expect(numMax('10.1'), large);
@@ -87,16 +88,17 @@ void main() {
     group('range:', () {
       const small = 'too small';
       const large = 'too large';
-      final range = Num.range(1, 10, nan: error, small: small, large: large);
-      final negRange =
-          Num.range(-10, -1, nan: error, small: small, large: large);
+      final range = ReqNum.range(1, 10,
+          blank: blank, nan: error, small: small, large: large);
+      final negRange = ReqNum.range(-10, -1,
+          blank: blank, nan: error, small: small, large: large);
       test('null', () {
-        expect(range(null), null);
-        expect(negRange(null), null);
+        expect(range(null), blank);
+        expect(negRange(null), blank);
       });
       test('empty', () {
-        expect(range(''), error);
-        expect(negRange(''), error);
+        expect(range(''), blank);
+        expect(negRange(''), blank);
       });
       test('too small', () {
         expect(range('0.9'), small);

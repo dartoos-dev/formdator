@@ -1,9 +1,9 @@
 /// **Formdator** - **Form**idaable Vali**dator**.
-
-/// According to the Flutter form standards, a validator must return the null
-/// value to indicate that an input is **valid**. On the other hand, to indicate
-/// a **valid** input, a validator must return a message, which in turn will be
-/// displayed to the user by the field with wrong data.
+///
+/// According to Flutter's form rules, a validator must return null to indicate
+/// **valid** data. On the other hand, to indicate **invalid** data, a validator
+/// must return a message which, in turn, will be displayed to the user by the
+/// field with erroneous data.
 library formdator;
 
 export 'brazil.dart';
