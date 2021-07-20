@@ -22,7 +22,7 @@ void main() {
     });
     test('— many validators test case', () {
       const blank = 'required value';
-      final many = ToValObj.many([Req(blank: blank), Digit(non: error)]);
+      final many = ToValObj.many([const Req(blank: blank), Digit(non: error)]);
       expect(many(null), blank);
       expect(many('1111'), null);
       expect(() => many(1111), throwsArgumentError);

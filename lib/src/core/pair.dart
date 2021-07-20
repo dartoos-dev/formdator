@@ -4,11 +4,24 @@ import 'package:formdator/formdator.dart';
 class Pair {
   /// A pair of validators of type [ValObj].
   ///
-  /// For example, for a mandatory length of 30 characters:
+  /// For example:
   ///
-  /// - ```Pair(Req(), Len.max(30));```
-  Pair(ValObj first, ValObj second)
-      : _pair = ((Object? input) => first(input) ?? second(input));
+  /// - A required field with up to 30 characters: ```Pair(Req(), Len.max(30));```
+  const Pair(this._first, this._second);
+
+  /// A pair of validators of which the first one is of type [ValStr].
+  ///
+  /// Example:
+  ///
+  /// - An email with up to 50 characters: ```Pair.str1st(Email(), Len.max(50));```
+  Pair.str1(ValStr first, ValObj second) : this(ToValObj(first), second);
+
+  /// A pair of validators of which the second one is of type [ValStr].
+  ///
+  /// Examples:
+  ///
+  /// - A mandatory email: ```Pair.str2nd(Req(), Email());```
+  Pair.str2(ValObj first, ValStr second) : this(first, ToValObj(second));
 
   /// A pair of validators of type [ValStr].
   ///
@@ -18,14 +31,15 @@ class Pair {
   /// Examples:
   ///
   /// - A mandatory email: ```Pair.str(Req(), Email());```
-  /// - A email that contains only lowercase letters:
-  /// ```Pair.str(NoUpperCase(), Email());```
+  /// - A email with no uppercase letters: ```Pair.str(NoUpperCase(), Email());```
   Pair.str(ValStr first, ValStr second)
       : this(ToValObj(first), ToValObj(second));
 
   // The pair.
-  final ValObj _pair;
+  // final ValObj _pair;
+  final ValObj _first;
+  final ValObj _second;
 
   /// Valid — returns null — if [input] if valid for both validators.
-  String? call(Object? input) => _pair(input);
+  String? call(Object? input) => _first(input) ?? _second(input);
 }

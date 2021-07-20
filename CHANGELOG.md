@@ -27,6 +27,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 - Optimization of the Pair aggregator —
   [75](https://github.com/dartoos-dev/formdator/issues/75) **BREAKING CHANGES**.
 
+### Removed
+
+- Superfluous constructos —
+  [78](https://github.com/dartoos-dev/formdator/issues/78) **BREAKING CHANGES**.
+
 ## [0.6.0] - 2021-07-15
 
 ### Changed

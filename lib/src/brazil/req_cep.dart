@@ -11,9 +11,9 @@ class ReqCep {
   ///
   /// For de default values of [blank] and [mal], see [Req] and [Cep].
   ReqCep({String? blank, String? mal})
-      : _reqCep = Req.str(Cep(mal: mal), blank: blank);
+      : _reqCep = Pair.str2(Req(blank: blank), Cep(mal: mal));
 
-  final Req _reqCep;
+  final Pair _reqCep;
 
   /// Checks that [cep] is neither blank nor malformed.
   ///
