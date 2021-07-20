@@ -7,15 +7,15 @@ import 'package:formdator/formdator.dart';
 ///
 /// Blank field — null or empty — is a valid input.
 ///
-/// If the field is mandatory, see [Req].
+/// If the field is mandatory, see [ReqDigit] or [Req].
 class Digit {
-  /// Constrains input data to digits [0-9].
+  /// Constrains the input data to the digits [0-9].
   ///
   /// [non] the error message if a non-digit character is found; the default
   /// value is 'non-digit character'.
   Digit({String? non}) : _valDig = _DigitImpl(non, const Ok());
 
-  /// Constrains input data to digits [0-9] and limits the length (number of
+  /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to [len] digits.
   ///
   /// [len] the number of digits; it must be > 0.
@@ -25,7 +25,7 @@ class Digit {
       : assert(len > 0),
         _valDig = _DigitImpl(non, Len(len, diff: diff));
 
-  /// Constrains thinput data to digits [0-9] and limits the length (number of
+  /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to a minimum of [min] digits.
   ///
   /// [min] the minimum number of digits; it must be > 0.
@@ -35,8 +35,8 @@ class Digit {
       : assert(min > 0),
         _valDig = _DigitImpl(non, Len.min(min, less: less));
 
-  /// Constrains input data to digits [0-9] and limits the length (number of
-  /// digits) to a maximum of [max] digits.
+  /// Constrains the input data to the digits [0-9] and its length (number of
+  /// digits) to a maximum of [min] digits.
   ///
   /// [max] the maximum number of digits; it must be > 0.
   /// [non] the error message if a non-digit character is found.
@@ -45,7 +45,7 @@ class Digit {
       : assert(max > 0),
         _valDig = _DigitImpl(non, Len.max(max, great: great));
 
-  /// Constrains input data to digits [0-9] and limits the length (number of
+  /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) within the range [min–max].
   ///
   /// [min] the minimum number of digits; it must be > 0 and < [max].

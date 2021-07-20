@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- 'ReqDigit' which is the composition between the validators 'Req' and 'Digit' —
+  [64](https://github.com/dartoos-dev/formdator/issues/64).
+
 ## [0.7.0] - 2021-07-20
 
 ### Added
