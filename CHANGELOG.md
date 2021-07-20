@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.7.0] - 2021-07-20
+
 ### Added
 
 - 'Digit.len', 'Digit.min', 'Digit.max', and 'Digit.range' constructors —
