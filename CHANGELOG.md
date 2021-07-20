@@ -23,6 +23,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
   [69](https://github.com/dartoos-dev/formdator/issues/69).
 - Refactoring of classes CnpjStrip, CpfStrip, and CepStrip —
   [73](https://github.com/dartoos-dev/formdator/issues/73).
+- Optimization of the Pair aggregator —
+  [75](https://github.com/dartoos-dev/formdator/issues/75) **BREAKING CHANGES**.
 
 ## [0.6.0] - 2021-07-15
 

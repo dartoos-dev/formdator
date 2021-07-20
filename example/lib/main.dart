@@ -114,30 +114,30 @@ class _SecretField extends StatelessWidget {
     required String label,
     OnChanged? onChanged,
     OnSaved? onSaved,
-    ValStr? extra,
+    ValObj? extra,
     Key? key,
   })  : _label = label,
         _onChanged = onChanged,
         _onSaved = onSaved,
-        _extra = extra ?? const Ok().call, // a dummy validator as default
+        _val = Pair(
+          Req.val(
+            Len.range(4, 8, less: 'at least 4 chars', great: 'at most 8 chars'),
+          ),
+          extra ?? const Ok().call, // a dummy validator as default
+        ),
         super(key: key);
 
   final String _label;
   final OnChanged? _onChanged;
   final OnSaved? _onSaved;
-  final ValStr _extra;
+  final ValObj _val;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: _onSaved,
       onChanged: _onChanged,
-      validator: Req.val(
-        Pair(
-          Len.range(4, 8, less: 'at least 4 chars', great: 'at most 8 chars'),
-          _extra,
-        ),
-      ),
+      validator: _val,
       keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
         labelText: _label,

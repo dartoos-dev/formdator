@@ -7,14 +7,14 @@ void main() {
     const malformed = 'invalid email address';
     final req = Req(blank: blank);
     test('— ValObj and ValStr', () {
-      final pair = Pair(req, Email(mal: malformed));
+      final pair = Pair.str(req, Email(mal: malformed));
       expect(pair(null), blank);
       expect(pair('an_invalid_email@.com'), malformed);
       expect(pair('a_user@email.com'), null);
     });
     test('— ValObj and ValObj', () {
       const long = 'the maximum length is 20';
-      final objPair = Pair.obj(req, Len.max(20, great: long));
+      final objPair = Pair(req, Len.max(20, great: long));
       expect(objPair(null), blank);
       expect(objPair('A text that is too long and should be rejected'), long);
       expect(objPair('A short text'), null);

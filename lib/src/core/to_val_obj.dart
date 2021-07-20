@@ -1,26 +1,39 @@
 import 'package:formdator/formdator.dart';
 
-/// [ToValObj] adapter — Turns an [Object?] input into a suitable type.
+/// Transforms an input value of type 'Object?' into a more suitable type.
 class ToValObj {
-  /// Converts input data of type [Object] into [String] and forwards it to the
-  /// [single] validator.
+  /// Tries to convert an input value of type Object? into a value of type
+  /// String?.
   ///
-  /// [single] the [ValStr] validator.
-  ToValObj(ValStr single) : this.many([single]);
+  /// **Note:** If you do not want an exception whenever an input value is not
+  /// of type [String]?, see [ToValObj.toStr].
+  ///
+  /// Throws an [ArgumentError] if an input value is not of type 'String?'.
+  ToValObj(ValStr valStr)
+      : _asValObj = ((Object? input) {
+          if (input is String?) return valStr(input);
+          throw ArgumentError.value(
+              input, 'input', 'input type other than String?');
+        });
 
-  /// Converts input data of type [Object] into [String] and forwards it to each
-  /// instance within the [vals] collection.
+  /// Transforms an input value of type 'Object?' to a value of type 'String?'
+  /// by invoking the [toString] method of the input value.
+  ToValObj.toStr(ValStr valStr)
+      : _asValObj = ((Object? input) => valStr(input?.toString()));
+
+  /// Tries to convert an input value of type Object? into a value of type
+  /// String? and forwards it to each instance within the [vals] iterable.
   ///
-  /// [vals] multiple instances of [ValStr].
+  /// [vals] the collection of [ValStr] instances.
+  /// Throws an [ArgumentError] if the input value is not of type 'String?'.
   ToValObj.many(Iterable<ValStr> vals)
-      : _rules = Rules<Object>(
-          vals
-              .map((valStr) => (Object? input) => valStr(input?.toString()))
-              .toList(growable: false),
-        );
+      : _asValObj = Rules<Object>(vals
+            .map((valStr) => ToValObj(valStr).call)
+            .toList(growable: false));
 
-  final Rules<Object> _rules;
+  /// The conversion logic.
+  final ValObj _asValObj;
 
-  /// Forwards [input] as [String].
-  String? call(Object? input) => _rules(input);
+  /// Forwards [input] as a value of type [String].
+  String? call(Object? input) => _asValObj(input);
 }

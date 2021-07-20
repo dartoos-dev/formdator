@@ -51,7 +51,7 @@ class Len {
   /// default value is 'the length or qty. cannot be > [max]'.
   Len.range(int min, int max, {String? less, String? great})
       : assert(min < max),
-        _lenVal = Pair.obj(
+        _lenVal = Pair(
           Len.min(min, less: less),
           Len.max(max, great: great),
         );

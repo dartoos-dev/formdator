@@ -2,36 +2,29 @@ import 'package:formdator/formdator.dart';
 
 /// A pair of validators.
 class Pair {
-  /// A pair of heterogeneous validators.
+  /// A pair of validators of type [ValObj].
   ///
-  /// The first type of validator is [ValObj], while the second is [ValStr]. For
-  /// example:
-  /// - ```Pair(Req(), Email());```
-  Pair(ValObj first, ValStr second) : this.obj(first, ToValObj(second));
+  /// For example, for a mandatory length of 30 characters:
+  ///
+  /// - ```Pair(Req(), Len.max(30));```
+  Pair(ValObj first, ValObj second)
+      : _pair = ((Object? input) => first(input) ?? second(input));
 
-  /// A pair of [ValObj] validators.
+  /// A pair of validators of type [ValStr].
   ///
-  /// For example:
-  /// - ```Pair.obj(Req(), Len.max(30));```
-  Pair.obj(ValObj first, ValObj second)
-      : _pair = Rules<Object>([first, second]);
-
-  /// A pair of [ValStr] validators.
+  /// **Note:** the validators can be of either [ValStr] or [ValObj] type due to
+  /// the fact that a [String] value is also an [Object] value.
   ///
-  /// For example:
-  /// - ```
-  ///   String? noUpperCase(String? input) {
-  ///     return (input != null && input.contains(RegExp('[A-Z]')))
-  ///         ? 'there must be no uppercase letters'
-  ///         : null;
-  ///     }
-  ///   Pair.str(noUpperCase, Email());
-  ///   ```
+  /// Examples:
+  ///
+  /// - A mandatory email: ```Pair.str(Req(), Email());```
+  /// - A email that contains only lowercase letters:
+  /// ```Pair.str(NoUpperCase(), Email());```
   Pair.str(ValStr first, ValStr second)
-      : this.obj(ToValObj(first), ToValObj(second));
+      : this(ToValObj(first), ToValObj(second));
 
   // The pair.
-  final Rules<Object> _pair;
+  final ValObj _pair;
 
   /// Valid — returns null — if [input] if valid for both validators.
   String? call(Object? input) => _pair(input);

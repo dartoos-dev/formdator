@@ -79,11 +79,11 @@ class _DigitImpl {
   // extra validation step.
   final ValObj _extra;
 
-  static final _digitsOnly = RegExp(r'^[0-9]+$');
+  static final _digitsOnly = RegExp(r'^\d+$');
 
-  String? call(String? input) =>
-      // (input == null || _digitsOnly.hasMatch(input)) ? null : _non;
-      (input != null && !_digitsOnly.hasMatch(input))
-          ? _nonDigit
-          : _extra(input);
+  String? call(String? input) {
+    return (input != null && !_digitsOnly.hasMatch(input))
+        ? _nonDigit
+        : _extra(input);
+  }
 }

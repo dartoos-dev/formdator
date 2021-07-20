@@ -39,13 +39,13 @@ void main() {
         const iter = ['123', '45'];
         expect(req(iter), null);
         expect(reqVal(iter), null);
-        expect(reqStr(iter), errorStr);
+        expect(() => reqStr(iter), throwsArgumentError);
         expect(reqMany(iter), errorMany);
       });
       test('Map input', () {
         expect(req({'key1': 1, 'key2': "two"}), null);
         expect(reqVal({'key1': 1, 'key2': "two"}), null);
-        expect(reqStr({'key1': 1, 'key2': "two"}), errorStr);
+        expect(() => reqStr({'key1': 1, 'key2': "two"}), throwsArgumentError);
         expect(reqMany({'key1': 1, 'key2': "two"}), errorMany);
       });
     });

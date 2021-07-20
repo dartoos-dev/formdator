@@ -23,12 +23,14 @@ class Req {
       : _val = val,
         _blank = blank ?? 'required';
 
-  /// It performs the same as the [Req.val] constructor, but it restricts the
-  /// input type to [String].
+  /// Performs the same as the [Req.val] constructor, but tries to convert the
+  /// input values to '[String]?'.
   ///
   /// [val] the additional validation step.
   /// [blank] the error message in case of a null or empty input value; the
-  /// default is 'required'.
+  /// default value is 'required'.
+  ///
+  /// Throws an [ArgumentError] if an input value is not of type 'String?'.
   Req.str(ValStr val, {String? blank}) : this.val(ToValObj(val), blank: blank);
 
   /// It performs the same task as the [Req.val] constructor, but for many
