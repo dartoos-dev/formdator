@@ -13,6 +13,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
   [63](https://github.com/dartoos-dev/formdator/issues/63).
 - 'Cep' and 'ReqCep' validators along with the 'CepStrip' utility class —
   [71](https://github.com/dartoos-dev/formdator/issues/71).
+- 'ReqLen' class — [62](https://github.com/dartoos-dev/formdator/issues/62).
 
 ### Changed
 
