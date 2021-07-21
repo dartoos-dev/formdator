@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.7.1] - 2021-07-21
+
 ### Added
 
 - 'ReqDigit' which is the composition between the validators 'Req' and 'Digit' —
