@@ -20,8 +20,7 @@ class Num {
   /// [small] the error message if an input is too small; the default value is
   /// 'it cannot be < [min]'.
   Num.min(num min, {String? nan, String? small})
-      : _val =
-            _AsNum(nan, (n) => n < min ? small ?? 'it cannot be < $min' : null);
+      : _val = _AsNum(nan, _Logic(min: min, s: small));
 
   /// Constrains data to numeric values that are less than or equal to [max].
   ///
@@ -31,8 +30,7 @@ class Num {
   /// [large] the error message if an input is too large; the default value is
   /// 'it cannot be > [max]'.
   Num.max(num max, {String? nan, String? large})
-      : _val = _AsNum(nan,
-            (num input) => input > max ? large ?? 'it cannot be > $max' : null);
+      : _val = _AsNum(nan, _Logic(max: max, l: large));
 
   /// Constrains data to numeric values within the range [min–max].
   ///
@@ -46,18 +44,8 @@ class Num {
   /// 'it cannot be > [max]'.
   Num.range(num min, num max, {String? nan, String? small, String? large})
       : assert(min < max),
-        // coverage:ignore-start
-        _val = _AsNum(
-          nan,
-          (num input) => input < min
-              ? small ?? 'it cannot be < $min'
-              : input > max
-                  ? large ?? 'it cannot be > $max'
-                  : null,
-        );
-  // coverage:ignore-end
+        _val = _AsNum(nan, _Logic(min: min, max: max, s: small, l: large));
 
-  // the number validator.
   final _AsNum _val;
 
   /// Valid — returns null – if [input] is either numeric or null.
@@ -81,5 +69,28 @@ class _AsNum {
 
     final asNum = num.tryParse(input);
     return asNum == null ? _nan : _logic(asNum);
+  }
+}
+
+/// Default messages and logic.
+class _Logic {
+  /// Ctor.
+  const _Logic({num? min, num? max, String? s, String? l})
+      : _min = min ?? double.negativeInfinity,
+        _max = max ?? double.infinity,
+        _small = s ?? 'it cannot be < $min',
+        _large = l ?? 'it cannot be > $max';
+
+  final String _small;
+  final String _large;
+  final num _min;
+  final num _max;
+
+  String? call(num n) {
+    return n < _min
+        ? _small
+        : n > _max
+            ? _large
+            : null;
   }
 }
