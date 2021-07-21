@@ -46,6 +46,7 @@ class Num {
   /// 'it cannot be > [max]'.
   Num.range(num min, num max, {String? nan, String? small, String? large})
       : assert(min < max),
+        // coverage:ignore-start
         _val = _AsNum(
           nan,
           (num input) => input < min
@@ -54,6 +55,7 @@ class Num {
                   ? large ?? 'it cannot be > $max'
                   : null,
         );
+  // coverage:ignore-end
 
   // the number validator.
   final _AsNum _val;
