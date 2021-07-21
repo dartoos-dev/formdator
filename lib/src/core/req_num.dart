@@ -46,9 +46,7 @@ class ReqNum {
     String? small,
     String? large,
   }) : this._num(
-          Num.range(min, max, nan: nan, small: small, large: large),
-          blank,
-        );
+            Num.range(min, max, nan: nan, small: small, large: large), blank);
 
   /// Helper ctor.
   ReqNum._num(Num numVal, String? blank)

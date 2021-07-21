@@ -10,7 +10,7 @@ class Num {
   ///
   /// [nan] "not-a-number", the error message in case of a non-numeric input;
   /// the default value is 'not a number'.
-  Num({String? nan}) : _numVal = _InputAsNum(nan, const Ok());
+  Num({String? nan}) : _val = _AsNum(nan, const Ok());
 
   /// Constrains data to numeric values greater than or equal to [min].
   ///
@@ -20,10 +20,8 @@ class Num {
   /// [small] the error message if an input is too small; the default value is
   /// 'it cannot be < [min]'.
   Num.min(num min, {String? nan, String? small})
-      : _numVal = _InputAsNum(
-          nan,
-          (num input) => input < min ? small ?? 'it cannot be < $min' : null,
-        );
+      : _val =
+            _AsNum(nan, (n) => n < min ? small ?? 'it cannot be < $min' : null);
 
   /// Constrains data to numeric values that are less than or equal to [max].
   ///
@@ -33,10 +31,8 @@ class Num {
   /// [large] the error message if an input is too large; the default value is
   /// 'it cannot be > [max]'.
   Num.max(num max, {String? nan, String? large})
-      : _numVal = _InputAsNum(
-          nan,
-          (num input) => input > max ? large ?? 'it cannot be > $max' : null,
-        );
+      : _val = _AsNum(nan,
+            (num input) => input > max ? large ?? 'it cannot be > $max' : null);
 
   /// Constrains data to numeric values within the range [min–max].
   ///
@@ -50,28 +46,26 @@ class Num {
   /// 'it cannot be > [max]'.
   Num.range(num min, num max, {String? nan, String? small, String? large})
       : assert(min < max),
-        _numVal = _InputAsNum(
+        _val = _AsNum(
           nan,
-          (num input) {
-            return input < min
-                ? small ?? 'it cannot be < $min'
-                : input > max
-                    ? large ?? 'it cannot be > $max'
-                    : null;
-          },
+          (num input) => input < min
+              ? small ?? 'it cannot be < $min'
+              : input > max
+                  ? large ?? 'it cannot be > $max'
+                  : null,
         );
 
   // the number validator.
-  final _InputAsNum _numVal;
+  final _AsNum _val;
 
   /// Valid — returns null – if [input] is either numeric or null.
-  String? call(String? input) => _numVal(input);
+  String? call(String? input) => _val(input);
 }
 
-class _InputAsNum {
+class _AsNum {
   /// [nan] The "Not-a-Number" error message; defaults to 'not a number'.
   /// [logic] the logic to be applied to a numeric input.
-  _InputAsNum(String? nan, this._logic) : _nan = nan ?? 'not a number';
+  _AsNum(String? nan, this._logic) : _nan = nan ?? 'not a number';
 
   /// Logic code related to numeric values.
   final String? Function(num) _logic;
