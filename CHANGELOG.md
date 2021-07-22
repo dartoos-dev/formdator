@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.7.2] - 2021-07-22
+
 ### Added
 
 - 'ReqCnpj' which is the composition between the validators 'Req' and 'Cnpj' —
