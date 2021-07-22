@@ -5,16 +5,15 @@ import 'cpf_strip.dart';
 ///
 /// Kind of Brazilian SSN - Social Security Number.
 ///
-/// Blank field - null value - is a valid input!
-///
-/// If the field is mandatory, see [Req].
+/// If the field is mandatory, see [ReqCpf] or [Req].
 class Cpf {
-  /// Validates an optional cpf input.
+  /// Validates an optional CPF.
   ///
-  /// [mal] is the error message in case of a malformed CPF; defaults to
+  /// [mal] the error message in case of a malformed CPF; the default value is
   /// 'malformed cpf'
   const Cpf({String? mal}) : _malformed = mal ?? 'malformed cpf';
 
+  /// The error message.
   final String _malformed;
 
   /// Returns null if [cpf] is well-formed; otherwise, the erro message.
