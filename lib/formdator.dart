@@ -1,4 +1,4 @@
-/// **Formdator** - **Form**idaable Vali**dator**.
+/// **Formdator** - **Form**idable Vali**dator**.
 ///
 /// According to Flutter's form rules, a validator must return null to indicate
 /// **valid** data. On the other hand, to indicate **invalid** data, a validator
