@@ -21,7 +21,8 @@ alt="EO-Color logo" width="101" height="48"/>
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
-- [Demo application](#demo-application)
+- [List of Validators](#list-of-validators)
+- [Demo Application](#demo-application)
 - [References](#references)
 
 ## Overview
@@ -85,6 +86,13 @@ task.
 
 The shorter command `ReqEmail.len(50)` is equivalent to the much longer command
 `Rules<String>([Req(), Len.max(50), Email()])`.
+
+## List of validators
+
+For a complete list of validators or more detailed information about any
+validator (constructors, parameters, examples, etc.):
+
+[formdator-doc](https://pub.dev/documentation/formdator/latest/formdator/formdator-library.html)
 
 ## Demo application
 
