@@ -14,6 +14,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 - 'ReqCpf' which is the composition between the validators 'Req' and 'Cpf' —
   [65](https://github.com/dartoos-dev/formdator/issues/66).
 
+### Changed
+
+- better README content —
+  [86](https://github.com/dartoos-dev/formdator/issues/86).
+
 ## [0.7.1] - 2021-07-21
 
 ### Added
