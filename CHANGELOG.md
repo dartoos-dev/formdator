@@ -11,7 +11,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Changed
 
-- Some improvements to the README content —
+- Some improvements to the README's content —
   [89](https://github.com/dartoos-dev/formdator/issues/89).
 
 ## [0.7.2] - 2021-07-22
