@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.8.0] - 2021-07-23
+
 ### Changed
 
 - Reorganization of the validator categories —
