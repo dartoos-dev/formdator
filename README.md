@@ -22,6 +22,7 @@ alt="EO-Color logo" width="101" height="48"/>
 - [Overview](#overview)
 - [Getting Started](#getting-started)
 - [List of Validators](#list-of-validators)
+  - [Categories](#grouped-by-category)
 - [Demo Application](#demo-application)
 - [References](#references)
 
@@ -33,7 +34,7 @@ packages, include:
 
 - An object-oriented mindset: the elements for validation are **immutable**,
   flexible objects that can be combined in various configurations.
-- Classes with short - yet meaningful - names like `Req` for a required field;
+- Classes with short — yet meaningful — names like `Req` for a required field;
   `ReqEmail` for a non-empty, well-formed email; `Len.max` for a maximum number
   of characters; and so on.
 - Easy-to-compose validators: the command `Trim(Email())` produces a validator
@@ -87,12 +88,23 @@ task.
 The shorter command `ReqEmail.len(50)` is equivalent to the much longer command
 `Rules<String>([Req(), Len.max(50), Email()])`.
 
-## List of validators
+## List of Validators
 
-For a complete list of validators or more detailed information about any
-validator (constructors, parameters, examples, etc.):
+For a complete list of validators with detailed information about each one
+(constructors, parameters, examples, etc.):
 
-[formdator-doc](https://pub.dev/documentation/formdator/latest/formdator/formdator-library.html)
+- [formdator](https://pub.dev/documentation/formdator/latest/formdator/formdator-library.html).
+
+### Grouped by Category
+
+- [brazil](https://pub.dev/documentation/formdator/latest/brazil/brazil-library.html)
+  — validators related to Brazil (CEP, CNPJ, CPF, etc).
+- [core](https://pub.dev/documentation/formdator/latest/core/core-library.html) —
+  core validators (Digit, Equal, Len, Num, Pair, Req, etc).
+- [logic](https://pub.dev/documentation/formdator/latest/logic/logic-library.html)
+  — validation logic and unit testing (Ok, Nok, ValueBack, etc).
+- [net](https://pub.dev/documentation/formdator/latest/net/net-library.html) —
+  internet (Email, Ipv4, Ipv6, Mac, etc).
 
 ## Demo application
 
@@ -118,4 +130,4 @@ This should launch the demo application on Chrome in debug mode.
 - [TextFormField](https://api.flutter.dev/flutter/material/TextFormField-class.html)
 - [build a Flutter form](https://flutter.dev/docs/cookbook/forms/validation)
 - [Mozilla input types](https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types)
-- [brazilian form masks](http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/)
+- [brazilian form masks](https://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/)
