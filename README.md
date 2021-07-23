@@ -91,20 +91,22 @@ The shorter command `ReqEmail.len(50)` is equivalent to the much longer command
 ## List of Validators
 
 For a complete list of validators with detailed information about each one
-(constructors, parameters, examples, etc.):
+(constructors, parameters, etc.):
 
-- [formdator](https://pub.dev/documentation/formdator/latest/formdator/formdator-library.html).
+- [formdator-library](https://pub.dev/documentation/formdator/latest/formdator/formdator-library.html).
 
 ### Grouped by Category
 
 - [brazil](https://pub.dev/documentation/formdator/latest/brazil/brazil-library.html)
-  — validators related to Brazil (CEP, CNPJ, CPF, etc).
+  — validators related to Brazil (Cep, Cnpj, Cpf, etc).
 - [core](https://pub.dev/documentation/formdator/latest/core/core-library.html) —
-  core validators (Digit, Equal, Len, Num, Pair, Req, etc).
+  core validators (Len, Pair, Req, Rules, Trim, etc).
 - [logic](https://pub.dev/documentation/formdator/latest/logic/logic-library.html)
-  — validation logic and unit testing (Ok, Nok, ValueBack, etc).
+  — validation logic and unit testing (Equal, Ok, Nok, ValueBack, etc).
 - [net](https://pub.dev/documentation/formdator/latest/net/net-library.html) —
-  internet (Email, Ipv4, Ipv6, Mac, etc).
+  internet (Email, Ipv4, Ipv6, Mac, Url, etc).
+- [numeric](https://pub.dev/documentation/formdator/latest/numeric/numeric-library.html)
+  — validators related to numbers or digits (Digit, Hex, Num, etc).
 
 ## Demo application
 

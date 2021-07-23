@@ -1,10 +1,10 @@
-/// Equality rule - checks whether A == B.
+/// Equality rule — checks whether A == B.
 class Equal {
   /// Validates the equality between two values.
   ///
   /// [to] the value to be compared to.
-  /// [diff] the error message in case of different values; defaults to 'does
-  /// not match'.
+  /// [diff] the error message in case of different values; the default value is
+  /// 'does not match'.
   const Equal(Object? Function() to, {String? diff})
       : _to = to,
         _diff = diff ?? 'does not match';
@@ -15,8 +15,8 @@ class Equal {
   /// Forwards to [call] method.
   String? to(String? value) => this(value);
 
-  /// Valid - returns null - if [value] is equal.
+  /// Valid - returns null - if [value] is equal to the given reference value.
   ///
-  /// the [==] operator is used for comparison.
+  /// The [==] operator is used for comparison.
   String? call(Object? value) => value == _to() ? null : _diff;
 }
