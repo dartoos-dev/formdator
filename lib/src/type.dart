@@ -1,3 +1,5 @@
+/// Set of validator types.
+
 /// Generic validator.
 ///
 /// Function signature: String? Function(T?)

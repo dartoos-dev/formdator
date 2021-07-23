@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- Reorganization of the validator categories —
+  [92](https://github.com/dartoos-dev/formdator/issues/92) **BREAKING CHANGES**.
+
 ## [0.7.3] - 2021-07-23
 
 ### Changed
