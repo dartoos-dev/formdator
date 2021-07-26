@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- Match and ReqMatch for string pattern validations —
+  [94](https://github.com/dartoos-dev/formdator/issues/94).
+
 ## [0.8.0] - 2021-07-23
 
 ### Changed
