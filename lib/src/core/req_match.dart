@@ -5,10 +5,11 @@ import 'package:formdator/formdator.dart';
 class ReqMatch {
   /// Constrains input data to values that the pattern [pattern] has a match.
   ///
+  /// [blank] the error message in case of a null or empty input value.
   /// [mis] the error message in case of a mismatch between the input data and
   /// [pattern].
   ReqMatch(String pattern, {String? blank, String? mis})
-      : this.regExp(RegExp(pattern), blank:blank, mis: mis);
+      : this.regExp(RegExp(pattern), blank: blank, mis: mis);
 
   /// Constrains input data to values that the regular expression [regExp] has a
   /// match.

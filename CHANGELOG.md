@@ -9,6 +9,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Added
 
+- Hex and ReqHex for validating hexadecimal input values
+  [93](https://github.com/dartoos-dev/formdator/issues/93).
 - Match and ReqMatch for string pattern validations —
   [94](https://github.com/dartoos-dev/formdator/issues/94).
 

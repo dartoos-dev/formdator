@@ -1,14 +1,11 @@
-/// Validators related to Brazil and utility classes.
+/// Brazil-related validators.
 ///
-/// - Use the [Cep] class to validate optional CEPs, the [ReqCep] class to
-///   validate required CEPs, and the [CepStrip] class to remove non-digit
-///   characters from masked CEPs.
-/// - Use the [Cpf] class to validate optional CPFs, the [ReqCpf] class to
-///   validate required CPFs, and the [CpfStrip] class to remove non-digit
-///   characters from masked CPFs.
-/// - Use the [Cnpj] class to validate optional CNPJs, the [ReqCnpj] class to
-///   validate required CNPJs, and the [CnpjStrip] class to remove non-digit
-///   characters from masked CPFs.
+/// - Use [Cep] or [ReqCep] to validate CEP values, and [CepStrip] to remove
+///   non-digit characters from masked CEPs.
+/// - Use [Cpf] or [ReqCpf] to validate CPF values, and [CpfStrip] to remove
+///   non-digit characters from masked CPFs.
+/// - Use [Cnpj] or [ReqCnpj] to validate CNPJ values, and [CnpjStrip] to remove
+///   non-digit characters from masked CNPJs.
 library brazil;
 
 export 'src/brazil/cep.dart';

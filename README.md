@@ -37,10 +37,10 @@ packages, include:
 - Classes with short — yet meaningful — names like `Req` for a required field;
   `ReqEmail` for a non-empty, well-formed email; `Len.max` for a maximum number
   of characters; and so on.
-- Easy-to-compose validators: the command `Trim(Email())` produces a validator
-  that trims the entered email before validating it.
-- A built-in set of ready-to-use compound validators: if you need to
-  validate an email and limit its length to, say, 50 chars, simply pass an
+- Easy-to-compose validators: e.g. the command `Trim(Email())` produces a
+  validator that trims the entered email before validating it.
+- **Write Less and Do More:** built-in, ready-to-use set of compound validators.
+  To validate an email and limit its length to, say, 50 chars, simply pass an
   `Email.len(50)` or `ReqEmail.len(50)` object as the validation argument.
 - You can apply multiple validation rules at once by using the `Pair` or `Rules`
   classes.
@@ -86,7 +86,7 @@ task.
 ```
 
 The shorter command `ReqEmail.len(50)` is equivalent to the much longer command
-`Rules<String>([Req(), Len.max(50), Email()])`.
+`Rules<String>([Req(), Len.max(50), Email()])` — write less; do more!
 
 ## List of Validators
 
