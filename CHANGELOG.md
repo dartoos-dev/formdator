@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.8.1] - 2021-07-26
+
 ### Added
 
 - Hex and ReqHex for validating hexadecimal input values
