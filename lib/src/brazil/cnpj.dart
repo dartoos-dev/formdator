@@ -1,5 +1,4 @@
-import 'package:cpf_cnpj_validator/cnpj_validator.dart';
-import 'cnpj_strip.dart';
+import 'cnpj_val.dart';
 
 /// CNPJ - Cadastro Nacional de Pessoa Jurídica.
 ///
@@ -20,10 +19,6 @@ class Cnpj {
   /// Returns null if [cnpj] is well-formed; otherwise, the erro message.
   String? call(String? cnpj) {
     if (cnpj == null) return null;
-
-    final stripped = CnpjStrip(cnpj).value;
-    if (stripped == null) return _malformed;
-
-    return CNPJValidator.isValid(stripped, false) ? null : _malformed;
+    return CnpjVal(cnpj).isOk ? null : _malformed;
   }
 }

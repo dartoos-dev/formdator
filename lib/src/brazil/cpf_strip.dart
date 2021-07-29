@@ -1,19 +1,18 @@
 /// CPF as a digit-only value.
 ///
-/// CPFs matching the pattern '###.###.###-##' will have the dots "." and dash
-/// "-" stripped from them; but, if a CPF is already entirely numeric, it
-/// remains as is. Finally, in case of a malformed CPF, the null value will be
-/// returned to indicate a formatting error.
+/// CPFs that match the pattern '###.###.###-##' will be stripped of its two
+/// dots "." and hyphen "-". However, if a CPF is already fully numeric, it will
+/// remain as-is. Finally, if the CPF is malformed, then the null value will be
+/// returned as an indication of a formatting error.
 ///
 /// For example:
 ///
-/// - if the CPF is '493.803.840-41', then the return value will be '49380384041';
-/// - if the CPF is '49380384041', then the return value will also be
-///   '49380384041';
-/// - if the CPF is malformed as the value 'AAB.831.918+60', then the return
-///   value will be the null value.
+/// - if the CPF is '493.803.840-41', the return value will be '49380384041'.
+/// - if the CPF is '49380384041', the return value will also be '49380384041'.
+/// - if the CPF is a malformed value, such as 'AAB.831.918+60', then the return
+///   value will be null.
 class CpfStrip {
-  /// It strips the two dots '.' and dash '-' from the CPF.
+  /// Strips the CPF of its two dots '.' and hyphen '-'.
   const CpfStrip(this._cpf);
 
   /// The original cpf.
@@ -28,15 +27,17 @@ class CpfStrip {
   /// forwards to [value].
   String? call() => value;
 
-  /// CPF as a digit-only value — non-numeric characters are stripped from it.
+  /// CPF as a 11-digits value — non-numeric characters are stripped from it.
   ///
-  /// There are three scenarios for a CPF value. If it is:
-  ///   1. properly masked as '###.###.###-##', then the dots "." and dash "-"
-  ///   will be stripped from it (e.g., '133.497.166-07' becomes '13349716607').
-  ///   2. composed entirely of 11 numbers, then it will remain unchanged (e.g.,
-  ///   '4183191800' remains as is).
-  ///   3. malformed, then the null value will be returned to indicate a
-  ///   formatting error (e.g., '40.769-911.00' becomes null).
+  /// There are three scenarios for a CPF value:
+  ///
+  /// - if the CPF is properly masked (###.###.###-##), it will be stripped of
+  ///   its two dots "." and hyphen "-"; therefore, if the input value is
+  ///   '133.497.166-07', the return value will be '13349716607'.
+  /// - if the CPF is composed entirely of 11 numbers, it will remain unchanged;
+  ///   thus, the return value will be the CPF as-is.
+  /// - if the CPF is malformed, then the return value will be null as an
+  ///   indication of a formatting error.
   String? get value => _isWellFormed ? _strip : null;
 
   /// Strips the '.'s and '-' from the CPF value.
