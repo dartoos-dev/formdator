@@ -54,12 +54,8 @@ Callable Classes.
 A flexible package provides components that can be selected and grouped in
 various combinations so that user requirements can be fulfilled.
 
-The code below shows how you can easily group the `Rules`, `Req`, `Len`, and
-`Email` validators to create a kind of _'required-max-50-chars-email'_
-constraint.
-
 The code below shows how you can easily group the classes `Rules`, `Req`, `Len`,
-and `Email` to create a sort of _'email-required-max-50-characters'_ constraint.
+and `Email` to create a kind of _'email-required-max-50-characters'_ constraint.
 
 ```dart
   @override
