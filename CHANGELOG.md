@@ -9,7 +9,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Changed
 
-- drop the dependency in the "cpf_cnpj_validator" package —
+- drop the dependency on the "cpf_cnpj_validator" package —
   [104](https://github.com/dartoos-dev/formdator/issues/104).
 
 ## [0.8.1] - 2021-07-26
