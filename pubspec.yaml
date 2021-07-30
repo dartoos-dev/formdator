@@ -1,6 +1,6 @@
 name: formdator
 description: A formidable collection of Flutter form field validators that can be selected and grouped into various combinations through composition — Decorator Pattern.
-version: 0.8.1
+version: 0.8.2
 homepage: https://dartoos.dev
 repository: https://github.com/dartoos-dev/formdator
 

@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.8.2] - 2021-07-30
+
 ### Changed
 
 - drop the dependency on the "cpf_cnpj_validator" package —
