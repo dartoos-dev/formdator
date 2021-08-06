@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- stricter lint rules
+  [111](https://github.com/dartoos-dev/formdator/issues/111).
+
 ## [0.8.2] - 2021-07-30
 
 ### Changed

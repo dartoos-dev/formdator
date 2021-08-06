@@ -41,12 +41,12 @@ void main() {
         });
         test('Iterable', () {
           expect(zeroReqLen(null), blank);
-          expect(zeroReqLen([]), blank);
+          expect(zeroReqLen(<String>[]), blank);
           expect(zeroReqLen(['a']), diff);
         });
         test('Map', () {
           expect(zeroReqLen(null), blank);
-          expect(zeroReqLen({}), blank);
+          expect(zeroReqLen(<int, int>{}), blank);
           expect(zeroReqLen({1: 'a'}), diff);
         });
       });
@@ -71,14 +71,14 @@ void main() {
         });
         test('Iterable', () {
           expect(five(null), blank);
-          expect(five([]), blank);
+          expect(five(<String>[]), blank);
           expect(five(['1']), diff);
           expect(five(['1', '2', '3', '4', '5']), null);
           expect(five(['1', '2', '3', '4', '5', '6']), diff);
         });
         test('Map', () {
           expect(five(null), blank);
-          expect(five({}), blank);
+          expect(five(<int, int>{}), blank);
           expect(five({1: 'a'}), diff);
           expect(five({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(five({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}), diff);
@@ -103,14 +103,14 @@ void main() {
         });
         test('Iterable', () {
           expect(minFive(null), blank);
-          expect(minFive([]), blank);
+          expect(minFive(<String>[]), blank);
           expect(minFive(['1']), less);
           expect(minFive([1, 2, 3, 4, 5]), null);
           expect(minFive([1, 2, 3, 4, 5, 6]), null);
         });
         test('Map', () {
           expect(minFive(null), blank);
-          expect(minFive({}), blank);
+          expect(minFive(<int, int>{}), blank);
           expect(minFive({1: 'a'}), less);
           expect(minFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(
@@ -135,14 +135,14 @@ void main() {
         });
         test('Iterable', () {
           expect(maxFive(null), null);
-          expect(maxFive([]), null);
+          expect(maxFive(<String>[]), null);
           expect(maxFive(['a']), null);
           expect(maxFive([1, 2, 3, 4, 5]), null);
           expect(maxFive([1, 2, 3, 4, 5, 6]), great);
         });
         test('Map', () {
           expect(maxFive(null), null);
-          expect(maxFive({}), null);
+          expect(maxFive(<int, int>{}), null);
           expect(maxFive({1: 'a'}), null);
           expect(maxFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(
@@ -170,14 +170,14 @@ void main() {
         });
         test('Iterable', () {
           expect(rangeOneFive(null), blank);
-          expect(rangeOneFive([]), blank);
+          expect(rangeOneFive(<String>[]), blank);
           expect(rangeOneFive(['a']), null);
           expect(rangeOneFive([1, 2, 3, 4, 5]), null);
           expect(rangeOneFive([1, 2, 3, 4, 5, 6]), great);
         });
         test('Map', () {
           expect(rangeOneFive(null), blank);
-          expect(rangeOneFive({}), blank);
+          expect(rangeOneFive(<int, int>{}), blank);
           expect(rangeOneFive({1: 'a'}), null);
           expect(rangeOneFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(

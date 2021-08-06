@@ -34,10 +34,10 @@ void main() {
         expect(req(''), error);
       });
       test('empty iterable', () {
-        expect(req([]), error);
+        expect(req(<int>[]), error);
       });
       test('empty map', () {
-        expect(req({}), error);
+        expect(req(<int, int>{}), error);
       });
     });
   });

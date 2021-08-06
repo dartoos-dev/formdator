@@ -9,8 +9,7 @@ void main() {
       expect(vb(empty), empty);
       const input = 'some-text';
       expect(vb(input), input);
-      const blank = null;
-      expect(vb(blank), blank);
+      expect(vb(null), null);
     });
   });
 }
