@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- Integer Constraint Validators, Int and ReqInt —
+  [113](https://github.com/dartoos-dev/formdator/issues/113).
+
 ### Changed
 
 - stricter lint rules

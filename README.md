@@ -35,15 +35,16 @@ packages, include:
 - An object-oriented mindset: the elements for validation are **immutable**
   objects that can be combined in various configurations.
 - Classes with short — yet meaningful — names like `Req` for a required field;
-  `ReqEmail` for a non-empty, well-formed email; `Len.max` for a maximum number
-  of characters; and so on.
+  `ReqEmail` for a well-formed non-empty email; `Len` for length constraints;
+  `Int` for integer-only values; and so on.
 - Easy-to-compose validators: e.g. the command `Trim(Email())` produces a
   validator that trims the entered email before validating it.
 - You can apply multiple validation rules at once by using the `Pair` or `Rules`
   classes.
 - **Write Less and Do More:** built-in, ready-to-use set of compound validators.
-  E.g. to validate an email limited to, say, 50 chars, simply pass an instance
-  of `Email.len(50)` or `ReqEmail.len(50)` as the validation argument.
+  E.g. to validate an email and limits its length to at most 50 characters,
+  simply pass an instance of `Email.len(50)` or `ReqEmail.len(50)` as the
+  validation argument to the email field.
 
 For easier integration with the Flutter form fields, every validator implements
 the `call()` method so that any validator object can be called as a function —
@@ -55,7 +56,7 @@ A flexible package provides components that can be selected and grouped in
 various combinations so that user requirements can be fulfilled.
 
 The code below shows how you can easily group the classes `Rules`, `Req`, `Len`,
-and `Email` to create a kind of _'email-required-max-50-characters'_ constraint.
+and `Email` to create a kind of _'required-50-characters-email'_ constraint.
 
 ```dart
   @override
@@ -105,13 +106,13 @@ For a complete list of validators with detailed information about each one
 - [net](https://pub.dev/documentation/formdator/latest/net/net-library.html) —
   internet (Email, Ipv4, Ipv6, Mac, Url, etc).
 - [numeric](https://pub.dev/documentation/formdator/latest/numeric/numeric-library.html)
-  — validators related to numbers or digits (Digit, Hex, Num, etc).
+  — validators related to numbers or digits (Digit, Hex, Int, Num, etc).
 
 ## Demo application
 
 The demo application provides a fully working example, focused on demonstrating
-exactly four validators in action — _Pair, ReqLen, ReqEmail, and Equal_. You can
-take the code in this demo and experiment with it.
+exactly four validators in action — _Pair_, _ReqLen_, _ReqEmail_, and _Equal_.
+You can take the code in this demo and experiment with it.
 
 To run the demo application:
 

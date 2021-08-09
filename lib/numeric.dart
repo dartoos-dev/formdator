@@ -10,7 +10,9 @@ library numeric;
 
 export 'src/numeric/digit.dart';
 export 'src/numeric/hex.dart';
+export 'src/numeric/int.dart';
 export 'src/numeric/num.dart';
 export 'src/numeric/req_digit.dart';
 export 'src/numeric/req_hex.dart';
+export 'src/numeric/req_int.dart';
 export 'src/numeric/req_num.dart';
