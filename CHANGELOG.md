@@ -11,6 +11,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - Integer Constraint Validators, Int and ReqInt —
   [113](https://github.com/dartoos-dev/formdator/issues/113).
+- Num.pos (numbers >= 0) and Num.neg (numbers < 0) constructors —
+  [117](https://github.com/dartoos-dev/formdator/issues/117).
 
 ### Changed
 

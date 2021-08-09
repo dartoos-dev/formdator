@@ -22,6 +22,15 @@ class Num {
   Num.min(num min, {String? non, String? small})
       : _val = _AsNum(non, _Logic(min: min, s: small));
 
+  /// Constrains data to positive numbers (zero included).
+  ///
+  /// [non] "non-numeric", the error message if an input is not numeric; the
+  /// default value is 'not a number'.
+  /// [neg] the error message if an input value is negative; the default value
+  /// is 'it cannot be negative'.
+  Num.pos({String? non, String? neg})
+      : this.min(0, non: non, small: neg ?? 'it cannot be negative');
+
   /// Constrains data to numeric values that are less than or equal to [max].
   ///
   /// [max] the greatest valid number.
@@ -31,6 +40,16 @@ class Num {
   /// 'it cannot be > [max]'.
   Num.max(num max, {String? non, String? large})
       : _val = _AsNum(non, _Logic(max: max, l: large));
+
+  /// Constrains data to negative numbers (zero excluded).
+  ///
+  /// [non] "non-numeric", the error message if an input is not numeric; the
+  /// default value is 'not a number'.
+  /// [pos] the error message if an input value is positive; the default value
+  /// is 'it cannot be positive'.
+  Num.neg({String? non, String? pos})
+      : this.max(0 - double.minPositive,
+            non: non, large: pos ?? 'it cannot be positive');
 
   /// Constrains data to numeric values within the range [min–max].
   ///

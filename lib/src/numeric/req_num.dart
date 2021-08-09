@@ -21,6 +21,14 @@ class ReqNum {
   ReqNum.min(num min, {String? blank, String? non, String? small})
       : this._num(Num.min(min, non: non, small: small), blank);
 
+  /// Constrains data to positive numbers (zero included).
+  ///
+  /// [blank] the error message in case of a null or empty input value.
+  /// [non] "non-numeric", the error message if an input is not numeric.
+  /// [neg] the error message if an input value is negative.
+  ReqNum.pos({String? blank, String? non, String? neg})
+      : this._num(Num.pos(non: non, neg: neg), blank);
+
   /// Constrains data to numeric values that are less than or equal to [max].
   ///
   /// [max] the greatest valid number.
@@ -29,6 +37,15 @@ class ReqNum {
   /// [large] the error message if an input is too large.
   ReqNum.max(num max, {String? blank, String? non, String? large})
       : this._num(Num.max(max, non: non, large: large), blank);
+
+  /// Constrains data to negative numbers (zero excluded).
+  ///
+  /// [blank] the error message in case of a null or empty input value.
+  /// [non] "non-numeric", the error message if an input is not numeric.
+  /// [pos] the error message if an input value is positive; the default value
+  /// is 'it cannot be positive'.
+  ReqNum.neg({String? blank, String? non, String? pos})
+      : this._num(Num.neg(non: non, pos: pos), blank);
 
   /// Constrains data to numeric values within the range [min–max].
   ///

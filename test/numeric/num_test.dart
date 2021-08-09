@@ -64,6 +64,50 @@ void main() {
         expect(numMin('9999999999'), null);
       });
     });
+    group('pos:', () {
+      const neg = 'negative number';
+      final pos = Num.pos(non: error, neg: neg);
+      test('null', () {
+        expect(pos(null), null);
+      });
+      test('empty', () {
+        expect(pos(''), error);
+      });
+      test('valid input', () {
+        expect(pos('0'), null);
+        expect(pos('0.001'), null);
+        expect(pos('+0.1'), null);
+        expect(pos('0.99'), null);
+        expect(pos('10'), null);
+        expect(pos('10000000000'), null);
+      });
+      group('Invalid input', () {
+        test('negative numbers', () {
+          expect(pos('-0.001'), neg);
+          expect(pos('-0.9999'), neg);
+          expect(pos('-1'), neg);
+          expect(pos('-1.1'), neg);
+          expect(pos('-10'), neg);
+          expect(pos('-10000000000'), neg);
+        });
+        test('null', () {
+          expect(pos(null), null);
+        });
+        test('empty', () {
+          expect(pos(''), error);
+        });
+        test('last digit non-integer', () {
+          expect(pos('123456789987654321X'), error);
+        });
+        test('non-numeric', () {
+          expect(pos('.'), error);
+          expect(pos('11,111'), error);
+          expect(pos('11A'), error);
+          expect(pos('A1122'), error);
+          expect(pos('000099999X'), error);
+        });
+      });
+    });
     group('max:', () {
       const large = 'too large';
       final numMax = Num.max(10, non: error, large: large);
@@ -82,6 +126,49 @@ void main() {
         expect(numMax('-1'), null);
         expect(numMax('-9999999999'), null);
         expect(numMax('9.9'), null);
+      });
+    });
+    group('neg:', () {
+      const pos = 'negative number';
+      final neg = Num.neg(non: error, pos: pos);
+      test('null', () {
+        expect(neg(null), null);
+      });
+      test('empty', () {
+        expect(neg(''), error);
+      });
+      test('valid input', () {
+        expect(neg('-0.001'), null);
+        expect(neg('-0.9'), null);
+        expect(neg('-1'), null);
+        expect(neg('-100'), null);
+        expect(neg('-100000000000'), null);
+      });
+      group('Invalid input', () {
+        test('negative numbers', () {
+          expect(neg('0'), pos);
+          expect(neg('0.001'), pos);
+          expect(neg('1'), pos);
+          expect(neg('1.1'), pos);
+          expect(neg('10'), pos);
+          expect(neg('10000000000'), pos);
+        });
+        test('null', () {
+          expect(neg(null), null);
+        });
+        test('empty', () {
+          expect(neg(''), error);
+        });
+        test('last digit non-integer', () {
+          expect(neg('123456789987654321X'), error);
+        });
+        test('non-numeric', () {
+          expect(neg('.'), error);
+          expect(neg('11,111'), error);
+          expect(neg('11A'), error);
+          expect(neg('A1122'), error);
+          expect(neg('000099999X'), error);
+        });
       });
     });
     group('range:', () {

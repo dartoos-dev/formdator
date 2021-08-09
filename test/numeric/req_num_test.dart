@@ -65,6 +65,30 @@ void main() {
         expect(numMin('9999999999'), null);
       });
     });
+    group('pos:', () {
+      const neg = 'negative number';
+      final pos = ReqNum.pos(blank: blank, non: error, neg: neg);
+      test('null input', () {
+        expect(pos(null), blank);
+      });
+      test('empty input', () {
+        expect(pos(''), blank);
+      });
+      test('negative numbers', () {
+        expect(pos('-0.001'), neg);
+        expect(pos('-1'), neg);
+        expect(pos('-1.1'), neg);
+        expect(pos('-10'), neg);
+        expect(pos('-10000000000'), neg);
+      });
+      test('valid input', () {
+        expect(pos('0'), null);
+        expect(pos('1.1'), null);
+        expect(pos('+2.222222'), null);
+        expect(pos('10'), null);
+        expect(pos('10000000000'), null);
+      });
+    });
     group('max:', () {
       const large = 'too large';
       final numMax = ReqNum.max(10, blank: blank, non: error, large: large);
@@ -83,6 +107,30 @@ void main() {
         expect(numMax('-1'), null);
         expect(numMax('-9999999999'), null);
         expect(numMax('9.9'), null);
+      });
+    });
+    group('neg:', () {
+      const pos = 'positive number';
+      final neg = ReqNum.neg(blank: blank, non: error, pos: pos);
+      test('null', () {
+        expect(neg(null), blank);
+      });
+      test('empty', () {
+        expect(neg(''), blank);
+      });
+      test('positive numbers', () {
+        expect(neg('0'), pos);
+        expect(neg('1.1'), pos);
+        expect(neg('+2.22'), pos);
+        expect(neg('10'), pos);
+        expect(neg('10000000000'), pos);
+      });
+      test('valid', () {
+        expect(neg('-0.001'), null);
+        expect(neg('-1'), null);
+        expect(neg('-1.1'), null);
+        expect(neg('-10'), null);
+        expect(neg('-10000000000'), null);
       });
     });
     group('range:', () {
