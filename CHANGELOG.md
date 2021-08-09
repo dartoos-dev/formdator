@@ -16,6 +16,9 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - stricter lint rules
   [111](https://github.com/dartoos-dev/formdator/issues/111).
+- rename the error message of Num and ReqNum from "nan" to "non" —
+  [115](https://github.com/dartoos-dev/formdator/issues/115) **BREAKING
+  CHANGE**.
 
 ## [0.8.2] - 2021-07-30
 
