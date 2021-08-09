@@ -4,7 +4,7 @@ import 'package:formdator/formdator.dart';
 void main() {
   const blank = 'The value is required';
   const error = 'The value must be numeric';
-  final numeric = ReqNum(blank: blank, nan: error);
+  final numeric = ReqNum(blank: blank, non: error);
 
   group('ReqNum', () {
     group('():', () {
@@ -48,7 +48,7 @@ void main() {
     });
     group('min:', () {
       const small = 'too small';
-      final numMin = ReqNum.min(10, blank: blank, nan: error, small: small);
+      final numMin = ReqNum.min(10, blank: blank, non: error, small: small);
       test('null input', () {
         expect(numMin(null), blank);
       });
@@ -67,7 +67,7 @@ void main() {
     });
     group('max:', () {
       const large = 'too large';
-      final numMax = ReqNum.max(10, blank: blank, nan: error, large: large);
+      final numMax = ReqNum.max(10, blank: blank, non: error, large: large);
       test('null', () {
         expect(numMax(null), blank);
       });
@@ -89,9 +89,9 @@ void main() {
       const small = 'too small';
       const large = 'too large';
       final range = ReqNum.range(1, 10,
-          blank: blank, nan: error, small: small, large: large);
+          blank: blank, non: error, small: small, large: large);
       final negRange = ReqNum.range(-10, -1,
-          blank: blank, nan: error, small: small, large: large);
+          blank: blank, non: error, small: small, large: large);
       test('null', () {
         expect(range(null), blank);
         expect(negRange(null), blank);
