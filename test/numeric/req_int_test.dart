@@ -57,12 +57,11 @@ void main() {
       });
       test('too small', () {
         expect(numMin('9'), small);
-        expect(numMin('9.9'), small);
         expect(numMin('-10'), small);
       });
       test('valid input', () {
-        expect(numMin('10.1'), null);
-        expect(numMin('9999999999'), null);
+        expect(numMin('10'), null);
+        expect(numMin('1000000000'), null);
       });
     });
     group('pos:', () {
@@ -95,14 +94,14 @@ void main() {
         expect(numMax(''), blank);
       });
       test('too large', () {
-        expect(numMax('10.1'), large);
-        expect(numMax('99999999999'), large);
+        expect(numMax('11'), large);
+        expect(numMax('10000000000'), large);
       });
       test('valid', () {
-        expect(numMax('0'), null);
+        expect(numMax('-10000000000'), null);
         expect(numMax('-1'), null);
-        expect(numMax('-9999999999'), null);
-        expect(numMax('9.9'), null);
+        expect(numMax('0'), null);
+        expect(numMax('9'), null);
       });
     });
     group('neg:', () {
@@ -141,16 +140,13 @@ void main() {
         expect(negRange(''), blank);
       });
       test('too small', () {
-        expect(range('0.9'), small);
-        expect(range('0'), small);
-        expect(range('-9'), small);
-        expect(negRange('-10.1'), small);
         expect(negRange('-11'), small);
+        expect(negRange('-10000000000'), small);
       });
       test('too large', () {
-        expect(range('10.1'), large);
+        expect(range('11'), large);
         expect(range('999999'), large);
-        expect(negRange('-0.9'), large);
+        expect(negRange('0'), large);
         expect(negRange('999999'), large);
       });
 
