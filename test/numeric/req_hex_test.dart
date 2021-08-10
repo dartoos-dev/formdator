@@ -11,12 +11,12 @@ void main() {
     const len = 2;
     const min = 3;
     const max = 8;
-    final dig = ReqHex(blank: blank, non: error);
-    final digLen = ReqHex.len(len, blank: blank, non: error, diff: diff);
-    final digMin = ReqHex.min(min, blank: blank, non: error, less: less);
-    final digMax = ReqHex.max(max, blank: blank, non: error, great: great);
+    final dig = ReqHex(blank: blank, mal: error);
+    final digLen = ReqHex.len(len, blank: blank, mal: error, diff: diff);
+    final digMin = ReqHex.min(min, blank: blank, mal: error, less: less);
+    final digMax = ReqHex.max(max, blank: blank, mal: error, great: great);
     final digRange = ReqHex.range(min, max,
-        blank: blank, non: error, less: less, great: great);
+        blank: blank, mal: error, less: less, great: great);
     test('null', () {
       expect(dig(null), blank);
       expect(digLen(null), blank);
