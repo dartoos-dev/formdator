@@ -32,19 +32,19 @@ alt="EO-Color logo" width="101" height="48"/>
 validating Flutter form fields. Its main benefits, compared to all other similar
 packages, include:
 
-- An object-oriented mindset: the elements for validation are **immutable**
+- Dependency-free package: there is only pure Dart code.
+- Object-oriented mindset: validation elements are **immutable**
   objects that can be combined in various configurations.
-- Classes with short — yet meaningful — names like `Req` for a required field;
-  `ReqEmail` for a well-formed non-empty email; `Len` for length constraints;
+- Classes with short - yet meaningful - names like `Req` for a required field;
+  `ReqEmail` for a non-empty, well-formed email; `Len` for length constraints;
   `Int` for integer-only values; and so on.
-- Easy-to-compose validators: e.g. the command `Trim(Email())` produces a
-  validator that trims the entered email before validating it.
-- You can apply multiple validation rules at once by using the `Pair` or `Rules`
-  classes.
-- **Write Less and Do More:** built-in, ready-to-use set of compound validators.
-  E.g. to validate an email and limits its length to at most 50 characters,
-  simply pass an instance of `Email.len(50)` or `ReqEmail.len(50)` as the
-  validation argument to the email field.
+- Easy-to-compose validators: for example, the `Trim(Email())` command produces
+  a validator that trims the entered email before validating it.
+- Multiple validation at once: you can apply multiple validation rules at once
+  by using the `Pair` or `Rules` classes.
+- Built-in set of compound validators: e.g. to validate an email and
+  limit its length to a maximum of 50 characters, simply use an instance of the
+  `Email.len(50)` class — **write less; do more!**
 
 For easier integration with the Flutter form fields, every validator implements
 the `call()` method so that any validator object can be called as a function —

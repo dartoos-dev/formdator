@@ -12,7 +12,7 @@ class Digit {
   /// Constrains the input data to the digits [0-9].
   ///
   /// [mal] "malformed", the error message if non-digit characters are found;
-  /// the default value is 'malformed value: non-digit characters found'.
+  /// the default value is 'non-digit character(s) found'.
   Digit({String? mal}) : _valDig = _DigitImpl(mal, const Ok());
 
   /// Constrains the input data to the digits [0-9] and its length (number of
@@ -20,7 +20,7 @@ class Digit {
   ///
   /// [len] the number of digits; it must be > 0.
   /// [mal] "malformed", the error message if non-digit characters are found;
-  /// the default value is 'malformed value: non-digit characters found'.
+  /// the default value is 'non-digit character(s) found'.
   /// [diff] the error message if the number of digits is different from [len].
   Digit.len(int len, {String? mal, String? diff})
       : assert(len > 0),
@@ -31,7 +31,7 @@ class Digit {
   ///
   /// [min] the minimum number of digits; it must be > 0.
   /// [mal] "malformed", the error message if non-digit characters are found;
-  /// the default value is 'malformed value: non-digit characters found'.
+  /// the default value is 'non-digit character(s) found'.
   /// [less] the error message if the number of digits is less than [min].
   Digit.min(int min, {String? mal, String? less})
       : assert(min > 0),
@@ -42,7 +42,7 @@ class Digit {
   ///
   /// [max] the maximum number of digits; it must be > 0.
   /// [mal] "malformed", the error message if non-digit characters are found;
-  /// the default value is 'malformed value: non-digit characters found'.
+  /// the default value is 'non-digit character(s) found'.
   /// [great] the error message if the number of digits is greater than [max].
   Digit.max(int max, {String? mal, String? great})
       : assert(max > 0),
@@ -54,7 +54,7 @@ class Digit {
   /// [min] the minimum number of digits; it must be > 0 and < [max].
   /// [max] the maximum number of digits; it must be > 0 and > [min].
   /// [mal] "malformed", the error message if non-digit characters are found;
-  /// the default value is 'malformed value: non-digit characters found'.
+  /// the default value is 'non-digit character(s) found'.
   /// [less] the error message if the number of digits is less than [min].
   /// [great] the error message if the number of digits is greater than [max].
   Digit.range(int min, int max, {String? mal, String? less, String? great})
@@ -76,7 +76,7 @@ class Digit {
 class _DigitImpl {
   /// Ctor. [mal] non-digit error message; [extra] additional validation step.
   _DigitImpl(String? mal, ValObj extra)
-      : _nonDigit = mal ?? 'malformed value: non-digit characters found',
+      : _nonDigit = mal ?? 'non-digit character(s) found',
         _extra = extra;
 
   final String _nonDigit;

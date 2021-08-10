@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 void main() {
   const error = 'The value must be numeric';
-  final numeric = Num(non: error);
+  final numeric = Num(mal: error);
 
   group('Num', () {
     group('():', () {
@@ -47,7 +47,7 @@ void main() {
     });
     group('min:', () {
       const small = 'too small';
-      final numMin = Num.min(10, non: error, small: small);
+      final numMin = Num.min(10, mal: error, small: small);
       test('null input', () {
         expect(numMin(null), null);
       });
@@ -66,7 +66,7 @@ void main() {
     });
     group('pos:', () {
       const neg = 'negative number';
-      final pos = Num.pos(non: error, neg: neg);
+      final pos = Num.pos(mal: error, neg: neg);
       test('null', () {
         expect(pos(null), null);
       });
@@ -110,7 +110,7 @@ void main() {
     });
     group('max:', () {
       const large = 'too large';
-      final numMax = Num.max(10, non: error, large: large);
+      final numMax = Num.max(10, mal: error, large: large);
       test('null', () {
         expect(numMax(null), null);
       });
@@ -130,7 +130,7 @@ void main() {
     });
     group('neg:', () {
       const pos = 'negative number';
-      final neg = Num.neg(non: error, pos: pos);
+      final neg = Num.neg(mal: error, pos: pos);
       test('null', () {
         expect(neg(null), null);
       });
@@ -174,9 +174,9 @@ void main() {
     group('range:', () {
       const small = 'too small';
       const large = 'too large';
-      final range = Num.range(1, 10, non: error, small: small, large: large);
+      final range = Num.range(1, 10, mal: error, small: small, large: large);
       final negRange =
-          Num.range(-10, -1, non: error, small: small, large: large);
+          Num.range(-10, -1, mal: error, small: small, large: large);
       test('null', () {
         expect(range(null), null);
         expect(negRange(null), null);
