@@ -7,38 +7,38 @@ class ReqDigit {
   /// Constrains the input data to the digits [0-9].
   ///
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] the error message if a non-digit character is found.
-  ReqDigit({String? blank, String? non}) : this._dig(Digit(non: non), blank);
+  /// [mal] the error message if a non-digit character is found.
+  ReqDigit({String? blank, String? mal}) : this._dig(Digit(mal: mal), blank);
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to [len] digits.
   ///
   /// [len] the number of digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] the error message if a non-digit character is found.
+  /// [mal] the error message if a non-digit character is found.
   /// [diff] the error message if the number of digits is different from [len].
-  ReqDigit.len(int len, {String? blank, String? non, String? diff})
-      : this._dig(Digit.len(len, non: non, diff: diff), blank);
+  ReqDigit.len(int len, {String? blank, String? mal, String? diff})
+      : this._dig(Digit.len(len, mal: mal, diff: diff), blank);
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to a minimum of [min] digits.
   ///
   /// [min] the minimum number of digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] the error message if a non-digit character is found.
+  /// [mal] the error message if a non-digit character is found.
   /// [less] the error message if the number of digits is less than [min].
-  ReqDigit.min(int min, {String? blank, String? non, String? less})
-      : this._dig(Digit.min(min, non: non, less: less), blank);
+  ReqDigit.min(int min, {String? blank, String? mal, String? less})
+      : this._dig(Digit.min(min, mal: mal, less: less), blank);
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to a maximum of [min] digits.
   ///
   /// [max] the maximum number of digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] the error message if a non-digit character is found.
+  /// [mal] the error message if a non-digit character is found.
   /// [great] the error message if the number of digits is greater than [max].
-  ReqDigit.max(int max, {String? blank, String? non, String? great})
-      : this._dig(Digit.max(max, non: non, great: great), blank);
+  ReqDigit.max(int max, {String? blank, String? mal, String? great})
+      : this._dig(Digit.max(max, mal: mal, great: great), blank);
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) within the range [min–max].
@@ -46,18 +46,18 @@ class ReqDigit {
   /// [min] the minimum number of digits; it must be > 0 and < [max].
   /// [max] the maximum number of digits; it must be > 0 and > [min].
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] the error message if a non-digit character is found.
+  /// [mal] the error message if a non-digit character is found.
   /// [less] the error message if the number of digits is less than [min].
   /// [great] the error message if the number of digits is greater than [max].
   ReqDigit.range(
     int min,
     int max, {
     String? blank,
-    String? non,
+    String? mal,
     String? less,
     String? great,
   }) : this._dig(
-          Digit.range(min, max, non: non, less: less, great: great),
+          Digit.range(min, max, mal: mal, less: less, great: great),
           blank,
         );
 

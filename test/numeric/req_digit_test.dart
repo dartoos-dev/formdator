@@ -8,12 +8,12 @@ void main() {
     const diff = 'length error';
     const less = 'the length is too short';
     const great = 'the length is too long';
-    final reqDig = ReqDigit(blank: blank, non: error);
-    final reqDigLen = ReqDigit.len(2, blank: blank, non: error, diff: diff);
-    final reqDigMin = ReqDigit.min(3, blank: blank, non: error, less: less);
-    final reqDigMax = ReqDigit.max(6, blank: blank, non: error, great: great);
+    final reqDig = ReqDigit(blank: blank, mal: error);
+    final reqDigLen = ReqDigit.len(2, blank: blank, mal: error, diff: diff);
+    final reqDigMin = ReqDigit.min(3, blank: blank, mal: error, less: less);
+    final reqDigMax = ReqDigit.max(6, blank: blank, mal: error, great: great);
     final reqDigRange = ReqDigit.range(4, 6,
-        blank: blank, non: error, less: less, great: great);
+        blank: blank, mal: error, less: less, great: great);
     test('null', () {
       expect(reqDig(null), blank);
       expect(reqDigLen(null), blank);
