@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.9.0] - 2021-08-10
+
 ### Added
 
 - Integer Constraint Validators, Int and ReqInt —
