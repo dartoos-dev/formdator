@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('ReqDigit —', () {
@@ -93,13 +93,13 @@ void main() {
       expect(reqDigRange(minusSign), error);
     });
     test('assertions', () {
-      expect(() => Digit.len(-1), throwsAssertionError);
-      expect(() => Digit.min(-1), throwsAssertionError);
-      expect(() => Digit.max(0), throwsAssertionError);
-      expect(() => Digit.range(0, 1), throwsAssertionError);
-      expect(() => Digit.range(1, -1), throwsAssertionError);
-      expect(() => Digit.range(2, 2), throwsAssertionError);
-      expect(() => Digit.range(5, 4), throwsAssertionError);
+      expect(() => Digit.len(-1), throwsA(isA<AssertionError>()));
+      expect(() => Digit.min(-1), throwsA(isA<AssertionError>()));
+      expect(() => Digit.max(0), throwsA(isA<AssertionError>()));
+      expect(() => Digit.range(0, 1), throwsA(isA<AssertionError>()));
+      expect(() => Digit.range(1, -1), throwsA(isA<AssertionError>()));
+      expect(() => Digit.range(2, 2), throwsA(isA<AssertionError>()));
+      expect(() => Digit.range(5, 4), throwsA(isA<AssertionError>()));
     });
   });
 }

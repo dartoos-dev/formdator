@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Len —', () {
@@ -8,12 +8,12 @@ void main() {
     const great = 'the value is too large';
     group('assertions and error:', () {
       test('invalid length', () {
-        expect(() => Len(-1), throwsAssertionError);
-        expect(() => Len.min(-1), throwsAssertionError);
-        expect(() => Len.min(0), throwsAssertionError);
-        expect(() => Len.max(-1), throwsAssertionError);
-        expect(() => Len.max(0), throwsAssertionError);
-        expect(() => Len.range(4, 2), throwsAssertionError);
+        expect(() => Len(-1), throwsA(isA<AssertionError>()));
+        expect(() => Len.min(-1), throwsA(isA<AssertionError>()));
+        expect(() => Len.min(0), throwsA(isA<AssertionError>()));
+        expect(() => Len.max(-1), throwsA(isA<AssertionError>()));
+        expect(() => Len.max(0), throwsA(isA<AssertionError>()));
+        expect(() => Len.range(4, 2), throwsA(isA<AssertionError>()));
       });
       test('input type other than String, num, Iterable, or Map', () {
         expect(() => Len(10).call(true), throwsArgumentError);

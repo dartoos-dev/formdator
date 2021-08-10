@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
+import 'package:test/test.dart';
 
 /// Currently the lowest postal code is 01001-000 and the highest one is
 /// 99990-970.

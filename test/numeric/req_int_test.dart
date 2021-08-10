@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
+import 'package:test/test.dart';
 
 void main() {
   const blank = 'The value is required';
@@ -151,8 +151,8 @@ void main() {
       });
 
       test('illegal range, min >= max', () {
-        expect(() => Int.range(10, 1), throwsAssertionError);
-        expect(() => Int.range(10, 10), throwsAssertionError);
+        expect(() => Int.range(10, 1), throwsA(isA<AssertionError>()));
+        expect(() => Int.range(10, 10), throwsA(isA<AssertionError>()));
       });
       test('valid input', () {
         expect(range('5'), null);

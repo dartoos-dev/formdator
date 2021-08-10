@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- this package has become dependency-free; it doesn't even depend on the Flutter
+  SDK — [120](https://github.com/dartoos-dev/formdator/issues/120).
+
 ## [0.9.0] - 2021-08-10
 
 ### Added

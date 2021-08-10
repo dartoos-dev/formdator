@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:formdator/formdator.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('ReqHex —', () {
@@ -96,13 +96,13 @@ void main() {
       expect(digRange(minusSign), error);
     });
     test('assertions', () {
-      expect(() => Hex.len(-1), throwsAssertionError);
-      expect(() => Hex.min(-1), throwsAssertionError);
-      expect(() => Hex.max(0), throwsAssertionError);
-      expect(() => Hex.range(0, 1), throwsAssertionError);
-      expect(() => Hex.range(1, -1), throwsAssertionError);
-      expect(() => Hex.range(2, 2), throwsAssertionError);
-      expect(() => Hex.range(5, 4), throwsAssertionError);
+      expect(() => Hex.len(-1), throwsA(isA<AssertionError>()));
+      expect(() => Hex.min(-1), throwsA(isA<AssertionError>()));
+      expect(() => Hex.max(0), throwsA(isA<AssertionError>()));
+      expect(() => Hex.range(0, 1), throwsA(isA<AssertionError>()));
+      expect(() => Hex.range(1, -1), throwsA(isA<AssertionError>()));
+      expect(() => Hex.range(2, 2), throwsA(isA<AssertionError>()));
+      expect(() => Hex.range(5, 4), throwsA(isA<AssertionError>()));
     });
   });
 }
