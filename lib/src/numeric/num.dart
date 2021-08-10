@@ -8,62 +8,62 @@ import 'package:formdator/formdator.dart';
 class Num {
   /// Constrains data to numeric values.
   ///
-  /// [non] "non-numeric", the error message in case of a non-numeric input; the
-  /// default value is 'not a number'.
-  Num({String? non}) : _val = _AsNum(non, const Ok());
+  /// [mal] "malformed", the error message in case of non-numeric input values;
+  /// the default value is 'not a number'.
+  Num({String? mal}) : _val = _AsNum(mal, const Ok());
 
   /// Constrains data to numeric values greater than or equal to [min].
   ///
   /// [min] the smallest valid number.
-  /// [non] "non-numeric", the error message if an input is not numeric; the
-  /// default value is 'not a number'.
+  /// [mal] "malformed", the error message in case of non-numeric input values;
+  /// the default value is 'not a number'.
   /// [small] the error message if an input is too small; the default value is
   /// 'it cannot be < [min]'.
-  Num.min(num min, {String? non, String? small})
-      : _val = _AsNum(non, _Logic(min: min, s: small));
+  Num.min(num min, {String? mal, String? small})
+      : _val = _AsNum(mal, _Logic(min: min, s: small));
 
   /// Constrains data to positive numbers (zero included).
   ///
-  /// [non] "non-numeric", the error message if an input is not numeric; the
-  /// default value is 'not a number'.
+  /// [mal] "malformed", the error message in case of non-numeric input values;
+  /// the default value is 'not a number'.
   /// [neg] the error message if an input value is negative; the default value
   /// is 'it cannot be negative'.
-  Num.pos({String? non, String? neg})
-      : this.min(0, non: non, small: neg ?? 'it cannot be negative');
+  Num.pos({String? mal, String? neg})
+      : this.min(0, mal: mal, small: neg ?? 'it cannot be negative');
 
   /// Constrains data to numeric values that are less than or equal to [max].
   ///
   /// [max] the greatest valid number.
-  /// [non] "non-numeric", the error message if an input is not numeric; the
-  /// default value is 'not a number'.
+  /// [mal] "malformed", the error message in case of non-numeric input values;
+  /// the default value is 'not a number'.
   /// [large] the error message if an input is too large; the default value is
   /// 'it cannot be > [max]'.
-  Num.max(num max, {String? non, String? large})
-      : _val = _AsNum(non, _Logic(max: max, l: large));
+  Num.max(num max, {String? mal, String? large})
+      : _val = _AsNum(mal, _Logic(max: max, l: large));
 
   /// Constrains data to negative numbers (zero excluded).
   ///
-  /// [non] "non-numeric", the error message if an input is not numeric; the
-  /// default value is 'not a number'.
+  /// [mal] "malformed", the error message in case of non-numeric input values;
+  /// the default value is 'not a number'.
   /// [pos] the error message if an input value is positive; the default value
   /// is 'it cannot be positive'.
-  Num.neg({String? non, String? pos})
+  Num.neg({String? mal, String? pos})
       : this.max(0 - double.minPositive,
-            non: non, large: pos ?? 'it cannot be positive');
+            mal: mal, large: pos ?? 'it cannot be positive');
 
   /// Constrains data to numeric values within the range [min–max].
   ///
   /// [min] the smallest valid number; it must be < [max].
   /// [max] the largest valid number; it must be > [min].
-  /// [non] "non-numeric", the error message if an input is not numeric; the
-  /// default value is 'not a number'.
+  /// [mal] "malformed", the error message in case of non-numeric input values;
+  /// the default value is 'not a number'.
   /// [small] the error message if an input is too small; the default value is
   /// 'it cannot be < [min]'.
   /// [large] the error message if an input is too large; the default value is
   /// 'it cannot be > [max]'.
-  Num.range(num min, num max, {String? non, String? small, String? large})
+  Num.range(num min, num max, {String? mal, String? small, String? large})
       : assert(min < max),
-        _val = _AsNum(non, _Logic(min: min, max: max, s: small, l: large));
+        _val = _AsNum(mal, _Logic(min: min, max: max, s: small, l: large));
 
   final _AsNum _val;
 
@@ -72,9 +72,9 @@ class Num {
 }
 
 class _AsNum {
-  /// [non] The "Not-a-Number" error message; defaults to 'not a number'.
+  /// [mal] The "Not-a-Number" error message; defaults to 'not a number'.
   /// [logic] the logic to be applied to a numeric input.
-  _AsNum(String? non, this._logic) : _non = non ?? 'not a number';
+  _AsNum(String? mal, this._logic) : _non = mal ?? 'not a number';
 
   /// Logic code related to numeric values.
   final String? Function(num) _logic;

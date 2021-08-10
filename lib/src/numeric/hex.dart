@@ -53,7 +53,7 @@ class Hex {
   ///
   /// [min] the minimum number of hex-digits; it must be > 0 and < [max].
   /// [max] the maximum number of hex-digits; it must be > 0 and > [min].
-  /// [mal] the error message if non-hex character are found; the default value
+  /// [mal] the error message if non-hex characters are found; the default value
   /// is 'non-hex-digit character(s) found'.
   /// [less] the error message if the number of hex-digits is less than [min].
   /// [great] the error message if the number of hex-digits is greater than [max].
