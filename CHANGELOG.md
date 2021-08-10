@@ -9,7 +9,7 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Changed
 
-- rename the parameter "non" param. to "mal" in all classes that use it —
+- rename the parameter "non" to "mal" in classes that use it —
   [122](https://github.com/dartoos-dev/formdator/issues/122) **BREAKING
   CHANGE**.
 - turn this package into a dependency-free package; it doesn't even depend on
