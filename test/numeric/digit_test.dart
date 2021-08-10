@@ -7,11 +7,11 @@ void main() {
     const diff = 'length error';
     const less = 'the length is too short';
     const great = 'the length is too long';
-    final dig = Digit(non: error);
-    final digLen = Digit.len(2, non: error, diff: diff);
-    final digMin = Digit.min(3, non: error, less: less);
-    final digMax = Digit.max(6, non: error, great: great);
-    final digRange = Digit.range(4, 6, non: error, less: less, great: great);
+    final dig = Digit(mal: error);
+    final digLen = Digit.len(2, mal: error, diff: diff);
+    final digMin = Digit.min(3, mal: error, less: less);
+    final digMax = Digit.max(6, mal: error, great: great);
+    final digRange = Digit.range(4, 6, mal: error, less: less, great: great);
     test('null', () {
       expect(dig(null), null);
       expect(digLen(null), null);
