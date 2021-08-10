@@ -10,11 +10,11 @@ void main() {
     const len = 2;
     const min = 3;
     const max = 8;
-    final dig = Hex(non: error);
-    final digLen = Hex.len(len, non: error, diff: diff);
-    final digMin = Hex.min(min, non: error, less: less);
-    final digMax = Hex.max(max, non: error, great: great);
-    final digRange = Hex.range(min, max, non: error, less: less, great: great);
+    final dig = Hex(mal: error);
+    final digLen = Hex.len(len, mal: error, diff: diff);
+    final digMin = Hex.min(min, mal: error, less: less);
+    final digMax = Hex.max(max, mal: error, great: great);
+    final digRange = Hex.range(min, max, mal: error, less: less, great: great);
     test('null', () {
       expect(dig(null), null);
       expect(digLen(null), null);
