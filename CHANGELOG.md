@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.10.0] - 2021-08-10
+
 ### Changed
 
 - rename the parameter "non" to "mal" in classes that use it —
