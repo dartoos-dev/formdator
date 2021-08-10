@@ -8,67 +8,62 @@ import 'package:formdator/formdator.dart';
 class Int {
   /// Constrains data to integer numbers.
   ///
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
-  Int({String? non}) : _val = _AsInt(non, const Ok());
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
+  Int({String? mal}) : _val = _AsInt(mal, const Ok());
 
   /// Constrains data to integer numbers greater than or equal to [min].
   ///
   /// [min] the smallest valid integer number.
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
   /// [small] the error message if an input value is too small; the default
   /// value is 'it cannot be < [min]'.
-  Int.min(int min, {String? non, String? small})
-      : _val = _AsInt(non, _Logic(min: min, s: small));
+  Int.min(int min, {String? mal, String? small})
+      : _val = _AsInt(mal, _Logic(min: min, s: small));
 
   /// Constrains data to positive integer numbers (zero included).
   ///
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
   /// [neg] the error message if an input value is negative; the default value
   /// is 'it cannot be negative'.
-  Int.pos({String? non, String? neg})
-      : this.min(0, non: non, small: neg ?? 'it cannot be negative');
+  Int.pos({String? mal, String? neg})
+      : this.min(0, mal: mal, small: neg ?? 'it cannot be negative');
 
   /// Constrains data to integer values that are less than or equal to [max].
   ///
   /// [max] the greatest valid integer number.
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
   /// character(s)'.
   /// [large] the error message if an input value is too large; the default
   /// value is 'it cannot be > [max]'.
-  Int.max(int max, {String? non, String? large})
-      : _val = _AsInt(non, _Logic(max: max, l: large));
+  Int.max(int max, {String? mal, String? large})
+      : _val = _AsInt(mal, _Logic(max: max, l: large));
 
   /// Constrains data to negative integer numbers (zero excluded).
   ///
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
   /// [pos] the error message if an input value is positive; the default value
   /// is 'it cannot be positive'.
-  Int.neg({String? non, String? pos})
-      : this.max(-1, non: non, large: pos ?? 'it cannot be positive');
+  Int.neg({String? mal, String? pos})
+      : this.max(-1, mal: mal, large: pos ?? 'it cannot be positive');
 
   /// Constrains data to integer values within the range [min–max].
   ///
   /// [min] the smallest valid number; it must be < [max].
   /// [max] the largest valid number; it must be > [min].
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
   /// [small] the error message if an input value is too small; the default
   /// value is 'it cannot be < [min]'.
   /// [large] the error message if an input value is too large; the default
   /// value is 'it cannot be > [max]'.
-  Int.range(int min, int max, {String? non, String? small, String? large})
+  Int.range(int min, int max, {String? mal, String? small, String? large})
       : assert(min < max),
-        _val = _AsInt(non, _Logic(min: min, max: max, s: small, l: large));
+        _val = _AsInt(mal, _Logic(min: min, max: max, s: small, l: large));
 
   final _AsInt _val;
 
@@ -77,23 +72,23 @@ class Int {
 }
 
 class _AsInt {
-  /// [non] the "non-Integer character" error message; it defaults to
-  /// 'non-integer character(s)'.
+  /// [mal] "malformed", the error message for non-integer input values; the
+  /// default value is 'non-integer input value'.
   /// [logic] the logic to be applied to a integer input.
-  _AsInt(String? non, this._logic) : _non = non ?? 'non-integer character(s)';
+  _AsInt(String? mal, this._logic) : _mal = mal ?? 'non-integer input value';
 
   /// Logic code related to integer values.
   final String? Function(int) _logic;
 
   /// The error message in case of NaN input.
-  final String _non;
+  final String _mal;
 
   /// Invokes [_logic] if [input] is num.
   String? call(String? input) {
     if (input == null) return null;
 
     final asInt = int.tryParse(input);
-    return asInt == null ? _non : _logic(asInt);
+    return asInt == null ? _mal : _logic(asInt);
   }
 }
 
