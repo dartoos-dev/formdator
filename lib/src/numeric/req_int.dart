@@ -9,69 +9,58 @@ class ReqInt {
   /// Constrains data to integer numbers.
   ///
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character.
-  ReqInt({String? blank, String? non}) : this._int(Int(non: non), blank);
+  /// [mal] "malformed", the error message for non-integer input values.
+  ReqInt({String? blank, String? mal}) : this._int(Int(mal: mal), blank);
 
   /// Constrains data to integer numbers greater than or equal to [min].
   ///
   /// [min] the smallest valid integer number.
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character.
+  /// [mal] "malformed", the error message for non-integer input values.
   /// [small] the error message if an input is too small.
-  ReqInt.min(int min, {String? blank, String? non, String? small})
-      : this._int(Int.min(min, non: non, small: small), blank);
+  ReqInt.min(int min, {String? blank, String? mal, String? small})
+      : this._int(Int.min(min, mal: mal, small: small), blank);
 
   /// Constrains data to positive integer numbers (zero included).
   ///
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character.
+  /// [mal] "malformed", the error message for non-integer input values.
   /// [neg] the error message if an input is negative.
-  ReqInt.pos({String? blank, String? non, String? neg})
-      : this._int(Int.pos(non: non, neg: neg), blank);
+  ReqInt.pos({String? blank, String? mal, String? neg})
+      : this._int(Int.pos(mal: mal, neg: neg), blank);
 
   /// Constrains data to integer numbers that are less than or equal to [max].
   ///
   /// [max] the greatest valid integer number.
   /// [blank] the error message in case of a null or empty input value.
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character.
+  /// [mal] "malformed", the error message for non-integer input values.
   /// [large] the error message if an input is too large.
-  ReqInt.max(int max, {String? blank, String? non, String? large})
-      : this._int(Int.max(max, non: non, large: large), blank);
+  ReqInt.max(int max, {String? blank, String? mal, String? large})
+      : this._int(Int.max(max, mal: mal, large: large), blank);
 
   /// Constrains data to negative integer numbers (zero excluded).
   ///
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
-  /// [pos] the error message if an input value is positive; the default value
-  /// is 'it cannot be positive'.
-  ReqInt.neg({String? blank, String? non, String? pos})
-      : this._int(Int.neg(non: non, pos: pos), blank);
+  /// [mal] "malformed", the error message for non-integer input values.
+  /// [pos] the error message if an input value is positive.
+  ReqInt.neg({String? blank, String? mal, String? pos})
+      : this._int(Int.neg(mal: mal, pos: pos), blank);
 
   /// Constrains data to integer numbers within the range [min–max].
   ///
   /// [min] the smallest valid number; it must be < [max].
   /// [max] the largest valid number; it must be > [min].
-  /// [non] "non-integer", the error message in case of input containing at
-  /// least one non-integer character; the default value is 'non-integer
-  /// character(s)'.
-  /// [small] the error message if an input value is too small; the default
-  /// value is 'it cannot be < [min]'.
-  /// [large] the error message if an input value is too large; the default
-  /// value is 'it cannot be > [max]'.
+  /// [mal] "malformed", the error message for non-integer input values.
+  /// [small] the error message if an input value is too small.
+  /// [large] the error message if an input value is too large.
   ReqInt.range(
     int min,
     int max, {
     String? blank,
-    String? non,
+    String? mal,
     String? small,
     String? large,
   }) : this._int(
-            Int.range(min, max, non: non, small: small, large: large), blank);
+            Int.range(min, max, mal: mal, small: small, large: large), blank);
 
   /// Helper ctor.
   ReqInt._int(Int intVal, String? blank)

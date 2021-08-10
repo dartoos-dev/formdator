@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 void main() {
   const blank = 'The value is required';
   const error = 'The value must be numeric';
-  final numeric = ReqInt(blank: blank, non: error);
+  final numeric = ReqInt(blank: blank, mal: error);
 
   group('ReqInt', () {
     group('():', () {
@@ -48,7 +48,7 @@ void main() {
     });
     group('min:', () {
       const small = 'too small';
-      final numMin = ReqInt.min(10, blank: blank, non: error, small: small);
+      final numMin = ReqInt.min(10, blank: blank, mal: error, small: small);
       test('null input', () {
         expect(numMin(null), blank);
       });
@@ -66,7 +66,7 @@ void main() {
     });
     group('pos:', () {
       const neg = 'negative number';
-      final pos = ReqInt.pos(blank: blank, non: error, neg: neg);
+      final pos = ReqInt.pos(blank: blank, mal: error, neg: neg);
       test('null input', () {
         expect(pos(null), blank);
       });
@@ -86,7 +86,7 @@ void main() {
     });
     group('max:', () {
       const large = 'too large';
-      final numMax = ReqInt.max(10, blank: blank, non: error, large: large);
+      final numMax = ReqInt.max(10, blank: blank, mal: error, large: large);
       test('null', () {
         expect(numMax(null), blank);
       });
@@ -106,7 +106,7 @@ void main() {
     });
     group('neg:', () {
       const pos = 'too pos';
-      final neg = ReqInt.neg(blank: blank, non: error, pos: pos);
+      final neg = ReqInt.neg(blank: blank, mal: error, pos: pos);
       test('null', () {
         expect(neg(null), blank);
       });
@@ -128,9 +128,9 @@ void main() {
       const small = 'too small';
       const large = 'too large';
       final range = ReqInt.range(1, 10,
-          blank: blank, non: error, small: small, large: large);
+          blank: blank, mal: error, small: small, large: large);
       final negRange = ReqInt.range(-10, -1,
-          blank: blank, non: error, small: small, large: large);
+          blank: blank, mal: error, small: small, large: large);
       test('null', () {
         expect(range(null), blank);
         expect(negRange(null), blank);
