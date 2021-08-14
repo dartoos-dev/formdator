@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.11.0] - 2021-08-14
+
 ### Added
 
 - BrPhone class to validate both masked and unmasked Brazilian landline numbers
