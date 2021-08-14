@@ -35,7 +35,7 @@ packages, include:
 - Dependency-free package: there is only pure Dart code.
 - Object-oriented mindset: validation elements are **immutable**
   objects that can be combined in various configurations.
-- Classes with short - yet meaningful - names like `Req` for a required field;
+- Classes with short - yet meaningful - names like `Req` for required fields;
   `ReqEmail` for a non-empty, well-formed email; `Len` for length constraints;
   `Int` for integer-only values; and so on.
 - Easy-to-compose validators: for example, the `Trim(Email())` command produces
@@ -56,7 +56,7 @@ A flexible package provides components that can be selected and grouped in
 various combinations so that user requirements can be fulfilled.
 
 The code below shows how you can easily group the classes `Rules`, `Req`, `Len`,
-and `Email` to create a kind of _'required-50-characters-email'_ constraint.
+and `Email` to create a kind of _'required-email-maximum-50-characters'_ constraint.
 
 ```dart
   @override
