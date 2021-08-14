@@ -38,7 +38,7 @@ packages, include:
 - Classes with short — yet meaningful — names like `Req` for required fields;
   `ReqEmail` for non-empty, well-formed emails; `Len` for length constraints;
   `Int` for integer-only values; and so on.
-- Easy-to-compose validators: the command `Trim(Email())` produces a validator
+- Easy-to-compose validators: e.g. the command `Trim(Email())` produces a validator
   that trims the entered email before validating it.
 - Multiple validation at once: you can apply multiple validation rules at once
   by using the `Pair` or `Rules` classes.
