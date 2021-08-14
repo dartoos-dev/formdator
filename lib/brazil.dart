@@ -10,6 +10,8 @@
 ///   remove non-digit characters from masked CNPJs.
 library brazil;
 
+export 'src/brazil/br_mobile.dart';
+export 'src/brazil/br_mobile_strip.dart';
 export 'src/brazil/br_phone.dart';
 export 'src/brazil/br_phone_strip.dart';
 export 'src/brazil/cep.dart';

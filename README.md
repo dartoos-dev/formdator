@@ -98,13 +98,13 @@ For a complete list of validators with detailed information about each one
 ### Grouped by Category
 
 - [brazil](https://pub.dev/documentation/formdator/latest/brazil/brazil-library.html)
-  — validators related to Brazil (Cep, Cnpj, Cpf, etc).
+  — validators related to Brazil (BrMobile, BrPhone, Cep, Cnpj, Cpf, etc).
 - [core](https://pub.dev/documentation/formdator/latest/core/core-library.html) —
   core validators (Len, Pair, Req, Rules, Trim, etc).
 - [logic](https://pub.dev/documentation/formdator/latest/logic/logic-library.html)
   — validation logic and unit testing (Equal, Ok, Nok, ValueBack, etc).
 - [net](https://pub.dev/documentation/formdator/latest/net/net-library.html) —
-  internet (Email, Ipv4, Ipv6, Mac, Url, etc).
+  internet (Email, Ipv4, Ipv6, MacAddr, Url, etc).
 - [numeric](https://pub.dev/documentation/formdator/latest/numeric/numeric-library.html)
   — validators related to numbers or digits (Digit, Hex, Int, Num, etc).
 
