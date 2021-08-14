@@ -32,9 +32,6 @@ class CepStrip {
   ///   formatting error (e.g., '13349-00' becomes null).
   String? get value => _isWellFormed ? _strip : null;
 
-  /// Forwards to [value].
-  String? call() => value;
-
   /// Strips the '-' from CEP.
   String get _strip => _cep.replaceFirst('-', '', 5);
 

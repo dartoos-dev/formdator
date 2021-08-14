@@ -24,9 +24,6 @@ class CpfStrip {
   /// Matches non-digit characters of a CPF value.
   static final _nonDigits = RegExp('[-.]');
 
-  /// forwards to [value].
-  String? call() => value;
-
   /// CPF as a 11-digits value — non-numeric characters are stripped from it.
   ///
   /// There are three scenarios for a CPF value:

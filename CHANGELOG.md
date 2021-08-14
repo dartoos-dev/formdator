@@ -9,12 +9,18 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ### Added
 
-- ReqBrPhone and ReqBrMobile classes —
-  [128](https://github.com/dartoos-dev/formdator/issues/128).
 - BrPhone class to validate both masked and unmasked Brazilian landline numbers
   — [108](https://github.com/dartoos-dev/formdator/issues/108).
 - BrMobile class to validate both masked and unmasked Brazilian mobile numbers
   — [107](https://github.com/dartoos-dev/formdator/issues/107).
+- ReqBrPhone and ReqBrMobile classes —
+  [128](https://github.com/dartoos-dev/formdator/issues/128).
+
+### Removed
+
+- useless 'call' method implementation from classes CpfStrip and CnpjStrip —
+  [130](https://github.com/dartoos-dev/formdator/issues/130) **BREAKING
+  CHANGE**.
 
 ## [0.10.0] - 2021-08-10
 

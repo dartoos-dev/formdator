@@ -28,9 +28,6 @@ class CnpjStrip {
   /// Matches non-digit characters of a CNPJ value.
   static final _nonDigits = RegExp('[-./]');
 
-  /// Forwards to [value].
-  String? call() => value;
-
   /// CNPJ as a digit-only value — non-numeric characters are stripped from it.
   ///
   /// There are three scenarios for a CNPJ value. If it is:

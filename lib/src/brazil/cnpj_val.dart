@@ -97,8 +97,6 @@ class _SumOfDig {
           int check = 5 * cnpj[0] + 4 * cnpj[1] + 3 * cnpj[2] + 2 * cnpj[3];
           check += 9 * cnpj[4] + 8 * cnpj[5] + 7 * cnpj[6] + 6 * cnpj[7];
           check += 5 * cnpj[8] + 4 * cnpj[9] + 3 * cnpj[10] + 2 * cnpj[11];
-          // check = 11 - check % 11;
-          // return check >= 10 ? 0 : check;
           return check;
         });
 
@@ -110,8 +108,6 @@ class _SumOfDig {
           check += 2 * cnpj[4] + 9 * cnpj[5] + 8 * cnpj[6] + 7 * cnpj[7];
           check += 6 * cnpj[8] + 5 * cnpj[9] + 4 * cnpj[10] + 3 * cnpj[11];
           check += 2 * cnpj[12];
-          // check = 11 - check % 11;
-          // return check >= 10 ? 0 : check;
           return check;
         });
 
