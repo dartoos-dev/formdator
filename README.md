@@ -33,18 +33,18 @@ validating Flutter form fields. Its main benefits, compared to all other similar
 packages, include:
 
 - Dependency-free package: there is only pure Dart code.
-- Object-oriented mindset: validation elements are **immutable**
-  objects that can be combined in various configurations.
-- Classes with short - yet meaningful - names like `Req` for required fields;
-  `ReqEmail` for a non-empty, well-formed email; `Len` for length constraints;
+- Object-oriented mindset: validation elements are **immutable objects** that
+  can be combined in various configurations.
+- Classes with short — yet meaningful — names like `Req` for required fields;
+  `ReqEmail` for non-empty, well-formed emails; `Len` for length constraints;
   `Int` for integer-only values; and so on.
-- Easy-to-compose validators: for example, the `Trim(Email())` command produces
-  a validator that trims the entered email before validating it.
+- Easy-to-compose validators: the command `Trim(Email())` produces a validator
+  that trims the entered email before validating it.
 - Multiple validation at once: you can apply multiple validation rules at once
   by using the `Pair` or `Rules` classes.
-- Built-in set of compound validators: e.g. to validate an email and
-  limit its length to a maximum of 50 characters, simply use an instance of the
-  `Email.len(50)` class — **write less; do more!**
+- Built-in set of compound validators: e.g. to validate an email and limit its
+  length to a maximum of 50 characters, simply use an instance of `Email.len(50)`
+  — **write less; do more!**
 
 For easier integration with the Flutter form fields, every validator implements
 the `call()` method so that any validator object can be called as a function —
@@ -98,15 +98,15 @@ For a complete list of validators with detailed information about each one
 ### Grouped by Category
 
 - [brazil](https://pub.dev/documentation/formdator/latest/brazil/brazil-library.html)
-  — validators related to Brazil (BrMobile, BrPhone, Cep, Cnpj, Cpf, etc).
+  — validators related to Brazil (BrMobile, BrPhone, Cep, Cnpj, Cpf, etc.).
 - [core](https://pub.dev/documentation/formdator/latest/core/core-library.html) —
-  core validators (Len, Pair, Req, Rules, Trim, etc).
+  core validators (Len, Match [text pattern], Pair, Req, Rules, Trim, etc.).
 - [logic](https://pub.dev/documentation/formdator/latest/logic/logic-library.html)
-  — validation logic and unit testing (Equal, Ok, Nok, ValueBack, etc).
+  — validation logic and unit testing (Equal, Ok, Nok, ValueBack).
 - [net](https://pub.dev/documentation/formdator/latest/net/net-library.html) —
-  internet (Email, Ipv4, Ipv6, MacAddr, Url, etc).
+  internet (Email, Ipv4, Ipv6, MacAddr, Url, etc.).
 - [numeric](https://pub.dev/documentation/formdator/latest/numeric/numeric-library.html)
-  — validators related to numbers or digits (Digit, Hex, Int, Num, etc).
+  — validators related to numbers or digits (Digit, Hex, Int, Num, etc.).
 
 ## Demo application
 
