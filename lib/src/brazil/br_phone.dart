@@ -10,6 +10,7 @@ import 'br_phone_strip.dart';
 /// example:
 ///
 /// - unmasked (plain) number: "1124654321".
+/// - unmasked with country code prefix: "+551124654321".
 /// - masked number: "(11) 2465-4321".
 ///
 /// References:
@@ -17,7 +18,8 @@ import 'br_phone_strip.dart';
 /// - [br numbering plan](https://en.wikipedia.org/wiki/Telephone_numbers_in_Brazil)
 /// - [br form masks](http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/)
 class BrPhone {
-  /// Validates both masked and unmasked Brazilian landline numbers.
+  /// Validates masked and unmasked (with or without '+55' prefix) Brazilian
+  /// landline numbers.
   ///
   /// [mal] the error message in case of a malformed number; the default value
   /// is 'malformed number'.
