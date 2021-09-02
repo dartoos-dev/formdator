@@ -62,7 +62,7 @@ _'email-max-50-characters'_ constraint.
     return TextFormField(
       validator: Rules<String>([
         Req(blank:'Please enter the email'), // "blank" is the error message in case of field left blank
-        Len.max(50, long: 'Email length > 50 characters'), // "long" is the error message in case the input value is too long
+        Len.max(50, long: 'Email length cannot exceed 50 characters'), // "long" is the error message in case the input value is too long
         Email(mal: 'Malformed email'), // "mal" (malformed) is the error message in case of a malformed email
       ]),
     );
