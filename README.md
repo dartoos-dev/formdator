@@ -53,17 +53,17 @@ Callable Classes.
 ## Getting Started
 
 The following code snippet demonstrates how you can easily group the `Rules`,
-`Req`, `Len` and `Email` classes together to create a kind of _'email-max-50
-characters'_ constraint.
+`Req`, `Len` and `Email` classes together to create a kind of
+_'email-max-50-characters'_ constraint.
 
 ```dart
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: Rules<String>([
-        Req(),
-        Len.max(50, long: 'Email length cannot exceed 50 characters'), // "long" (short for too long) is the optional error message
-        Email(mal: 'Malformed email'), // "mal" (short for malformed) is the optional rror message 
+        Req(blank:'Please enter the email'), // "blank" is the error message in case of field left blank
+        Len.max(50, long: 'Email length > 50 characters'), // "long" is the error message in case the input value is too long
+        Email(mal: 'Malformed email'), // "mal" (malformed) is the error message in case of a malformed email
       ]),
     );
   }
