@@ -12,8 +12,14 @@ void main() {
     final reqDigLen = ReqDigit.len(2, blank: blank, mal: error, diff: diff);
     final reqDigMin = ReqDigit.min(3, blank: blank, mal: error, less: less);
     final reqDigMax = ReqDigit.max(6, blank: blank, mal: error, great: great);
-    final reqDigRange = ReqDigit.range(4, 6,
-        blank: blank, mal: error, less: less, great: great);
+    final reqDigRange = ReqDigit.range(
+      4,
+      6,
+      blank: blank,
+      mal: error,
+      less: less,
+      great: great,
+    );
     test('null', () {
       expect(reqDig(null), blank);
       expect(reqDigLen(null), blank);

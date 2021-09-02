@@ -60,7 +60,9 @@ class ReqInt {
     String? small,
     String? large,
   }) : this._int(
-            Int.range(min, max, mal: mal, small: small, large: large), blank);
+          Int.range(min, max, mal: mal, small: small, large: large),
+          blank,
+        );
 
   /// Helper ctor.
   ReqInt._int(Int intVal, String? blank)

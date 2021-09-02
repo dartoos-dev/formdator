@@ -48,8 +48,11 @@ class Num {
   /// [pos] the error message if an input value is positive; the default value
   /// is 'it cannot be positive'.
   Num.neg({String? mal, String? pos})
-      : this.max(0 - double.minPositive,
-            mal: mal, large: pos ?? 'it cannot be positive');
+      : this.max(
+          0 - double.minPositive,
+          mal: mal,
+          large: pos ?? 'it cannot be positive',
+        );
 
   /// Constrains data to numeric values within the range [min–max].
   ///

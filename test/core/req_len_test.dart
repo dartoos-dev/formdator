@@ -114,7 +114,9 @@ void main() {
           expect(minFive({1: 'a'}), less);
           expect(minFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(
-              minFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}), null);
+            minFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}),
+            null,
+          );
         });
       });
 

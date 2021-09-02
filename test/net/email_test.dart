@@ -67,15 +67,19 @@ void main() {
       });
       test('local-part is longer than 64 characters', () {
         expect(
-            email(
-                '1234567890123456789012345678901234567890123456789012345678901234+x@example.com'),
-            error);
+          email(
+            '1234567890123456789012345678901234567890123456789012345678901234+x@example.com',
+          ),
+          error,
+        );
       });
       test('Underscore is not allowed in domain part', () {
         expect(
-            email(
-                'i_like_underscore@but_its_not_allowed_in_this_part.example.com'),
-            error);
+          email(
+            'i_like_underscore@but_its_not_allowed_in_this_part.example.com',
+          ),
+          error,
+        );
       });
       test('icon characters', () {
         expect(email('QA[icon]CHOCOLATE[icon]@test.com'), error);
@@ -101,9 +105,11 @@ void main() {
     });
     test('long invalid email', () {
       expect(
-          lenEmail(
-              '1234567890123456789012345678901234567890123456789012345678901234+x@example.com'),
-          long);
+        lenEmail(
+          '1234567890123456789012345678901234567890123456789012345678901234+x@example.com',
+        ),
+        long,
+      );
     });
   });
 }

@@ -7,6 +7,12 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- Update lint and test packages.
+- Stricter linting rules.
+- Shorter package description.
+
 ## [0.11.1] - 2021-08-14
 
 ### Changed

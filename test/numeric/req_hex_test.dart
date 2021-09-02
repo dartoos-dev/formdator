@@ -15,8 +15,14 @@ void main() {
     final digLen = ReqHex.len(len, blank: blank, mal: error, diff: diff);
     final digMin = ReqHex.min(min, blank: blank, mal: error, less: less);
     final digMax = ReqHex.max(max, blank: blank, mal: error, great: great);
-    final digRange = ReqHex.range(min, max,
-        blank: blank, mal: error, less: less, great: great);
+    final digRange = ReqHex.range(
+      min,
+      max,
+      blank: blank,
+      mal: error,
+      less: less,
+      great: great,
+    );
     test('null', () {
       expect(dig(null), blank);
       expect(digLen(null), blank);

@@ -28,7 +28,7 @@ alt="EO-Color logo" width="101" height="48"/>
 
 ## Overview
 
-**Form**idable Vali**dator** — Formdator is a fully object-oriented package for
+**Form** Vali**dator** — Formdator is a fully object-oriented package for
 validating Flutter form fields. Its main benefits, compared to all other similar
 packages, include:
 
@@ -38,25 +38,23 @@ packages, include:
 - Classes with short — yet meaningful — names like `Req` for required fields;
   `ReqEmail` for non-empty, well-formed emails; `Len` for length constraints;
   `Int` for integer-only values; and so on.
-- Easy-to-compose validators: e.g. the command `Trim(Email())` produces a validator
-  that trims the entered email before validating it.
+- Easy-to-compose validators: e.g., the command `Trim(Email())` produces a
+  validator that trims an email value before validating it.
 - Multiple validation at once: you can apply multiple validation rules at once
   by using the `Pair` or `Rules` classes.
-- Built-in set of compound validators: e.g. to validate an email and limit its
-  length to a maximum of 50 characters, simply use an instance of `Email.len(50)`
-  — **write less; do more!**
+- Built-in set of compound validators: e.g., to validate an email and limit its
+  length to a maximum of 50 characters, simply use an instance of
+  `Email.len(50)` — **write less; do more!**
 
-For easier integration with the Flutter form fields, every validator implements
-the `call()` method so that any validator object can be called as a function —
+For easier integration with Flutter form fields, every validator implements the
+`call()` method. As a result, any validator object can be called as a function —
 Callable Classes.
 
 ## Getting Started
 
-A flexible package provides components that can be selected and grouped in
-various combinations so that user requirements can be fulfilled.
-
-The code below shows how you can easily group the classes `Rules`, `Req`, `Len`,
-and `Email` to create a kind of _'required-email-maximum-50-characters'_ constraint.
+The following code snippet demonstrates how you can easily group the `Rules`,
+`Req`, `Len` and `Email` classes together to create a kind of _'email-max-50
+characters'_ constraint.
 
 ```dart
   @override
@@ -64,10 +62,9 @@ and `Email` to create a kind of _'required-email-maximum-50-characters'_ constra
     return TextFormField(
       validator: Rules<String>([
         Req(),
-        Len.max(50),
-        Email(),
+        Len.max(50, long: 'Email length cannot exceed 50 characters'), // "long" (short for too long) is the optional error message
+        Email(mal: 'Malformed email'), // "mal" (short for malformed) is the optional rror message 
       ]),
-      keyboardType: TextInputType.emailAddress,
     );
   }
 ```
@@ -79,8 +76,7 @@ task.
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: ReqEmail.len(50),
-      keyboardType: TextInputType.emailAddress,
+      validator: ReqEmail.len(50, mal: 'Malformed email', long: 'Email length cannot exceed 50 characters'),
     );
   }
 ```

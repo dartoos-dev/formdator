@@ -136,10 +136,22 @@ void main() {
     group('range:', () {
       const small = 'too small';
       const large = 'too large';
-      final range = ReqNum.range(1, 10,
-          blank: blank, mal: error, small: small, large: large);
-      final negRange = ReqNum.range(-10, -1,
-          blank: blank, mal: error, small: small, large: large);
+      final range = ReqNum.range(
+        1,
+        10,
+        blank: blank,
+        mal: error,
+        small: small,
+        large: large,
+      );
+      final negRange = ReqNum.range(
+        -10,
+        -1,
+        blank: blank,
+        mal: error,
+        small: small,
+        large: large,
+      );
       test('null', () {
         expect(range(null), blank);
         expect(negRange(null), blank);

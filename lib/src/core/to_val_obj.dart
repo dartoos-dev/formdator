@@ -13,7 +13,10 @@ class ToValObj {
       : _asValObj = ((Object? input) {
           if (input is String?) return valStr(input);
           throw ArgumentError.value(
-              input, 'input', 'input type other than String?');
+            input,
+            'input',
+            'input type other than String?',
+          );
         });
 
   /// Transforms an input value of type 'Object?' to a value of type 'String?'
@@ -27,9 +30,9 @@ class ToValObj {
   /// [vals] the collection of [ValStr] instances.
   /// Throws an [ArgumentError] if the input value is not of type 'String?'.
   ToValObj.many(Iterable<ValStr> vals)
-      : _asValObj = Rules<Object>(vals
-            .map((valStr) => ToValObj(valStr).call)
-            .toList(growable: false));
+      : _asValObj = Rules<Object>(
+          vals.map((valStr) => ToValObj(valStr).call).toList(growable: false),
+        );
 
   /// The conversion logic.
   final ValObj _asValObj;
