@@ -1,45 +1,45 @@
 import 'package:formdator/formdator.dart';
 
-/// Convenient validator for required fields with length/quantity constraints.
+/// Convenient validator for required fields with length (number of items)
+/// constraints.
 ///
 /// It is the composite of [Req] and [Len] validators.
 class ReqLen {
-  /// Constrains the length or quantity of data items.
+  /// Constrains the length (number of items).
   ///
   /// [len] the length or number of items; it must be >= 0.
   /// [blank] the error message in case of a null or empty input value.
-  /// [diff] the error message if the length or number of data items is
-  /// different from [len].
+  /// [diff] the error message if the length is different from [len].
   ReqLen(int len, {String? blank, String? diff})
       : _reqLenVal = Pair(Req(blank: blank), Len(len, diff: diff));
 
-  /// Constrains the length or number of data items to a minimum amount.
+  /// Constrains the length (number of items) to a minimum amount.
   ///
   /// [min] the minimum number of items; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
-  /// [less] the error message if the length or number of items is < [min].
-  ReqLen.min(int min, {String? blank, String? less})
-      : _reqLenVal = Pair(Req(blank: blank), Len.min(min, less: less));
+  /// [short] the error message if the length < [min].
+  ReqLen.min(int min, {String? blank, String? short})
+      : _reqLenVal = Pair(Req(blank: blank), Len.min(min, short: short));
 
   /// Constrains the length or number of data items to a maximum amount.
   ///
   /// [max] the minimum number of items; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
-  /// [great] the error message if the length or number of items is > [max].
-  ReqLen.max(int max, {String? blank, String? great})
-      : _reqLenVal = Pair(Req(blank: blank), Len.max(max, great: great));
+  /// [long] the error message if the length > [max].
+  ReqLen.max(int max, {String? blank, String? long})
+      : _reqLenVal = Pair(Req(blank: blank), Len.max(max, long: long));
 
-  /// Constrains the length or number of data items within the range [min–max].
+  /// Constrains the length (number of items) within the range [min–max].
   ///
   /// [min] the lower limit; it must be > 0 and < [max].
   /// [max] the upper limit; it must be > 0 and > [min].
   /// [blank] the error message in case of a null or empty input value.
-  /// [less] the error message if the length or number of items is < [min].
-  /// [great] the error message if the length or number of items is > [max].
-  ReqLen.range(int min, int max, {String? blank, String? less, String? great})
+  /// [short] the error message if the length < [min].
+  /// [long] the error message if the length > [max].
+  ReqLen.range(int min, int max, {String? blank, String? short, String? long})
       : _reqLenVal = Pair(
           Req(blank: blank),
-          Len.range(min, max, less: less, great: great),
+          Len.range(min, max, short: short, long: long),
         );
 
   // Performs length-related validation.

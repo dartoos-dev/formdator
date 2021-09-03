@@ -6,22 +6,22 @@ void main() {
     const blank = 'required field';
     const error = 'the data must only contain hexadecimal digits';
     const diff = 'length error';
-    const less = 'the length is too short';
-    const great = 'the length is too long';
+    const short = 'the length is too short';
+    const long = 'the length is too long';
     const len = 2;
     const min = 3;
     const max = 8;
     final dig = ReqHex(blank: blank, mal: error);
     final digLen = ReqHex.len(len, blank: blank, mal: error, diff: diff);
-    final digMin = ReqHex.min(min, blank: blank, mal: error, less: less);
-    final digMax = ReqHex.max(max, blank: blank, mal: error, great: great);
+    final digMin = ReqHex.min(min, blank: blank, mal: error, short: short);
+    final digMax = ReqHex.max(max, blank: blank, mal: error, long: long);
     final digRange = ReqHex.range(
       min,
       max,
       blank: blank,
       mal: error,
-      less: less,
-      great: great,
+      short: short,
+      long: long,
     );
     test('null', () {
       expect(dig(null), blank);
@@ -41,9 +41,9 @@ void main() {
       const twoHex = 'AA';
       expect(dig(twoHex), null);
       expect(digLen(twoHex), null);
-      expect(digMin(twoHex), less);
+      expect(digMin(twoHex), short);
       expect(digMax(twoHex), null);
-      expect(digRange(twoHex), less);
+      expect(digRange(twoHex), short);
     });
     test('4 digits', () {
       const fourHexs = 'ab1C';
@@ -66,8 +66,8 @@ void main() {
       expect(dig(tenHex), null);
       expect(digLen(tenHex), diff);
       expect(digMin(tenHex), null);
-      expect(digMax(tenHex), great);
-      expect(digRange(tenHex), great);
+      expect(digMax(tenHex), long);
+      expect(digRange(tenHex), long);
     });
     test('the last char is a non-hex-digit', () {
       const invalid = '0123456789ABCDEFX';

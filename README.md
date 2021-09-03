@@ -60,8 +60,8 @@ _'email-max-50-characters'_ constraint.
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: Rules<String>([
-        Req(blank:'Please enter the email'), // "blank" is the error message in case of field left blank
+      validator: Rules<String>([ // The "Rules" class performs multiple validations at once
+        Req(blank: 'Please enter the email'), // "blank" is the error message in case of field left blank
         Len.max(50, long: 'Email length cannot exceed 50 characters'), // "long" is the error message in case the input value is too long
         Email(mal: 'Malformed email'), // "mal" (malformed) is the error message in case of a malformed email
       ]),
@@ -76,7 +76,12 @@ task.
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: ReqEmail.len(50, mal: 'Malformed email', long: 'Email length cannot exceed 50 characters'),
+      validator: ReqEmail.len(
+        50,
+        blank: 'Please enter the email',
+        mal: 'Malformed email',
+        long: 'Email length cannot exceed 50 characters',
+      ),
     );
   }
 ```

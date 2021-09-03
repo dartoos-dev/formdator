@@ -26,19 +26,20 @@ class ReqDigit {
   /// [min] the minimum number of digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if a non-digit character is found.
-  /// [less] the error message if the number of digits is less than [min].
-  ReqDigit.min(int min, {String? blank, String? mal, String? less})
-      : this._dig(Digit.min(min, mal: mal, less: less), blank);
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  ReqDigit.min(int min, {String? blank, String? mal, String? short})
+      : this._dig(Digit.min(min, mal: mal, short: short), blank);
 
   /// Constrains the input data to the digits [0-9] and its length (number of
-  /// digits) to a maximum of [min] digits.
+  /// digits) to a maximum of [max] digits.
   ///
   /// [max] the maximum number of digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if a non-digit character is found.
-  /// [great] the error message if the number of digits is greater than [max].
-  ReqDigit.max(int max, {String? blank, String? mal, String? great})
-      : this._dig(Digit.max(max, mal: mal, great: great), blank);
+  /// [long] the error message if the input length is longer than [max] digits.
+  ReqDigit.max(int max, {String? blank, String? mal, String? long})
+      : this._dig(Digit.max(max, mal: mal, long: long), blank);
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) within the range [min–max].
@@ -47,17 +48,18 @@ class ReqDigit {
   /// [max] the maximum number of digits; it must be > 0 and > [min].
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if a non-digit character is found.
-  /// [less] the error message if the number of digits is less than [min].
-  /// [great] the error message if the number of digits is greater than [max].
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  /// [long] the error message if the number of digits is longer than [max].
   ReqDigit.range(
     int min,
     int max, {
     String? blank,
     String? mal,
-    String? less,
-    String? great,
+    String? short,
+    String? long,
   }) : this._dig(
-          Digit.range(min, max, mal: mal, less: less, great: great),
+          Digit.range(min, max, mal: mal, short: short, long: long),
           blank,
         );
 

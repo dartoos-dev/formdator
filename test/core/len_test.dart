@@ -4,8 +4,8 @@ import 'package:test/test.dart';
 void main() {
   group('Len —', () {
     const diff = 'value length diff';
-    const less = 'the value is too small';
-    const great = 'the value is too large';
+    const short = 'the value is too small';
+    const long = 'the value is too large';
     group('assertions and error:', () {
       test('invalid length', () {
         expect(() => Len(-1), throwsA(isA<AssertionError>()));
@@ -85,32 +85,32 @@ void main() {
       });
 
       group('Len.min', () {
-        final minFive = Len.min(5, less: less);
+        final minFive = Len.min(5, short: short);
         test('String', () {
           expect(minFive(null), null);
-          expect(minFive(''), less);
-          expect(minFive('1'), less);
+          expect(minFive(''), short);
+          expect(minFive('1'), short);
           expect(minFive('12345'), null);
           expect(minFive('123456'), null);
         });
         test('num', () {
           expect(minFive(null), null);
-          expect(minFive(1), less);
-          expect(minFive(01234), less);
+          expect(minFive(1), short);
+          expect(minFive(01234), short);
           expect(minFive(12345), null);
           expect(minFive(123456), null);
         });
         test('Iterable', () {
           expect(minFive(null), null);
-          expect(minFive(<String>[]), less);
-          expect(minFive(['1']), less);
+          expect(minFive(<String>[]), short);
+          expect(minFive(['1']), short);
           expect(minFive([1, 2, 3, 4, 5]), null);
           expect(minFive([1, 2, 3, 4, 5, 6]), null);
         });
         test('Map', () {
           expect(minFive(null), null);
-          expect(minFive(<int, int>{}), less);
-          expect(minFive({1: 'a'}), less);
+          expect(minFive(<int, int>{}), short);
+          expect(minFive({1: 'a'}), short);
           expect(minFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(
             minFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}),
@@ -120,26 +120,26 @@ void main() {
       });
 
       group('Len.max', () {
-        final maxFive = Len.max(5, great: great);
+        final maxFive = Len.max(5, long: long);
         test('String', () {
           expect(maxFive(null), null);
           expect(maxFive(''), null);
           expect(maxFive('a'), null);
           expect(maxFive('12345'), null);
-          expect(maxFive('123456'), great);
+          expect(maxFive('123456'), long);
         });
         test('num', () {
           expect(maxFive(null), null);
           expect(maxFive(1), null);
           expect(maxFive(12345), null);
-          expect(maxFive(123456), great);
+          expect(maxFive(123456), long);
         });
         test('Iterable', () {
           expect(maxFive(null), null);
           expect(maxFive(<String>[]), null);
           expect(maxFive(['a']), null);
           expect(maxFive([1, 2, 3, 4, 5]), null);
-          expect(maxFive([1, 2, 3, 4, 5, 6]), great);
+          expect(maxFive([1, 2, 3, 4, 5, 6]), long);
         });
         test('Map', () {
           expect(maxFive(null), null);
@@ -148,41 +148,41 @@ void main() {
           expect(maxFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(
             maxFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}),
-            great,
+            long,
           );
         });
       });
 
       group('Len.range', () {
-        final rangeOneFive = Len.range(1, 5, less: less, great: great);
+        final rangeOneFive = Len.range(1, 5, short: short, long: long);
         test('String', () {
           expect(rangeOneFive(null), null);
-          expect(rangeOneFive(''), less);
+          expect(rangeOneFive(''), short);
           expect(rangeOneFive('a'), null);
           expect(rangeOneFive(12345), null);
-          expect(rangeOneFive(123456), great);
+          expect(rangeOneFive(123456), long);
         });
         test('num', () {
           expect(rangeOneFive(null), null);
           expect(rangeOneFive(0), null);
           expect(rangeOneFive(12345), null);
-          expect(rangeOneFive(123456), great);
+          expect(rangeOneFive(123456), long);
         });
         test('Iterable', () {
           expect(rangeOneFive(null), null);
-          expect(rangeOneFive(<String>[]), less);
+          expect(rangeOneFive(<String>[]), short);
           expect(rangeOneFive(['a']), null);
           expect(rangeOneFive([1, 2, 3, 4, 5]), null);
-          expect(rangeOneFive([1, 2, 3, 4, 5, 6]), great);
+          expect(rangeOneFive([1, 2, 3, 4, 5, 6]), long);
         });
         test('Map', () {
           expect(rangeOneFive(null), null);
-          expect(rangeOneFive(<int, int>{}), less);
+          expect(rangeOneFive(<int, int>{}), short);
           expect(rangeOneFive({1: 'a'}), null);
           expect(rangeOneFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}), null);
           expect(
             rangeOneFive({1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f'}),
-            great,
+            long,
           );
         });
       });

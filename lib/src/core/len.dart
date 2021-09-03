@@ -4,56 +4,53 @@ import 'package:formdator/formdator.dart';
 ///
 /// Valid input types: [String], [num], [Iterable], and [Map].
 class Len {
-  /// Constrains the length or quantity of data items.
+  /// Constrains the length (number of items).
   ///
   /// [len] the length or number of items; it must be >= 0.
   /// [diff] the error message if the length or number of data items is
-  /// different from [len]; the default value is 'the length or qty. must be
-  /// $len'.
+  /// different from [len]; the default value is 'the length must be $len'.
   Len(int len, {String? diff})
       : assert(len >= 0),
         _lenVal = _InputLen(
-          (int l) =>
-              l != len ? diff ?? 'the length or qty. must be $len' : null,
+          (int l) => l != len ? diff ?? 'the length must be $len' : null,
         );
 
-  /// Constrains the length or number of data items to a minimum amount.
+  /// Constrains the length (number of items) to a minimum amount.
   ///
   /// [min] the minimum number of items; it must be > 0.
-  /// [less] the error message if the length or number of items is < [min]; the
-  /// default value is 'the length or qty. cannot be < $min'
-  Len.min(int min, {String? less})
+  /// [short] the error message if the length < [min]; the default value is 'the
+  /// length cannot be < $min'
+  Len.min(int min, {String? short})
       : assert(min > 0),
         _lenVal = _InputLen(
           (int len) =>
-              len < min ? less ?? 'the length or qty. cannot be < $min' : null,
+              len < min ? short ?? 'the length cannot be < $min' : null,
         );
 
-  /// Constrains the length or number of data items to a maximum amount.
+  /// Constrains the length (number of items) to a maximum amount.
   ///
   /// [max] the maximum number of items; it must be > 0.
-  /// [great] the error message if the length or number of items is > [max]; the
-  /// default value is 'the length or qty. cannot be > [max]'.
-  Len.max(int max, {String? great})
+  /// [long] the error message if the length > [max]; the default value is 'the
+  /// length cannot be > [max]'.
+  Len.max(int max, {String? long})
       : assert(max > 0),
         _lenVal = _InputLen(
-          (int len) =>
-              len > max ? great ?? 'the length or qty. cannot be > $max' : null,
+          (int len) => len > max ? long ?? 'the length cannot be > $max' : null,
         );
 
-  /// Constrains the length or number of data items within the range [min–max].
+  /// Constrains the length (number of items) within the range [min–max].
   ///
   /// [min] the lower limit; it must be > 0 and < [max].
   /// [max] the upper limit; it must be > 0 and > [min].
-  /// [less] the error message if the length or number of items is < [min]; the
-  /// default value is 'the length or qty. cannot be < [min]'
-  /// [great] the error message if the length or number of items is > [max]; the
-  /// default value is 'the length or qty. cannot be > [max]'.
-  Len.range(int min, int max, {String? less, String? great})
+  /// [short] the error message if the length < [min]; the default value is 'the
+  /// length cannot be < [min]'
+  /// [long] the error message if the length > [max]; the default value is 'the
+  /// length cannot be > [max]'.
+  Len.range(int min, int max, {String? short, String? long})
       : assert(min < max),
         _lenVal = Pair(
-          Len.min(min, less: less),
-          Len.max(max, great: great),
+          Len.min(min, short: short),
+          Len.max(max, long: long),
         );
 
   // Performs length-related validation.

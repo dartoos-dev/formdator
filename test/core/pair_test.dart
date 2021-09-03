@@ -21,7 +21,7 @@ void main() {
     });
     test('— ValObj and ValObj', () {
       const long = 'the maximum length is 20';
-      final objPair = Pair(req, Len.max(20, great: long));
+      final objPair = Pair(req, Len.max(20, long: long));
       expect(objPair(null), blank);
       expect(objPair('A text that is too long and should be rejected'), long);
       expect(objPair('A short text'), null);
@@ -35,7 +35,7 @@ void main() {
     group('heterogeneous pairs', () {
       test('— ValStr and ValObj', () {
         const tooShort = 'too short';
-        final str1st = Pair.str1(noUpperCase, Len.min(5, less: tooShort));
+        final str1st = Pair.str1(noUpperCase, Len.min(5, short: tooShort));
         expect(str1st(null), null);
         expect(str1st('1234'), tooShort);
         expect(str1st('Titlecase Text'), upperCaseError);
@@ -43,7 +43,7 @@ void main() {
       });
       test('— ValObj and ValStr', () {
         const tooLong = 'too long';
-        final str2nd = Pair.str2(Len.max(20, great: tooLong), noUpperCase);
+        final str2nd = Pair.str2(Len.max(20, long: tooLong), noUpperCase);
         expect(str2nd(null), null);
         expect(str2nd('abcdefghijklmnopqrstuvwxyz'), tooLong);
         expect(str2nd('Titlecase Text'), upperCaseError);

@@ -32,21 +32,22 @@ class Digit {
   /// [min] the minimum number of digits; it must be > 0.
   /// [mal] "malformed", the error message if non-digit characters are found;
   /// the default value is 'non-digit character(s) found'.
-  /// [less] the error message if the number of digits is less than [min].
-  Digit.min(int min, {String? mal, String? less})
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  Digit.min(int min, {String? mal, String? short})
       : assert(min > 0),
-        _valDig = _DigitImpl(mal, Len.min(min, less: less));
+        _valDig = _DigitImpl(mal, Len.min(min, short: short));
 
   /// Constrains the input data to the digits [0-9] and its length (number of
-  /// digits) to a maximum of [min] digits.
+  /// digits) to a maximum of [max] digits.
   ///
   /// [max] the maximum number of digits; it must be > 0.
   /// [mal] "malformed", the error message if non-digit characters are found;
   /// the default value is 'non-digit character(s) found'.
-  /// [great] the error message if the number of digits is greater than [max].
-  Digit.max(int max, {String? mal, String? great})
+  /// [long] the error message if the input length is longer than [max] digits.
+  Digit.max(int max, {String? mal, String? long})
       : assert(max > 0),
-        _valDig = _DigitImpl(mal, Len.max(max, great: great));
+        _valDig = _DigitImpl(mal, Len.max(max, long: long));
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) within the range [min–max].
@@ -55,15 +56,16 @@ class Digit {
   /// [max] the maximum number of digits; it must be > 0 and > [min].
   /// [mal] "malformed", the error message if non-digit characters are found;
   /// the default value is 'non-digit character(s) found'.
-  /// [less] the error message if the number of digits is less than [min].
-  /// [great] the error message if the number of digits is greater than [max].
-  Digit.range(int min, int max, {String? mal, String? less, String? great})
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  /// [long] the error message if the input length is longer than [max] digits.
+  Digit.range(int min, int max, {String? mal, String? short, String? long})
       : assert(min > 0),
         assert(max > 0),
         assert(max > min),
         _valDig = _DigitImpl(
           mal,
-          Len.range(min, max, less: less, great: great),
+          Len.range(min, max, short: short, long: long),
         );
 
   // the digit-only validation logic.
