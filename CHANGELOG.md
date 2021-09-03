@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.12.0] - 2021-09-03
+
 ### Changed
 
 - rename parameters 'less' to 'short' and 'great' to 'long' in length-related
