@@ -133,7 +133,7 @@ class _SecretField extends StatelessWidget {
       onSaved: _onSaved,
       onChanged: _onChanged,
       validator: Pair(
-        ReqLen.range(4, 8, less: 'at least 4 chars', great: 'at most 8 chars'),
+        ReqLen.range(4, 8, short: 'at least 4 chars', long: 'at most 8 chars'),
         _extra,
       ),
       keyboardType: TextInputType.visiblePassword,

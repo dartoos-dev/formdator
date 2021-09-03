@@ -5,13 +5,13 @@ void main() {
   group('Digit —', () {
     const error = 'the data must only contain digits';
     const diff = 'length error';
-    const less = 'the length is too short';
-    const great = 'the length is too long';
+    const short = 'the length is too short';
+    const long = 'the length is too long';
     final dig = Digit(mal: error);
     final digLen = Digit.len(2, mal: error, diff: diff);
-    final digMin = Digit.min(3, mal: error, less: less);
-    final digMax = Digit.max(6, mal: error, great: great);
-    final digRange = Digit.range(4, 6, mal: error, less: less, great: great);
+    final digMin = Digit.min(3, mal: error, short: short);
+    final digMax = Digit.max(6, mal: error, long: long);
+    final digRange = Digit.range(4, 6, mal: error, short: short, long: long);
     test('null', () {
       expect(dig(null), null);
       expect(digLen(null), null);
@@ -42,21 +42,21 @@ void main() {
       expect(digMax(sixDigits), null);
       expect(digRange(sixDigits), null);
     });
-    test('less value', () {
+    test('short value', () {
       const twoDigits = '99';
       expect(dig(twoDigits), null);
       expect(digLen(twoDigits), null);
-      expect(digMin(twoDigits), less);
+      expect(digMin(twoDigits), short);
       expect(digMax(twoDigits), null);
-      expect(digRange(twoDigits), less);
+      expect(digRange(twoDigits), short);
     });
-    test('great value', () {
+    test('long value', () {
       const manyDigits = '01234567899876543210';
       expect(dig(manyDigits), null);
       expect(digLen(manyDigits), diff);
       expect(digMin(manyDigits), null);
-      expect(digMax(manyDigits), great);
-      expect(digRange(manyDigits), great);
+      expect(digMax(manyDigits), long);
+      expect(digRange(manyDigits), long);
     });
     test('the last char is non-digit', () {
       const invalid = '0123456789987654321X';

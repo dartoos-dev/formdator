@@ -7,6 +7,20 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- rename parameters 'less' to 'short' and 'great' to 'long' in length-related
+  constructors — [140](https://github.com/dartoos-dev/formdator/issues/140)
+  **BREAKING CHANGES**.
+
+### Added
+
+- improvements in README.
+
+### Fixed
+
+- several doc comments.
+
 ## [0.11.2] - 2021-09-02
 
 ### Changed

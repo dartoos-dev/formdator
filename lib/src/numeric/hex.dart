@@ -32,21 +32,22 @@ class Hex {
   /// [min] the minimum number of hex-digits; it must be > 0.
   /// [mal] the error message if non-hex characters are found; the default value
   /// is 'non-hex-digit character(s) found'.
-  /// [less] the error message if the number of hex-digits is less than [min].
-  Hex.min(int min, {String? mal, String? less})
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  Hex.min(int min, {String? mal, String? short})
       : assert(min > 0),
-        _valHex = _HexImpl(mal, Len.min(min, less: less));
+        _valHex = _HexImpl(mal, Len.min(min, short: short));
 
   /// Constrains the input data to the hex-digits [0-9A–F] and its length
-  /// (number of hex-digits) to a maximum of [min] hex-digits.
+  /// (number of hex-digits) to a maximum of [max] hex-digits.
   ///
   /// [max] the maximum number of hex-digits; it must be > 0.
   /// [mal] the error message if non-hex characters are found; the default value
   /// is 'non-hex-digit character(s) found'.
-  /// [great] the error message if the number of hex-digits is greater than [max].
-  Hex.max(int max, {String? mal, String? great})
+  /// [long] the error message if the input length is longer than [max] digits.
+  Hex.max(int max, {String? mal, String? long})
       : assert(max > 0),
-        _valHex = _HexImpl(mal, Len.max(max, great: great));
+        _valHex = _HexImpl(mal, Len.max(max, long: long));
 
   /// Constrains the input data to the hex-digits [0-9A–F] and its length
   /// (number of hex-digits) within the range [min–max].
@@ -55,15 +56,16 @@ class Hex {
   /// [max] the maximum number of hex-digits; it must be > 0 and > [min].
   /// [mal] the error message if non-hex characters are found; the default value
   /// is 'non-hex-digit character(s) found'.
-  /// [less] the error message if the number of hex-digits is less than [min].
-  /// [great] the error message if the number of hex-digits is greater than [max].
-  Hex.range(int min, int max, {String? mal, String? less, String? great})
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  /// [long] the error message if the input length is longer than [max] digits.
+  Hex.range(int min, int max, {String? mal, String? short, String? long})
       : assert(min > 0),
         assert(max > 0),
         assert(max > min),
         _valHex = _HexImpl(
           mal,
-          Len.range(min, max, less: less, great: great),
+          Len.range(min, max, short: short, long: long),
         );
 
   // the hex-digit-only validation logic.

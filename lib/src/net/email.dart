@@ -38,7 +38,7 @@ class Email {
   Email.len(int len, {String? mal, String? long})
       : assert(len > 0),
         _emailVal = Pair.str(
-          Len.max(len, great: long ?? 'email longer than $len chars'),
+          Len.max(len, long: long ?? 'email longer than $len chars'),
           Email(mal: mal),
         );
 

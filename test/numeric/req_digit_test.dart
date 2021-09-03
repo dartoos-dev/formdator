@@ -6,19 +6,19 @@ void main() {
     const blank = 'it cannot be left blank';
     const error = 'the data must only contain digits';
     const diff = 'length error';
-    const less = 'the length is too short';
-    const great = 'the length is too long';
+    const short = 'the length is too short';
+    const long = 'the length is too long';
     final reqDig = ReqDigit(blank: blank, mal: error);
     final reqDigLen = ReqDigit.len(2, blank: blank, mal: error, diff: diff);
-    final reqDigMin = ReqDigit.min(3, blank: blank, mal: error, less: less);
-    final reqDigMax = ReqDigit.max(6, blank: blank, mal: error, great: great);
+    final reqDigMin = ReqDigit.min(3, blank: blank, mal: error, short: short);
+    final reqDigMax = ReqDigit.max(6, blank: blank, mal: error, long: long);
     final reqDigRange = ReqDigit.range(
       4,
       6,
       blank: blank,
       mal: error,
-      less: less,
-      great: great,
+      short: short,
+      long: long,
     );
     test('null', () {
       expect(reqDig(null), blank);
@@ -50,21 +50,21 @@ void main() {
       expect(reqDigMax(sixDigits), null);
       expect(reqDigRange(sixDigits), null);
     });
-    test('less value', () {
+    test('short value', () {
       const twoDigits = '99';
       expect(reqDig(twoDigits), null);
       expect(reqDigLen(twoDigits), null);
-      expect(reqDigMin(twoDigits), less);
+      expect(reqDigMin(twoDigits), short);
       expect(reqDigMax(twoDigits), null);
-      expect(reqDigRange(twoDigits), less);
+      expect(reqDigRange(twoDigits), short);
     });
-    test('great value', () {
+    test('long value', () {
       const manyDigits = '01234567899876543210';
       expect(reqDig(manyDigits), null);
       expect(reqDigLen(manyDigits), diff);
       expect(reqDigMin(manyDigits), null);
-      expect(reqDigMax(manyDigits), great);
-      expect(reqDigRange(manyDigits), great);
+      expect(reqDigMax(manyDigits), long);
+      expect(reqDigRange(manyDigits), long);
     });
     test('the last char is non-digit', () {
       const invalid = '0123456789987654321X';

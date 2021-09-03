@@ -28,24 +28,25 @@ class ReqHex {
   /// [min] the minimum number of hex-digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if non-hex-digit characters are found.
-  /// [less] the error message if the number of hex-digits is less than [min].
-  ReqHex.min(int min, {String? blank, String? mal, String? less})
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  ReqHex.min(int min, {String? blank, String? mal, String? short})
       : _reqHex = Pair.str2(
           Req(blank: blank),
-          Hex.min(min, mal: mal, less: less),
+          Hex.min(min, mal: mal, short: short),
         );
 
   /// Constrains the input data to hexadecimal digits and its length to a
-  /// maximum of [min] hex-digits.
+  /// maximum of [max] hex-digits.
   ///
   /// [max] the maximum number of hex-digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if non-hex-digit characters are found.
-  /// [great] the error message if the number of hex-digits is greater than [max].
-  ReqHex.max(int max, {String? blank, String? mal, String? great})
+  /// [long] the error message if the input length is longer than [max] digits.
+  ReqHex.max(int max, {String? blank, String? mal, String? long})
       : _reqHex = Pair.str2(
           Req(blank: blank),
-          Hex.max(max, mal: mal, great: great),
+          Hex.max(max, mal: mal, long: long),
         );
 
   /// Constrains the input data to the hexadecimal digits and its length within
@@ -55,18 +56,19 @@ class ReqHex {
   /// [max] the maximum number of hex-digits; it must be > 0 and > [min].
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if non-hex-digit characters are found.
-  /// [less] the error message if the number of hex-digits is less than [min].
-  /// [great] the error message if the number of hex-digits is greater than [max].
+  /// [short] the error message if the input length is shorter than [min]
+  /// digits.
+  /// [long] the error message if the number of hex-digits is longer than [max].
   ReqHex.range(
     int min,
     int max, {
     String? blank,
     String? mal,
-    String? less,
-    String? great,
+    String? short,
+    String? long,
   }) : _reqHex = Pair.str2(
           Req(blank: blank),
-          Hex.range(min, max, mal: mal, less: less, great: great),
+          Hex.range(min, max, mal: mal, short: short, long: long),
         );
 
   // the hex-digit-only validation logic.
