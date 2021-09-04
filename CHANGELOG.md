@@ -7,6 +7,12 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Changed
+
+- increase the allowed maximum length of the local part of emails (before the @)
+  to 128 characters —
+  [143](https://github.com/dartoos-dev/formdator/issues/143).
+
 ## [0.12.0] - 2021-09-03
 
 ### Changed
