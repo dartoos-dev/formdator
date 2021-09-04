@@ -65,10 +65,10 @@ void main() {
           () {
         expect(email(r'this\ still\"not\\allowed@example.com'), error);
       });
-      test('local-part is longer than 64 characters', () {
+      test('local-part is longer than 128 characters', () {
         expect(
           email(
-            '1234567890123456789012345678901234567890123456789012345678901234+x@example.com',
+            '12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234x@example.com',
           ),
           error,
         );
@@ -106,7 +106,7 @@ void main() {
     test('long invalid email', () {
       expect(
         lenEmail(
-          '1234567890123456789012345678901234567890123456789012345678901234+x@example.com',
+          '12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234x@example.com',
         ),
         long,
       );

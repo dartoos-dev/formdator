@@ -10,7 +10,7 @@ class Email {
   /// manually entered emails.
   ///
   /// The validation takes into account that the local part (before the @) is
-  /// limited to 64 characters and that each part of the domain name is limited
+  /// limited to 128 characters and that each part of the domain name is limited
   /// to 63 characters. The number of subdomains has been deliberately limited
   /// to 8 as it is unlikely that someone will ever enter an email address with
   /// more than 4 subdomains.
@@ -51,7 +51,7 @@ class Email {
   /// suitable pattern for a manually entered email.
   static RegExp _emailPattern() {
     return RegExp(
-      r'^[A-Z0-9._%+-]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,8}[A-Z]{2,63}$',
+      r'^[A-Z0-9._%+-]{1,128}@(?:[A-Z0-9-]{1,63}\.){1,8}[A-Z]{2,63}$',
       caseSensitive: false,
       unicode: true,
     );
