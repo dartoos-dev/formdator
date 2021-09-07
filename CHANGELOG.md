@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.12.1] - 2021-09-07
+
 ### Changed
 
 - increase the allowed maximum length of the local part of emails (before the @)
