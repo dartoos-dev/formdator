@@ -32,8 +32,8 @@ alt="EO-Color logo" width="101" height="48"/>
 validating Flutter form fields. Its main benefits, compared to all other similar
 packages, include:
 
-- Dependency-free package: there is only pure Dart code.
-- Object-oriented mindset: validation elements are **immutable objects** that
+- Dependency-free: there is only pure Dart code.
+- Object-oriented mindset: the elements for validation are **immutable objects** that
   can be combined in various configurations.
 - Classes with short — yet meaningful — names like `Req` for required fields;
   `ReqEmail` for non-empty, well-formed emails; `Len` for length constraints;
