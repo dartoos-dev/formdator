@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.12.2] - 2021-12-15
+
 ### Fixed
 
 - remove redundant imports.
