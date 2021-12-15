@@ -7,6 +7,10 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Fixed
+
+- running demo app on Android — [146](https://github.com/dartoos-dev/formdator/issues/146).
+
 ## [0.12.1] - 2021-09-07
 
 ### Changed
