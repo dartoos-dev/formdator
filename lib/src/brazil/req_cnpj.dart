@@ -1,4 +1,5 @@
-import 'package:formdator/formdator.dart';
+import '../core/pair.dart';
+import '../core/req.dart';
 import 'cnpj.dart';
 
 /// Required CNPJ - Cadastro Nacional de Pessoa Jurídica.

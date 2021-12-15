@@ -1,9 +1,12 @@
-import 'package:formdator/formdator.dart';
+import '../core/pair.dart';
+import '../core/req.dart';
+import '../type.dart';
+
 import 'email.dart';
 
-/// Convenient validator for required email fields.
+/// Convenience validator for required email fields.
 ///
-/// It is the composite of [Req] and [Email] validators.
+/// It is the composition between validators [Req] and [Email].
 class ReqEmail {
   /// Non-blank and well-formed email values.
   ///
