@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [0.12.3] - 2021-12-18
+
 ### Added
 
 - IPv4 and ReqIPv4 classes to validate both optional and mandatory IPv4 form
