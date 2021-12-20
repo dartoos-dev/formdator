@@ -14,11 +14,11 @@ import 'package:formdator/formdator.dart';
 /// See also:
 /// - [IPv6](https://en.wikipedia.org/wiki/IPv6)
 class IPv6 {
-  /// Validates IPv4 addresses using a regular expression that is suitable for
+  /// Validates IPv6 addresses using a regular expression that is suitable for
   /// manually entered IP's. Examples:
   ///
   ///
-  /// If the ipv4 field is mandatory, see [ReqIPv4] or [Req].
+  /// If the ipv6 field is mandatory, see [ReqIPv6] or [Req].
   ///
   /// [mal] the error message in case of a malformed IP address; if omitted, the
   /// default message will be 'malformed IPv6 address'.
@@ -35,7 +35,7 @@ class IPv6 {
   // lazy loading (on-demand) initialization.
   static late final RegExp _matcher = _ipv6Pattern();
 
-  /// a suitable pattern for  IPv6 addresses.
+  /// A suitable pattern for  IPv6 addresses.
   static RegExp _ipv6Pattern() {
     return RegExp(
       r'^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$',

@@ -11,6 +11,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 - IPv6 and ReqIPv6 classes to validate both optional and mandatory IPv6 form
   fields — [98](https://github.com/dartoos-dev/formdator/issues/98).
+- MacAddr and ReqMacAddr classes to validate both optional and mandatory MAC
+  Address form fields — [95](https://github.com/dartoos-dev/formdator/issues/95).
 
 ## [0.12.3] - 2021-12-18
 

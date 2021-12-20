@@ -4,7 +4,7 @@ import 'package:formdator/type.dart';
 
 /// Convenience validator for required IPv4 addresses.
 ///
-/// It is the composition between the validators [Req] and [IPv4].
+/// It is the composition between [Req] and [IPv4].
 class ReqIPv4 {
   /// Non-blank and well-formed IPv4 values.
   ///
@@ -22,7 +22,7 @@ class ReqIPv4 {
   // the required IPv4 logic.
   final ValObj _reqIPv4;
 
-  /// Valid — returns null — if [ipv4] is a non-blank well-formed IPv4;
+  /// Valid — returns null — if [ipv4] is a non-blank, well-formed IPv4;
   /// otherwise, returns the blank error message if [ipv4] is null, or the
   /// malformed error message if [ipv4] is malformed.
   String? call(String? ipv4) => _reqIPv4(ipv4);

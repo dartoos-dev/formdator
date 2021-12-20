@@ -4,7 +4,7 @@ import 'package:formdator/type.dart';
 
 /// Convenience validator for required IPv6 addresses.
 ///
-/// It is the composition between the validators [Req] and [IPv6].
+/// It is the composition between [Req] and [IPv6].
 class ReqIPv6 {
   /// Non-blank and well-formed IPv6 values.
   ///
@@ -22,7 +22,7 @@ class ReqIPv6 {
   // the required IPv6 logic.
   final ValObj _reqIPv6;
 
-  /// Valid — returns null — if [ipv6] is a non-blank well-formed IPv6;
+  /// Valid — returns null — if [ipv6] is a non-blank, well-formed IPv6;
   /// otherwise, returns the blank error message if [ipv6] is null, or the
   /// malformed error message if [ipv6] is malformed.
   String? call(String? ipv6) => _reqIPv6(ipv6);

@@ -4,7 +4,7 @@ import 'package:formdator/type.dart';
 
 /// Convenience validator for required email fields.
 ///
-/// It is the composition between validators [Req] and [Email].
+/// It is the composition between [Req] and [Email].
 class ReqEmail {
   /// Non-blank and well-formed email values.
   ///
@@ -34,7 +34,7 @@ class ReqEmail {
   // the required email logic.
   final ValObj _reqEmail;
 
-  /// Valid — returns null — if [input] is a non-blank well-formed email;
+  /// Valid — returns null — if [input] is a non-blank, well-formed email;
   /// otherwise, returns the blank error message if [input] is null, or the
   /// malformed error message if [input] is malformed.
   String? call(String? input) => _reqEmail(input);
