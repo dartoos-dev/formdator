@@ -1,4 +1,5 @@
-import 'package:formdator/formdator.dart';
+import 'package:formdator/core.dart';
+import 'package:formdator/numeric.dart';
 
 /// Convenient validator for required hexadecimal fields.
 class ReqHex {
@@ -15,7 +16,8 @@ class ReqHex {
   /// [len] the number of hex-digits; it must be > 0.
   /// [blank] the error message in case of a null or empty input value.
   /// [mal] the error message if non-hex-digit characters are found.
-  /// [diff] the error message if the number of hex-digits is different from [len].
+  /// [diff] the error message if the number of hex-digits is different from
+  /// [len].
   ReqHex.len(int len, {String? blank, String? mal, String? diff})
       : _reqHex = Pair.str2(
           Req(blank: blank),

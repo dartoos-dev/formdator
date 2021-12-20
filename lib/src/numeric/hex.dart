@@ -1,4 +1,7 @@
-import 'package:formdator/formdator.dart';
+import 'package:formdator/core.dart';
+import 'package:formdator/logic.dart';
+import 'package:formdator/numeric.dart';
+import 'package:formdator/type.dart';
 
 /// Hex - any one of the sixteen hexadecimal digits 0 to F.
 ///
@@ -19,9 +22,10 @@ class Hex {
   /// length (number of digits) to [len] hex-digits.
   ///
   /// [len] the number of hex-digits; it must be > 0.
-  /// [mal] the error message if non-hex characters are found; the default value
-  /// is 'non-hex-digit character(s) found'.
-  /// [diff] the error message if the number of hex-digits is different from [len].
+  /// [mal] the error message if non-hex characters are found; if omitted, the
+  /// default value is 'non-hex-digit character(s) found'.
+  /// [diff] the error message if the number of hex-digits is different from
+  /// [len].
   Hex.len(int len, {String? mal, String? diff})
       : assert(len > 0),
         _valHex = _HexImpl(mal, Len(len, diff: diff));

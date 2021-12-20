@@ -1,4 +1,4 @@
-import 'cpf_strip.dart';
+import 'package:formdator/brazil.dart';
 
 /// CPF Validity — it checks the validity of the provided CPF.
 class CpfVal {

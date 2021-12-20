@@ -23,7 +23,7 @@ void main() {
         expect(req(iter), null);
       });
       test('Map input', () {
-        expect(req({'key1': 1, 'key2': "two"}), null);
+        expect(req({'key1': 1, 'key2': 'two'}), null);
       });
     });
     group('- invalid inputs:', () {

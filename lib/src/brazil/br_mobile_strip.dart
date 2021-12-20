@@ -8,12 +8,13 @@
 /// formatting error. For example:
 ///
 /// - if the number is '(21) 91234-5678', then the return value will be
-///   '92112345678'
-/// - if the number is '9876543210', then the return value will also be '9876543210'
+/// '92112345678'
+/// - if the number is '9876543210', then the return value will also be
+/// '9876543210'
 /// - if the number contains the Brazilian code prefix '+55' like
-///   '+559876543210', then the return value will also be '+559876543210'
+/// '+559876543210', then the return value will also be '+559876543210'
 /// - if the number is malformed like '983191+060', then the return value will
-///   be the null value
+/// be the null value
 class BrMobileStrip {
   /// It strips the hyfen '-' and parenthesis from the BrMobile value.
   const BrMobileStrip(this._brMobile);

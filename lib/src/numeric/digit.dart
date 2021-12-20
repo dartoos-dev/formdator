@@ -1,4 +1,7 @@
-import 'package:formdator/formdator.dart';
+import 'package:formdator/core.dart';
+import 'package:formdator/logic.dart';
+import 'package:formdator/numeric.dart';
+import 'package:formdator/type.dart';
 
 /// Digit - any one of the ten numbers 0 to 9.
 ///

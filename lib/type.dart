@@ -1,4 +1,5 @@
-/// Set of validator types.
+/// Types of validators
+library type;
 
 /// Generic validator.
 ///

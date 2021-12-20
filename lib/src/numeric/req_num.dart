@@ -1,4 +1,5 @@
-import 'package:formdator/formdator.dart';
+import 'package:formdator/core.dart';
+import 'package:formdator/numeric.dart';
 
 /// Convenient validator for required, numeric fields.
 ///
