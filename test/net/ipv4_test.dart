@@ -1,13 +1,12 @@
 import 'package:formdator/formdator.dart';
 import 'package:test/test.dart';
 
-/// Most of the test cases were taken from:
-/// - [valid-ipv4-addresses](https://en.wikipedia.org/wiki/ipv4_address#Valid_ipv4_addresses)
 void main() {
   group('IPv4', () {
     const error = 'malformed IP';
     final ipv4 = IPv4(mal: error);
     test('valid values:', () {
+      expect(ipv4(null), null);
       expect(ipv4('0.0.0.0'), null);
       expect(ipv4('1.1.1.10'), null);
       expect(ipv4('10.0.0.1'), null);
@@ -20,6 +19,7 @@ void main() {
       expect(ipv4('255.255.255.255'), null);
     });
     test('invalid values', () {
+      expect(ipv4(''), error);
       expect(ipv4('1'), error);
       expect(ipv4('10.10'), error);
       expect(ipv4('10.10.10.'), error);

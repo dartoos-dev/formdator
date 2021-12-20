@@ -32,17 +32,17 @@ alt="EO-Color logo" width="101" height="48"/>
 validating Flutter form fields. Its main benefits, compared to all other similar
 packages, include:
 
-- Dependency-free: there is only pure Dart code.
-- Object-oriented mindset: the elements for validation are **immutable objects** that
-  can be combined in various configurations.
-- Classes with short — yet meaningful — names like `Req` for required fields;
+- **Dependency-free**: there is only pure Dart code.
+- **Object-oriented mindset**: the elements for validation are **immutable
+  objects** that can be combined in various configurations.
+- **Classes with short — yet meaningful — names** like `Req` for required fields;
   `ReqEmail` for non-empty, well-formed emails; `Len` for length constraints;
   `Int` for integer-only values; and so on.
-- Easy-to-compose validators: e.g., the command `Trim(Email())` produces a
+- **Easy-to-compose validators**: e.g., the command `Trim(Email())` produces a
   validator that trims an email value before validating it.
-- Multiple validation at once: you can apply multiple validation rules at once
+- **Multiple validation at once**: you can apply multiple validation rules at once
   by using the `Pair` or `Rules` classes.
-- Built-in set of compound validators: e.g., to validate an email and limit its
+- **Built-in set of compound validators**: e.g., to validate an email and limit its
   length to a maximum of 50 characters, simply use an instance of
   `Email.len(50)` — **write less; do more!**
 

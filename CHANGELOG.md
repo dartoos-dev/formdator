@@ -7,6 +7,11 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+### Added
+
+- IPv6 and ReqIPv6 classes to validate both optional and mandatory IPv6 form
+  fields — [98](https://github.com/dartoos-dev/formdator/issues/98).
+
 ## [0.12.3] - 2021-12-18
 
 ### Added
