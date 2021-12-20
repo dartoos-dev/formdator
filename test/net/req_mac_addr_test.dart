@@ -1,4 +1,3 @@
-
 import 'package:formdator/formdator.dart';
 import 'package:test/test.dart';
 
