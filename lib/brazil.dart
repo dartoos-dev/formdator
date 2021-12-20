@@ -1,15 +1,15 @@
 /// Brazil-related validators.
 ///
 /// - Use [BrMobile] or [ReqBrMobile] to validate Brazilian mobile numbers;
-///   [BrMobileStrip] to remove non-digit characters from masked numbers.
+/// [BrMobileStrip] to remove non-digit characters from masked numbers.
 /// - Use [BrPhone] or [ReqBrPhone] to validate Brazilian landline telephone
-///   numbers; [BrPhoneStrip] to remove non-digit characters from masked numbers.
+/// numbers; [BrPhoneStrip] to remove non-digit characters from masked numbers.
 /// - Use [Cep] or [ReqCep] to validate CEP values; [CepStrip] to remove
-///   non-digit characters from masked CEPs.
+/// non-digit characters from masked CEPs.
 /// - Use [CpfVal], [ReqCpf] or [Cpf] to validate CPF values; [CpfStrip] to
-///   remove non-digit characters from masked CPFs.
-/// - Use [CnpjVal],  [ReqCnpj] or [Cnpj] to validate CNPJ values; [CnpjStrip] to
-///   remove non-digit characters from masked CNPJs.
+/// remove non-digit characters from masked CPFs.
+/// - Use [CnpjVal],  [ReqCnpj] or [Cnpj] to validate CNPJ values; [CnpjStrip]
+/// to remove non-digit characters from masked CNPJs.
 library brazil;
 
 export 'src/brazil/br_mobile.dart';

@@ -1,4 +1,4 @@
-import 'package:formdator/formdator.dart';
+import 'package:formdator/logic.dart';
 
 /// Numeric constraints — limits input data to numeric values.
 ///

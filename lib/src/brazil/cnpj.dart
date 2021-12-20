@@ -1,4 +1,4 @@
-import 'cnpj_val.dart';
+import 'package:formdator/brazil.dart';
 
 /// CNPJ - Cadastro Nacional de Pessoa Jurídica.
 ///

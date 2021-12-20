@@ -1,4 +1,4 @@
-import 'br_phone_strip.dart';
+import 'package:formdator/brazil.dart';
 
 /// Plano Brasileiro de Numeração de Telefones Fixos.
 ///

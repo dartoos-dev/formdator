@@ -10,4 +10,4 @@ export 'core.dart';
 export 'logic.dart';
 export 'net.dart';
 export 'numeric.dart';
-export 'src/type.dart';
+export 'type.dart';

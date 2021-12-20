@@ -33,7 +33,7 @@ void main() {
         expect(email('user%example.com@example.org'), null);
       });
       test(
-          'local part ending with non-alphanumeric character from the list of allowed printable characters',
+          '''local part ending with non-alphanumeric character from the list of allowed printable characters''',
           () {
         expect(email('user-@example.org'), null);
       });
@@ -46,29 +46,29 @@ void main() {
         expect(email('A@b@c@example.com'), error);
       });
       test(
-          'none of the special characters in this local-part are allowed outside quotation marks',
+          '''none of the special characters in this local-part are allowed outside quotation marks''',
           () {
         expect(email(r'a"b(c)d,e:f;g<h>i[j\k]l@example.com'), error);
       });
       test(
-          'quoted strings must be dot separated or the only element making up the local-part',
+          '''quoted strings must be dot separated or the only element making up the local-part''',
           () {
         expect(email('just"not"right@example.com '), error);
       });
       test(
-          'spaces, quotes, and backslashes may only exist when within quoted strings and preceded by a backslash',
+          '''spaces, quotes, and backslashes may only exist when within quoted strings and preceded by a backslash''',
           () {
         expect(email(r'this is"not\allowed@example.com'), error);
       });
       test(
-          'even if escaped (preceded by a backslash), spaces, quotes, and backslashes must still be contained by quotes',
+          '''even if escaped (preceded by a backslash), spaces, quotes, and backslashes must still be contained by quotes''',
           () {
         expect(email(r'this\ still\"not\\allowed@example.com'), error);
       });
       test('local-part is longer than 128 characters', () {
         expect(
           email(
-            '12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234x@example.com',
+            '''12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234x@example.com''',
           ),
           error,
         );
@@ -106,7 +106,7 @@ void main() {
     test('long invalid email', () {
       expect(
         lenEmail(
-          '12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234x@example.com',
+          '''12345678901234567890123456789012345678901234567890123456789012341234567890123456789012345678901234567890123456789012345678901234x@example.com''',
         ),
         long,
       );

@@ -1,4 +1,4 @@
-import 'cep_strip.dart';
+import 'package:formdator/brazil.dart';
 
 /// CEP — Código de Endereçamento Postal.
 ///

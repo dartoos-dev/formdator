@@ -1,4 +1,4 @@
-import 'cpf_val.dart';
+import 'package:formdator/brazil.dart';
 
 /// CPF - Cadastro da Pessoa Física.
 ///

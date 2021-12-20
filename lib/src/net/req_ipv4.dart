@@ -1,8 +1,6 @@
-import '../core/pair.dart';
-import '../core/req.dart';
-import '../type.dart';
-
-import 'ipv4.dart';
+import 'package:formdator/core.dart';
+import 'package:formdator/net.dart';
+import 'package:formdator/type.dart';
 
 /// Convenience validator for required IPv4 addresses.
 ///

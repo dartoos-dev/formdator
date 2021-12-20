@@ -1,4 +1,4 @@
-import 'cnpj_strip.dart';
+import 'package:formdator/brazil.dart';
 
 /// CNPJ Validity — it checks the validity of the provided CNPJ.
 class CnpjVal {
