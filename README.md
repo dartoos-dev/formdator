@@ -24,6 +24,7 @@ alt="EO-Color logo" width="101" height="48"/>
 - [List of Validators](#list-of-validators)
   - [Categories](#grouped-by-category)
 - [Demo Application](#demo-application)
+- [Contribute](#contribute)
 - [References](#references)
 
 ## Overview
@@ -118,14 +119,30 @@ You can take the code in this demo and experiment with it.
 To run the demo application:
 
 ```shell
-git clone https://github.com/dartoos-dev/formdator.git
-cd formdator/example/
-flutter run -d chrome
+  git clone https://github.com/dartoos-dev/formdator.git
+  cd formdator/example/
+  flutter run -d chrome
 ```
 
 This should launch the demo application on Chrome in debug mode.
 
 ![formdator-demo-app](https://user-images.githubusercontent.com/24878574/126716646-07cb5d58-f8da-4030-a829-2038946b5941.png)
+
+## Contribute
+
+Contributors are welcome!
+
+1. Open an issue regarding an improvement, a bug you noticed, or ask to be
+   assigned to an existing one.
+2. If the issue is confirmed, fork the repository, do the changes on a separate
+   branch and make a _Pull Request_.
+3. After review and acceptance, the _Pull Request_ is merged and closed.
+
+Make sure the commands below **passes** before making a Pull Request.
+
+```shell
+  dart analyze && sudo dart test
+```
 
 ## References
 
