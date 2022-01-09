@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [1.0.0] - 2022-01-09
+
 ### Added
 
 - _'Contribute'_ section to README — [156](https://github.com/dartoos-dev/formdator/issues/156).
