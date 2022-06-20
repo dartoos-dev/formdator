@@ -7,6 +7,8 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+## [1.1.0] - 2022-06-20
+
 ### Added
 
 - Url and ReqUrl classes to validate both optional and mandatory Url form fields
