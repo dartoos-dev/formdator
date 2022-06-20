@@ -9,6 +9,7 @@ analyzer:
     implicit-dynamic: false
 linter:
   rules:
+    always_use_package_imports: false
     # Make constructors the first thing in every class
     sort_constructors_first: true
     # Good packages document everything

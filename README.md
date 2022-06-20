@@ -29,9 +29,10 @@ alt="EO-Color logo" width="101" height="48"/>
 
 ## Overview
 
-**Form** Vali**dator** — Formdator is a fully object-oriented package for
-validating Flutter form fields. Its main benefits, compared to all other similar
-packages, include:
+**Formdator** — **Form**idable Vali**dator**.
+
+Formdator is a fully object-oriented package for validating Flutter form fields.
+Its main benefits, compared to all other similar packages, include:
 
 - **Dependency-free**: there is only pure Dart code.
 - **Object-oriented mindset**: the elements for validation are **immutable
@@ -138,7 +139,7 @@ Contributors are welcome!
    branch and make a _Pull Request_.
 3. After review and acceptance, the _Pull Request_ is merged and closed.
 
-Make sure the commands below **passes** before making a Pull Request.
+Make sure the command below **passes** before making a Pull Request.
 
 ```shell
   dart analyze && sudo dart test
