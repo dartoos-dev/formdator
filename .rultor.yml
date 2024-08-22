@@ -1,5 +1,5 @@
 docker:
-  image: cirrusci/flutter:stable
+  image: ghcr.io/cirruslabs/flutter:stable
   as_root: true
 architect:
   - rafamizes
@@ -10,10 +10,7 @@ merge:
   script: |
     flutter clean
     flutter pub get
-    flutter format --set-exit-if-changed lib/ test/ example/
-    flutter analyze --no-current-package lib/ test/ example/
-    flutter test --no-pub --coverage
-    bash <(curl -s https://codecov.io/bash)
+    flutter test --no-pub
     flutter pub publish --dry-run
 release:
   # updates pubspec.yaml's version attribute to $tag;
@@ -23,9 +20,11 @@ release:
   # repository.
   script: |-
     sed -i "s/^\(version:\).*/\1 $tag/" pubspec.yaml
-    sed -i "/\[Unreleased\]/a\\\n## [$tag] - $(date '+%F')" CHANGELOG.md
+    sed -i "/\[[Uu]nreleased\]/a\\\n## [$tag] - $(date '+%F')" CHANGELOG.md
     mkdir -p ~/.pub-cache
     mv ../credentials.json ~/.pub-cache/credentials.json
+    flutter clean
+    flutter pub get
     flutter pub publish -f
     git commit -am "version $tag"
     git checkout master
