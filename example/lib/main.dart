@@ -17,7 +17,7 @@ class _DemoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Simple form demo',
+      title: 'Simple form showcase with Formdator',
       home: SafeArea(
         child: _RegForm(
           title: 'Enter an email, a password and password confirmation',
@@ -29,44 +29,50 @@ class _DemoApp extends StatelessWidget {
 
 /// A simple registration form widget.
 class _RegForm extends StatelessWidget {
-  /// Ctor.
-  _RegForm({required String title, Key? key})
-      : _title = title,
-        super(key: key);
+  _RegForm({required this.title, Key? key}) : super(key: key);
 
-  final String _title;
-  // The input data.
-  final Map<String, dynamic> _data = {};
-  // The form's mandatory key.
-  final _fkey = GlobalKey<FormState>();
+  /// The form's title.
+  final String title;
+
+  /// The input data.
+  final Map<String, dynamic> data = {};
+
+  /// The form's mandatory key.
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        title: Text(_title),
-      ),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: SizedBox(
             width: 500,
-            child: Form(
-              key: _fkey,
-              child: Column(
-                children: [
-                  _EmailField(onSaved: _saveEmail),
-                  _SecretField(label: 'Password', onChanged: _refreshPass),
-                  _SecretField(
-                    label: 'Password confirmation',
-                    onChanged: _refreshConfirm,
-                    onSaved: _savePass,
-                    extra: Equal(_enteredPass, diff: 'does not match.'),
+            child: Column(
+              children: [
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 24),
+                Form(
+                  key: formKey,
+                  child: Column(
+                    children: [
+                      _EmailField(onSaved: _saveEmail),
+                      _SecretField(label: 'Password', onChanged: _refreshPass),
+                      _SecretField(
+                        label: 'Password confirmation',
+                        onChanged: _refreshConfirm,
+                        onSaved: _savePass,
+                        extra: Equal(_enteredPass, diff: 'does not match.'),
+                      ),
+                      _ClearSubmitBar(fkey: formKey, data: data),
+                    ],
                   ),
-                  _ClearSubmitBar(fkey: _fkey, data: _data),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -75,23 +81,23 @@ class _RegForm extends StatelessWidget {
   }
 
   /// The current entered password value.
-  String _enteredPass() => (_data['pass'] as String?) ?? '';
+  String _enteredPass() => (data['pass'] as String?) ?? '';
 
   /// Refreshes the password value.
-  void _refreshPass(String value) => _data['pass'] = value;
+  void _refreshPass(String value) => data['pass'] = value;
 
   /// Refreshes the password confirmation value.
-  void _refreshConfirm(String value) => _data['confirm'] = value;
+  void _refreshConfirm(String value) => data['confirm'] = value;
 
   void _saveEmail(String? email) {
     if (email != null && email.isNotEmpty) {
-      _data['email'] = email;
+      data['email'] = email;
     }
   }
 
   void _savePass(String? pass) {
     if (pass != null && pass.isNotEmpty) {
-      _data['pass'] = pass;
+      data['pass'] = pass;
     }
   }
 }
