@@ -29,7 +29,9 @@ class ReqEmail {
 
   /// Helper ctor.
   ReqEmail._email(Email email, {String? blank})
-      : _reqEmail = Pair.str2(Req(blank: blank ?? 'required email'), email);
+      : _reqEmail =
+            Pair.str2(Req(blank: blank ?? 'required email').call, email.call)
+                .call;
 
   // the required email logic.
   final ValObj _reqEmail;

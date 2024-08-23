@@ -1,12 +1,12 @@
-import '../../core.dart';
-import '../../type.dart';
-import 'url.dart';
+import 'package:formdator/core.dart';
+import 'package:formdator/net.dart';
+import 'package:formdator/type.dart';
 
 /// Convenience validator for required URL values.
 class ReqUrl {
   /// Non-blank and well-formed URL values.
   ReqUrl({String blank = 'required URL', String mal = 'malformed URL'})
-      : _reqUrl = Pair.str2(Req(blank: blank), Url(mal: mal));
+      : _reqUrl = Pair.str2(Req(blank: blank).call, Url(mal: mal).call).call;
 
   final ValObj _reqUrl;
 

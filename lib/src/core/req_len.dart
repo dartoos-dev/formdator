@@ -11,7 +11,8 @@ class ReqLen {
   /// [blank] the error message in case of a null or empty input value.
   /// [diff] the error message if the length is different from [len].
   ReqLen(int len, {String? blank, String? diff})
-      : _reqLenVal = Pair(Req(blank: blank), Len(len, diff: diff));
+      : _reqLenVal =
+            Pair(Req(blank: blank).call, Len(len, diff: diff).call).call;
 
   /// Constrains the length (number of items) to a minimum amount.
   ///
@@ -19,7 +20,8 @@ class ReqLen {
   /// [blank] the error message in case of a null or empty input value.
   /// [short] the error message if the length < [min].
   ReqLen.min(int min, {String? blank, String? short})
-      : _reqLenVal = Pair(Req(blank: blank), Len.min(min, short: short));
+      : _reqLenVal =
+            Pair(Req(blank: blank).call, Len.min(min, short: short).call).call;
 
   /// Constrains the length or number of data items to a maximum amount.
   ///
@@ -27,7 +29,8 @@ class ReqLen {
   /// [blank] the error message in case of a null or empty input value.
   /// [long] the error message if the length > [max].
   ReqLen.max(int max, {String? blank, String? long})
-      : _reqLenVal = Pair(Req(blank: blank), Len.max(max, long: long));
+      : _reqLenVal =
+            Pair(Req(blank: blank).call, Len.max(max, long: long).call).call;
 
   /// Constrains the length (number of items) within the range [min–max].
   ///
@@ -38,9 +41,9 @@ class ReqLen {
   /// [long] the error message if the length > [max].
   ReqLen.range(int min, int max, {String? blank, String? short, String? long})
       : _reqLenVal = Pair(
-          Req(blank: blank),
-          Len.range(min, max, short: short, long: long),
-        );
+          Req(blank: blank).call,
+          Len.range(min, max, short: short, long: long).call,
+        ).call;
 
   // Performs length-related validation.
   final ValObj _reqLenVal;

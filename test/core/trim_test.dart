@@ -5,7 +5,7 @@ void main() {
   const trimmed = 'trimmed text';
   const untrimmed = '  \t$trimmed  \n';
   // ignore: prefer_const_constructors
-  final trim = Trim(const ValueBack());
+  final trim = Trim(const ValueBack().call);
   group('Trim validator', () {
     test('blank input', () {
       expect(trim(null), null);

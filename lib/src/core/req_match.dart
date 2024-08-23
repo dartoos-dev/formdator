@@ -18,7 +18,10 @@ class ReqMatch {
   /// [mis] the error message in case of a mismatch between the input data and
   /// [pattern].
   ReqMatch.regExp(RegExp regExp, {String? blank, String? mis})
-      : _reqVal = Pair.str2(Req(blank: blank), Match.regExp(regExp, mis: mis));
+      : _reqVal = Pair.str2(
+          Req(blank: blank).call,
+          Match.regExp(regExp, mis: mis).call,
+        );
 
   /// The required match validation logic.
   final Pair _reqVal;

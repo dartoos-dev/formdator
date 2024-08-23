@@ -17,7 +17,9 @@ class ReqIPv4 {
 
   /// Helper ctor.
   ReqIPv4._set(IPv4 ip, {String? blank})
-      : _reqIPv4 = Pair.str2(Req(blank: blank ?? 'required IP address'), ip);
+      : _reqIPv4 =
+            Pair.str2(Req(blank: blank ?? 'required IP address').call, ip.call)
+                .call;
 
   // the required IPv4 logic.
   final ValObj _reqIPv4;

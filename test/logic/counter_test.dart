@@ -16,7 +16,7 @@ void main() {
     });
     test('custom extra validation step', () {
       const invalid = 'invalid';
-      final counter = Counter(val: const Nok(error: invalid));
+      final counter = Counter(val: const Nok(error: invalid).call);
       expect(counter('anything'), invalid);
       expect(counter.value, 1);
     });

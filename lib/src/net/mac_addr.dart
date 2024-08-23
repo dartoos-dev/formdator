@@ -32,7 +32,7 @@ class MacAddr {
   final ValStr _macAddrVal;
 
   // lazy loading (on-demand) initialization.
-  static late final RegExp _matcher = _macAddrPattern();
+  static final RegExp _matcher = _macAddrPattern();
 
   /// A suitable pattern for  MAC Addresses.
   ///

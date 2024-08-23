@@ -38,15 +38,15 @@ class Email {
   Email.len(int len, {String? mal, String? long})
       : assert(len > 0),
         _emailVal = Pair.str(
-          Len.max(len, long: long ?? 'email longer than $len chars'),
-          Email(mal: mal),
-        );
+          Len.max(len, long: long ?? 'email longer than $len chars').call,
+          Email(mal: mal).call,
+        ).call;
 
   // email validation logic.
   final ValStr _emailVal;
 
   // lazy loading (on-demand) initialization.
-  static late final RegExp _matcher = _emailPattern();
+  static final RegExp _matcher = _emailPattern();
 
   /// suitable pattern for a manually entered email.
   static RegExp _emailPattern() {

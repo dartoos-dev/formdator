@@ -11,7 +11,7 @@ class ReqCnpj {
   /// [blank] the error message in case of a empty or null CNPJ.
   /// [mal] the error message in case of a malformed CNPJ.
   ReqCnpj({String? blank, String? mal})
-      : _reqCnpjVal = Pair.str2(Req(blank: blank), Cnpj(mal: mal));
+      : _reqCnpjVal = Pair.str2(Req(blank: blank).call, Cnpj(mal: mal).call);
 
   /// The required CNPJ validation logic.
   final Pair _reqCnpjVal;

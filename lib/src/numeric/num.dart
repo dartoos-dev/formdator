@@ -10,7 +10,7 @@ class Num {
   ///
   /// [mal] "malformed", the error message in case of non-numeric input values;
   /// the default value is 'not a number'.
-  Num({String? mal}) : _val = _AsNum(mal, const Ok());
+  Num({String? mal}) : _val = _AsNum(mal, const Ok().call);
 
   /// Constrains data to numeric values greater than or equal to [min].
   ///
@@ -20,7 +20,7 @@ class Num {
   /// [small] the error message if an input is too small; the default value is
   /// 'it cannot be < [min]'.
   Num.min(num min, {String? mal, String? small})
-      : _val = _AsNum(mal, _Logic(min: min, s: small));
+      : _val = _AsNum(mal, _Logic(min: min, s: small).call);
 
   /// Constrains data to positive numbers (zero included).
   ///
@@ -39,7 +39,7 @@ class Num {
   /// [large] the error message if an input is too large; the default value is
   /// 'it cannot be > [max]'.
   Num.max(num max, {String? mal, String? large})
-      : _val = _AsNum(mal, _Logic(max: max, l: large));
+      : _val = _AsNum(mal, _Logic(max: max, l: large).call);
 
   /// Constrains data to negative numbers (zero excluded).
   ///
@@ -66,7 +66,7 @@ class Num {
   /// 'it cannot be > [max]'.
   Num.range(num min, num max, {String? mal, String? small, String? large})
       : assert(min < max),
-        _val = _AsNum(mal, _Logic(min: min, max: max, s: small, l: large));
+        _val = _AsNum(mal, _Logic(min: min, max: max, s: small, l: large).call);
 
   final _AsNum _val;
 

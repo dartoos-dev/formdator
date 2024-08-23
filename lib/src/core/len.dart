@@ -13,7 +13,7 @@ class Len {
       : assert(len >= 0),
         _lenVal = _InputLen(
           (int l) => l != len ? diff ?? 'the length must be $len' : null,
-        );
+        ).call;
 
   /// Constrains the length (number of items) to a minimum amount.
   ///
@@ -25,7 +25,7 @@ class Len {
         _lenVal = _InputLen(
           (int len) =>
               len < min ? short ?? 'the length cannot be < $min' : null,
-        );
+        ).call;
 
   /// Constrains the length (number of items) to a maximum amount.
   ///
@@ -36,7 +36,7 @@ class Len {
       : assert(max > 0),
         _lenVal = _InputLen(
           (int len) => len > max ? long ?? 'the length cannot be > $max' : null,
-        );
+        ).call;
 
   /// Constrains the length (number of items) within the range [min–max].
   ///
@@ -49,9 +49,9 @@ class Len {
   Len.range(int min, int max, {String? short, String? long})
       : assert(min < max),
         _lenVal = Pair(
-          Len.min(min, short: short),
-          Len.max(max, long: long),
-        );
+          Len.min(min, short: short).call,
+          Len.max(max, long: long).call,
+        ).call;
 
   // Performs length-related validation.
   final ValObj _lenVal;

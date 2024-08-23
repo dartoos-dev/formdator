@@ -66,7 +66,7 @@ class ReqDigit {
 
   /// Helper ctor.
   ReqDigit._dig(Digit digit, String? blank)
-      : _reqDig = Pair.str2(Req(blank: blank), digit);
+      : _reqDig = Pair.str2(Req(blank: blank).call, digit.call);
 
   // the digit-only validation logic.
   final Pair _reqDig;

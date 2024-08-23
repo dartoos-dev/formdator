@@ -7,6 +7,10 @@ and this project adheres to [Dart Package Versioning](https://dart.dev/tools/pub
 
 ## [Unreleased]
 
+- Bump up dependencies.
+- Stricter linting rules.
+- Example app tested and running on multiple platforms: Android, IOS, Web and MacOS.
+
 ## [1.1.0] - 2022-06-20
 
 ### Added

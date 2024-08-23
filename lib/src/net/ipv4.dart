@@ -38,7 +38,7 @@ class IPv4 {
   final ValStr _ipv4Val;
 
   // lazy loading (on-demand) initialization.
-  static late final RegExp _matcher = _ipv4Pattern();
+  static final RegExp _matcher = _ipv4Pattern();
 
   /// a suitable pattern for  IPv4 addresses.
   static RegExp _ipv4Pattern() {

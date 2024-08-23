@@ -11,7 +11,7 @@ void main() {
     });
     test('single rule', () {
       final counter = Counter();
-      final single = Rules(<ValObj>[counter]);
+      final single = Rules(<ValObj>[counter.call]);
       expect(single(null), null);
       expect(single(''), null);
       expect(single('non-blank input'), null);
@@ -21,11 +21,11 @@ void main() {
       final counter = Counter();
       const error = 'erroneous value';
       final List<ValStr> theRules = [
-        counter,
-        const Ok(),
-        counter,
+        counter.call,
+        const Ok().call,
+        counter.call,
         // the last rule is always invalid regardless of the input value
-        const Nok(error: error),
+        const Nok(error: error).call,
       ];
       final multiple = Rules(theRules);
       expect(multiple(null), error);

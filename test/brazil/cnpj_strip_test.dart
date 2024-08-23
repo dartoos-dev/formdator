@@ -21,7 +21,7 @@ void main() {
         const malformed = [
           '34.600/728000.177',
           '41.831.918000161',
-          '89.161.992/001-43'
+          '89.161.992/001-43',
         ];
         for (int i = 0; i < malformed.length; i++) {
           expect(CnpjStrip(malformed[i]).value, null);

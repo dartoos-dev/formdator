@@ -18,9 +18,9 @@ class ReqMacAddr {
   /// Helper ctor.
   ReqMacAddr._set(MacAddr mac, {String? blank})
       : _reqMacAddr = Pair.str2(
-          Req(blank: blank ?? 'required MAC Address'),
-          mac,
-        );
+          Req(blank: blank ?? 'required MAC Address').call,
+          mac.call,
+        ).call;
 
   // the required IPv4 logic.
   final ValObj _reqMacAddr;

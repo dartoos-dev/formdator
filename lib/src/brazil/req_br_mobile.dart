@@ -18,7 +18,8 @@ class ReqBrMobile {
   /// [blank] the error message in case of a null or empty mobile number.
   /// [mal] the error message in case of a malformed number.
   ReqBrMobile({String? blank, String? mal})
-      : _reqBrMobile = Pair.str2(Req(blank: blank), BrMobile(mal: mal));
+      : _reqBrMobile =
+            Pair.str2(Req(blank: blank).call, BrMobile(mal: mal).call);
 
   final Pair _reqBrMobile;
 

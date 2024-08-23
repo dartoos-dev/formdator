@@ -24,7 +24,7 @@ void main() {
           '222.22-222',
           '33333/333',
           '44444-44',
-          '12345-67A'
+          '12345-67A',
         ];
         for (int i = 0; i < mals.length; i++) {
           expect(CepStrip(mals[i]).value, null);

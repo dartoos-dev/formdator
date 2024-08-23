@@ -32,7 +32,7 @@ class ToValObj {
   ToValObj.many(Iterable<ValStr> vals)
       : _asValObj = Rules<Object>(
           vals.map((valStr) => ToValObj(valStr).call).toList(growable: false),
-        );
+        ).call;
 
   /// The conversion logic.
   final ValObj _asValObj;
