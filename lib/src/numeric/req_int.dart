@@ -67,7 +67,7 @@ class ReqInt {
 
   /// Helper ctor.
   ReqInt._int(Int intVal, String? blank)
-      : _reqInt = Pair.str2(Req(blank: blank), intVal);
+      : _reqInt = Pair.str2(Req(blank: blank).call, intVal.call);
 
   // the intber validator.
   final Pair _reqInt;

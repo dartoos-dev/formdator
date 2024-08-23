@@ -33,7 +33,7 @@ class IPv6 {
   final ValStr _ipv6Val;
 
   // lazy loading (on-demand) initialization.
-  static late final RegExp _matcher = _ipv6Pattern();
+  static final RegExp _matcher = _ipv6Pattern();
 
   /// A suitable pattern for  IPv6 addresses.
   static RegExp _ipv6Pattern() {

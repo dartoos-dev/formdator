@@ -10,7 +10,7 @@ class Int {
   ///
   /// [mal] "malformed", the error message for non-integer input values; the
   /// default value is 'non-integer input value'.
-  Int({String? mal}) : _val = _AsInt(mal, const Ok());
+  Int({String? mal}) : _val = _AsInt(mal, const Ok().call);
 
   /// Constrains data to integer numbers greater than or equal to [min].
   ///
@@ -20,7 +20,7 @@ class Int {
   /// [small] the error message if an input value is too small; the default
   /// value is 'it cannot be < [min]'.
   Int.min(int min, {String? mal, String? small})
-      : _val = _AsInt(mal, _Logic(min: min, s: small));
+      : _val = _AsInt(mal, _Logic(min: min, s: small).call);
 
   /// Constrains data to positive integer numbers (zero included).
   ///
@@ -40,7 +40,7 @@ class Int {
   /// [large] the error message if an input value is too large; the default
   /// value is 'it cannot be > [max]'.
   Int.max(int max, {String? mal, String? large})
-      : _val = _AsInt(mal, _Logic(max: max, l: large));
+      : _val = _AsInt(mal, _Logic(max: max, l: large).call);
 
   /// Constrains data to negative integer numbers (zero excluded).
   ///
@@ -63,7 +63,7 @@ class Int {
   /// value is 'it cannot be > [max]'.
   Int.range(int min, int max, {String? mal, String? small, String? large})
       : assert(min < max),
-        _val = _AsInt(mal, _Logic(min: min, max: max, s: small, l: large));
+        _val = _AsInt(mal, _Logic(min: min, max: max, s: small, l: large).call);
 
   final _AsInt _val;
 

@@ -70,7 +70,7 @@ class ReqNum {
 
   /// Helper ctor.
   ReqNum._num(Num numVal, String? blank)
-      : _reqNum = Pair.str2(Req(blank: blank), numVal);
+      : _reqNum = Pair.str2(Req(blank: blank).call, numVal.call);
 
   // the number validator.
   final Pair _reqNum;

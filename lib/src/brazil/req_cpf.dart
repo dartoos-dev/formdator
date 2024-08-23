@@ -9,7 +9,7 @@ class ReqCpf {
   /// [blank] the error message in case of an empty or null CPF.
   /// [mal] the error message in case of a malformed CPF
   ReqCpf({String? blank, String? mal})
-      : _reqCpfVal = Pair.str2(Req(blank: blank), Cpf(mal: mal));
+      : _reqCpfVal = Pair.str2(Req(blank: blank).call, Cpf(mal: mal).call);
 
   /// The required CPF validation logic.
   final Pair _reqCpfVal;

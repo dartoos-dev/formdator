@@ -14,14 +14,14 @@ class Pair {
   /// Example:
   ///
   /// - an email with up to 50 characters: `Pair.str1st(Email(), Len.max(50));`
-  Pair.str1(ValStr first, ValObj second) : this(ToValObj(first), second);
+  Pair.str1(ValStr first, ValObj second) : this(ToValObj(first).call, second);
 
   /// A pair of validators of which the second one is of type [ValStr].
   ///
   /// Example:
   ///
   /// - a mandatory email: `Pair.str2nd(Req(), Email());`
-  Pair.str2(ValObj first, ValStr second) : this(first, ToValObj(second));
+  Pair.str2(ValObj first, ValStr second) : this(first, ToValObj(second).call);
 
   /// A pair of validators of type [ValStr].
   ///
@@ -33,7 +33,7 @@ class Pair {
   /// - a mandatory email: `Pair.str(Req(), Email());`
   /// - an email with no uppercase letters: `Pair.str(NoUpperCase(), Email());`
   Pair.str(ValStr first, ValStr second)
-      : this(ToValObj(first), ToValObj(second));
+      : this(ToValObj(first).call, ToValObj(second).call);
 
   // The pair of validators.
   final ValObj _first;

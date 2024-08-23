@@ -16,7 +16,7 @@ class Digit {
   ///
   /// [mal] "malformed", the error message if non-digit characters are found;
   /// the default value is 'non-digit character(s) found'.
-  Digit({String? mal}) : _valDig = _DigitImpl(mal, const Ok());
+  Digit({String? mal}) : _valDig = _DigitImpl(mal, const Ok().call).call;
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to [len] digits.
@@ -27,7 +27,7 @@ class Digit {
   /// [diff] the error message if the number of digits is different from [len].
   Digit.len(int len, {String? mal, String? diff})
       : assert(len > 0),
-        _valDig = _DigitImpl(mal, Len(len, diff: diff));
+        _valDig = _DigitImpl(mal, Len(len, diff: diff).call).call;
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to a minimum of [min] digits.
@@ -39,7 +39,7 @@ class Digit {
   /// digits.
   Digit.min(int min, {String? mal, String? short})
       : assert(min > 0),
-        _valDig = _DigitImpl(mal, Len.min(min, short: short));
+        _valDig = _DigitImpl(mal, Len.min(min, short: short).call).call;
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) to a maximum of [max] digits.
@@ -50,7 +50,7 @@ class Digit {
   /// [long] the error message if the input length is longer than [max] digits.
   Digit.max(int max, {String? mal, String? long})
       : assert(max > 0),
-        _valDig = _DigitImpl(mal, Len.max(max, long: long));
+        _valDig = _DigitImpl(mal, Len.max(max, long: long).call).call;
 
   /// Constrains the input data to the digits [0-9] and its length (number of
   /// digits) within the range [min–max].
@@ -68,8 +68,8 @@ class Digit {
         assert(max > min),
         _valDig = _DigitImpl(
           mal,
-          Len.range(min, max, short: short, long: long),
-        );
+          Len.range(min, max, short: short, long: long).call,
+        ).call;
 
   // the digit-only validation logic.
   final ValStr _valDig;

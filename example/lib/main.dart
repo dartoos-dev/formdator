@@ -191,7 +191,8 @@ class _ClearSubmitBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonBar(
+    return OverflowBar(
+      alignment: MainAxisAlignment.end,
       children: <Widget>[
         TextButton(
           onPressed: () {

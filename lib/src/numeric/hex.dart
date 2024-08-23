@@ -16,7 +16,7 @@ class Hex {
   ///
   /// [mal] the error message if non-hex characters are found; the default value
   /// is 'non-hex-digit character(s) found'.
-  Hex({String? mal}) : _valHex = _HexImpl(mal, const Ok());
+  Hex({String? mal}) : _valHex = _HexImpl(mal, const Ok().call).call;
 
   /// Constrains the input data to the hexadecimal digits [0-9A–F] and its
   /// length (number of digits) to [len] hex-digits.
@@ -28,7 +28,7 @@ class Hex {
   /// [len].
   Hex.len(int len, {String? mal, String? diff})
       : assert(len > 0),
-        _valHex = _HexImpl(mal, Len(len, diff: diff));
+        _valHex = _HexImpl(mal, Len(len, diff: diff).call).call;
 
   /// Constrains the input data to the hex-digits [0-9A–F] and its length
   /// (number of hex-digits) to a minimum of [min] hex-digits.
@@ -40,7 +40,7 @@ class Hex {
   /// digits.
   Hex.min(int min, {String? mal, String? short})
       : assert(min > 0),
-        _valHex = _HexImpl(mal, Len.min(min, short: short));
+        _valHex = _HexImpl(mal, Len.min(min, short: short).call).call;
 
   /// Constrains the input data to the hex-digits [0-9A–F] and its length
   /// (number of hex-digits) to a maximum of [max] hex-digits.
@@ -51,7 +51,7 @@ class Hex {
   /// [long] the error message if the input length is longer than [max] digits.
   Hex.max(int max, {String? mal, String? long})
       : assert(max > 0),
-        _valHex = _HexImpl(mal, Len.max(max, long: long));
+        _valHex = _HexImpl(mal, Len.max(max, long: long).call).call;
 
   /// Constrains the input data to the hex-digits [0-9A–F] and its length
   /// (number of hex-digits) within the range [min–max].
@@ -69,8 +69,8 @@ class Hex {
         assert(max > min),
         _valHex = _HexImpl(
           mal,
-          Len.range(min, max, short: short, long: long),
-        );
+          Len.range(min, max, short: short, long: long).call,
+        ).call;
 
   // the hex-digit-only validation logic.
   final ValStr _valHex;

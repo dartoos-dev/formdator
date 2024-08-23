@@ -17,7 +17,10 @@ class ReqIPv6 {
 
   /// Helper ctor.
   ReqIPv6._set(IPv6 ip, {String? blank})
-      : _reqIPv6 = Pair.str2(Req(blank: blank ?? 'required IPv6 address'), ip);
+      : _reqIPv6 = Pair.str2(
+          Req(blank: blank ?? 'required IPv6 address').call,
+          ip.call,
+        ).call;
 
   // the required IPv6 logic.
   final ValObj _reqIPv6;
